@@ -13,19 +13,22 @@ nav_order: 2
 </div>
 
 {% for group in site.data.people.groups %}
-  {% if group.members and group.members.size > 0 %}
-    <section class="people-section">
-      <div class="section-heading section-heading--compact">
-        <div>
-          <p class="micro-label">{{ group.id }}</p>
-          <h2>{{ group.title }}</h2>
-          {% if group.description %}<p>{{ group.description }}</p>{% endif %}
-        </div>
-      </div>
-      {% include people-grid.liquid members=group.members %}
-    </section>
-  {% endif %}
+{% if group.members and group.members.size > 0 %}
+<section class="people-section">
+  <div class="section-heading section-heading--compact">
+    <div>
+      <p class="micro-label">{{ group.id }}</p>
+      <h2>{{ group.title }}</h2>
+      {% if group.description %}<p>{{ group.description }}</p>{% endif %}
+    </div>
+  </div>
+
+  {% include people-grid.liquid members=group.members %}
+</section>
+{% endif %}
 {% endfor %}
+
+
 
 {% if site.data.people.recruiting.enabled %}
 <section class="open-roster nomad-panel">
