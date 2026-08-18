@@ -1,0 +1,52 @@
+themes:
+  - code: ROUTE-01
+    icon: shield-check
+    title: Reliable & Responsible AI
+    summary: We study how learning systems can communicate uncertainty, remain robust under distribution shifts, and behave fairly across groups and operating conditions.
+    questions:
+      - How should a model express what it does not know?
+      - Which failures appear only after deployment conditions change?
+      - How can evaluation expose uneven performance across groups?
+    keywords:
+      - uncertainty quantification
+      - conformal prediction
+      - robustness and fairness
+
+  - code: ROUTE-02
+    icon: photo-scan
+    title: Vision & Multimodal Learning
+    summary: We build methods that connect visual representations with language and other signals, with an emphasis on foundation models and data-efficient adaptation.
+    questions:
+      - How can large visual models adapt with limited supervision?
+      - Which representations remain useful across domains and modalities?
+      - How can subtle or previously unseen anomalies be localized?
+    keywords:
+      - vision-language models
+      - anomaly detection
+      - representation learning
+
+  - code: ROUTE-03
+    icon: route
+    title: Language Models & Retrieval
+    summary: We explore retrieval, prompting, evaluation, and reasoning methods that make language-model systems more accurate, efficient, and task-aware.
+    questions:
+      - Which evidence and examples should be retrieved for this input?
+      - When does prompt optimization justify its added cost?
+      - How can retrieval and generation be evaluated as one system?
+    keywords:
+      - information retrieval
+      - prompt optimization
+      - retrieval-augmented generation
+
+  - code: ROUTE-04
+    icon: atom-2
+    title: AI for Science & Engineering
+    summary: We apply machine learning to scientific and engineering problems where physical structure, uncertainty, and real-world constraints matter.
+    questions:
+      - How can learned models respect scientific structure and constraints?
+      - What uncertainty is needed for a real scientific decision?
+      - Where can AI accelerate exploration without hiding evidence?
+    keywords:
+      - scientific machine learning
+      - climate and Earth systems
+      - autonomous discovery

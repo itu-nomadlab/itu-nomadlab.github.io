@@ -1,0 +1,33 @@
+projects:
+  - code: NMD-01
+    title: Robust Vision Foundation Models
+    type: Research direction
+    status: active
+    summary: Adapting and evaluating large visual models under domain shift, limited supervision, and real-world anomalies.
+    tags:
+      - computer vision
+      - foundation models
+      - robustness
+    url:
+
+  - code: NMD-02
+    title: Retrieval and Prompt Intelligence
+    type: Research direction
+    status: active
+    summary: Selecting evidence, examples, and instructions dynamically so that language models solve tasks with less cost and greater reliability.
+    tags:
+      - LLMs
+      - retrieval
+      - prompt optimization
+    url:
+
+  - code: NMD-03
+    title: Uncertainty-Aware Scientific AI
+    type: Research direction
+    status: active
+    summary: Building predictive systems that combine strong empirical performance with calibrated uncertainty for scientific decision making.
+    tags:
+      - uncertainty
+      - scientific AI
+      - conformal prediction
+    url:

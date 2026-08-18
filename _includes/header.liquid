@@ -1,0 +1,90 @@
+<header class="site-header">
+  <nav id="navbar" class="navbar navbar-light navbar-expand-lg {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation" aria-label="Primary navigation">
+    <div class="container">
+      <a class="navbar-brand nomad-brand" href="{{ '/' | relative_url }}" aria-label="NomadLab home">
+        <span class="nomad-brand__mark" aria-hidden="true">N</span>
+        <span class="nomad-brand__name">NomadLab</span>
+        <span class="nomad-brand__cursor" aria-hidden="true"></span>
+      </a>
+
+      <button
+        class="navbar-toggler collapsed ml-auto"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap align-items-lg-center">
+          {% for candidate in site.pages %}
+            {% if candidate.permalink == '/' %}{% assign home_title = candidate.title %}{% endif %}
+          {% endfor %}
+
+          <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/' | relative_url }}">
+              {{ home_title | default: 'Home' }}
+              {% if page.permalink == '/' %}<span class="sr-only">(current)</span>{% endif %}
+            </a>
+          </li>
+
+          {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+          {% for p in sorted_pages %}
+            {% if p.nav and p.autogen == null %}
+              {% assign parent_link = p.permalink | remove: 'index.html' %}
+              <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
+                {% if p.permalink contains '://' %}
+                  {% assign nav_url = p.permalink %}
+                {% else %}
+                  {% assign nav_url = p.url %}
+                {% endif %}
+                <a class="nav-link" href="{{ nav_url | relative_url }}">
+                  {{ p.title }}
+                  {% if page.url contains p.url %}<span class="sr-only">(current)</span>{% endif %}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+
+          <li class="nav-item nomad-toggle-container">
+            <button
+              id="nomad-mode-toggle"
+              class="nomad-mode-toggle"
+              type="button"
+              aria-pressed="false"
+              title="Toggle Nomad Mode"
+            >
+              <span class="nomad-mode-toggle__signal" aria-hidden="true"></span>
+              <span class="nomad-mode-toggle__label">Nomad Mode</span>
+            </button>
+          </li>
+
+          {% if site.search_enabled %}
+            <li class="nav-item utility-nav-item">
+              <button id="search-toggle" class="utility-button" title="Search" aria-label="Search" onclick="openSearchModal()">
+                <i class="ti ti-search"></i><span class="utility-button__text">Search</span>
+              </button>
+            </li>
+          {% endif %}
+
+          {% if site.enable_darkmode %}
+            <li class="nav-item toggle-container utility-nav-item">
+              <button id="light-toggle" class="utility-button" title="Change color theme" aria-label="Change color theme">
+                <i class="ti ti-sun-moon" id="light-toggle-system"></i>
+                <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
+                <i class="ti ti-sun-filled" id="light-toggle-light"></i>
+              </button>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

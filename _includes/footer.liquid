@@ -1,0 +1,30 @@
+<footer class="site-footer sticky-bottom mt-5" role="contentinfo">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <a class="nomad-brand nomad-brand--footer" href="{{ '/' | relative_url }}">
+          <span class="nomad-brand__mark" aria-hidden="true">N</span>
+          <span class="nomad-brand__name">NomadLab</span>
+        </a>
+        <p>Adaptive, reliable, and multimodal intelligence.</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <a href="{{ '/research/' | relative_url }}">Research</a>
+        <a href="{{ '/people/' | relative_url }}">People</a>
+        <a href="{{ '/publications/' | relative_url }}">Publications</a>
+        <a href="{{ '/join/' | relative_url }}">Join us</a>
+      </nav>
+
+      <div class="site-footer__meta">
+        <p>{{ site.institution }}<br>{{ site.department }}<br>{{ site.location }}</p>
+        {% if site.contact_email %}<a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>{% endif %}
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <span>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</span>
+      <span>{{ site.footer_text }}</span>
+    </div>
+  </div>
+</footer>

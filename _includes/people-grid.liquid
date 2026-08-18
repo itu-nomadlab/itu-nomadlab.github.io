@@ -1,0 +1,37 @@
+{% assign people = include.members %}
+<div class="people-grid">
+  {% for person in people %}
+    <article class="person-card nomad-panel">
+      <div class="person-card__portrait">
+        {% if person.image %}
+          {% assign portrait_path = '/assets/img/' | append: person.image %}
+          <img src="{{ portrait_path | relative_url }}" alt="{{ person.image_alt | default: person.name }}" loading="lazy">
+        {% else %}
+          <div class="person-card__initials" aria-hidden="true">{{ person.initials | default: person.name | slice: 0, 2 }}</div>
+        {% endif %}
+      </div>
+
+      <div class="person-card__body">
+        <p class="person-card__role">{{ person.role }}</p>
+        <h3 class="person-card__name">{{ person.name }}</h3>
+        {% if person.bio %}<p class="person-card__bio">{{ person.bio }}</p>{% endif %}
+
+        {% if person.interests %}
+          <ul class="tag-list" aria-label="Research interests">
+            {% for interest in person.interests %}<li>{{ interest }}</li>{% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if person.email or person.homepage or person.scholar or person.github or person.linkedin %}
+          <div class="person-card__links" aria-label="Links for {{ person.name }}">
+            {% if person.email %}<a href="mailto:{{ person.email }}" aria-label="Email {{ person.name }}"><i class="ti ti-mail"></i><span>Email</span></a>{% endif %}
+            {% if person.homepage %}<a href="{{ person.homepage }}" aria-label="Homepage of {{ person.name }}"><i class="ti ti-world"></i><span>Web</span></a>{% endif %}
+            {% if person.scholar %}<a href="{{ person.scholar }}" aria-label="Google Scholar profile of {{ person.name }}"><i class="ai ai-google-scholar"></i><span>Scholar</span></a>{% endif %}
+            {% if person.github %}<a href="{{ person.github }}" aria-label="GitHub profile of {{ person.name }}"><i class="ti ti-brand-github"></i><span>GitHub</span></a>{% endif %}
+            {% if person.linkedin %}<a href="{{ person.linkedin }}" aria-label="LinkedIn profile of {{ person.name }}"><i class="ti ti-brand-linkedin"></i><span>LinkedIn</span></a>{% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </article>
+  {% endfor %}
+</div>

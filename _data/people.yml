@@ -1,0 +1,25 @@
+groups:
+  - id: leadership
+    title: Principal Investigator
+    description: Research leadership and lab direction.
+    members:
+      - name: Yusuf Hüseyin Şahin
+        initials: YHŞ
+        role: Principal Investigator · Assistant Professor
+        affiliation: Department of Computer Engineering, Istanbul Technical University
+        email: sahinyu@itu.edu.tr
+        bio: Researcher and educator working across machine learning, computer vision, multimodal systems, information retrieval, and scientific AI.
+        image: people/yusuf-huseyin-sahin.svg
+        image_alt: Abstract NomadLab profile graphic for Yusuf Hüseyin Şahin
+        interests:
+          - Reliable machine learning
+          - Vision-language models
+          - Information retrieval
+          - AI for science
+
+recruiting:
+  enabled: true
+  title: Join the journey
+  text: We welcome motivated students interested in building reliable, useful, and scientifically grounded AI systems.
+  button_label: See open directions
+  button_url: /join/

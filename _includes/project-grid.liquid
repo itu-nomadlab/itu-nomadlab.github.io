@@ -1,0 +1,15 @@
+<div class="project-grid">
+  {% for project in site.data.projects.projects %}
+    <article class="project-card nomad-panel">
+      <div class="project-card__meta">
+        <span class="project-card__code">{{ project.code }}</span>
+        <span class="status-pill status-pill--{{ project.status }}">{{ project.status }}</span>
+      </div>
+      <h3>{% if project.url %}<a href="{{ project.url | relative_url }}">{{ project.title }}</a>{% else %}{{ project.title }}{% endif %}</h3>
+      <p>{{ project.summary }}</p>
+      <ul class="tag-list" aria-label="Topics for {{ project.title }}">
+        {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
+      </ul>
+    </article>
+  {% endfor %}
+</div>

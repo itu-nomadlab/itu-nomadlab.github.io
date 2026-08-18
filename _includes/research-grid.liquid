@@ -1,0 +1,23 @@
+<div class="research-grid">
+  {% for theme in site.data.research.themes %}
+    <article class="research-card nomad-panel">
+      <div class="research-card__topline">
+        <span class="research-card__code">{{ theme.code }}</span>
+        <i class="ti ti-{{ theme.icon }}" aria-hidden="true"></i>
+      </div>
+      <h3>{{ theme.title }}</h3>
+      <p>{{ theme.summary }}</p>
+      {% if include.show_questions and theme.questions %}
+        <div class="research-card__questions">
+          <p class="micro-label">Questions we ask</p>
+          <ul>
+            {% for question in theme.questions %}<li>{{ question }}</li>{% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+      <ul class="tag-list" aria-label="Keywords for {{ theme.title }}">
+        {% for keyword in theme.keywords %}<li>{{ keyword }}</li>{% endfor %}
+      </ul>
+    </article>
+  {% endfor %}
+</div>

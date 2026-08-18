@@ -1,0 +1,118 @@
+---
+layout: default
+---
+<div class="lab-home">
+  <section class="lab-hero nomad-panel">
+    <div class="lab-hero__copy">
+      <p class="eyebrow"><span>NOMADLAB</span> / {{ site.institution | upcase }}</p>
+      <h1>Nomadic intelligence.<br>Grounded science.</h1>
+      <p class="lab-hero__lead">{{ site.data.site.short_description }}</p>
+      <div class="hero-actions">
+        <a class="lab-button lab-button--primary" href="{{ '/research/' | relative_url }}">Explore our research <i class="ti ti-arrow-up-right"></i></a>
+        <a class="lab-button lab-button--secondary" href="{{ '/people/' | relative_url }}">Meet the lab</a>
+      </div>
+      <p class="hero-hint"><i class="ti ti-sparkles"></i> Try <strong>Nomad Mode</strong> in the navigation.</p>
+    </div>
+
+    <div class="lab-hero__map" aria-hidden="true">
+      <div class="route-map">
+        <span class="route-map__label route-map__label--a">ADAPT</span>
+        <span class="route-map__label route-map__label--b">RETRIEVE</span>
+        <span class="route-map__label route-map__label--c">VERIFY</span>
+        <span class="route-map__label route-map__label--d">DISCOVER</span>
+        <span class="route-map__node route-map__node--a"></span>
+        <span class="route-map__node route-map__node--b"></span>
+        <span class="route-map__node route-map__node--c"></span>
+        <span class="route-map__node route-map__node--d"></span>
+        <span class="route-map__path route-map__path--one"></span>
+        <span class="route-map__path route-map__path--two"></span>
+        <span class="route-map__path route-map__path--three"></span>
+        <div class="route-map__mark">
+          <span>N</span>
+          <small>ISTANBUL<br>TÜRKİYE</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-metrics" aria-label="NomadLab at a glance">
+    <div><strong>04</strong><span>research routes</span></div>
+    <div><strong>OPEN</strong><span>to collaboration</span></div>
+    <div><strong>01</strong><span>experimental interface</span></div>
+  </section>
+
+  <section class="home-section">
+    <div class="section-heading">
+      <div>
+        <p class="micro-label">Research routes</p>
+        <h2>Questions that move with the world</h2>
+      </div>
+      <a class="text-link" href="{{ '/research/' | relative_url }}">All research <i class="ti ti-arrow-right"></i></a>
+    </div>
+    {% include research-grid.liquid show_questions=false %}
+  </section>
+
+  <section class="home-section">
+    <div class="section-heading">
+      <div>
+        <p class="micro-label">Current work</p>
+        <h2>Projects in motion</h2>
+      </div>
+      <a class="text-link" href="{{ '/projects/' | relative_url }}">All projects <i class="ti ti-arrow-right"></i></a>
+    </div>
+    <div class="project-grid project-grid--home">
+      {% for project in site.data.projects.projects limit: 3 %}
+        <article class="project-card nomad-panel">
+          <div class="project-card__meta">
+            <span class="project-card__code">{{ project.code }}</span>
+            <span class="status-pill status-pill--{{ project.status }}">{{ project.status }}</span>
+          </div>
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.summary }}</p>
+          <ul class="tag-list" aria-label="Topics for {{ project.title }}">
+            {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
+          </ul>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="home-section home-split">
+    <div class="home-split__main">
+      <div class="section-heading section-heading--compact">
+        <div>
+          <p class="micro-label">Selected work</p>
+          <h2>Publications</h2>
+        </div>
+        <a class="text-link" href="{{ '/publications/' | relative_url }}">Full list <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="publication-shell nomad-panel">
+        {% if site.nomadlab.publications_ready %}
+          {% include selected_papers.liquid %}
+        {% else %}
+          <div class="publication-empty">
+            <div><i class="ti ti-books"></i><strong>Publication records are being migrated.</strong><br>The BibTeX pipeline is ready for the lab bibliography.</div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <aside class="home-split__aside nomad-panel">
+      <p class="micro-label">Latest signal</p>
+      {% assign latest_news = site.data.news | first %}
+      <time datetime="{{ latest_news.date }}">{{ latest_news.date | date: '%d %b %Y' }}</time>
+      <h3>{{ latest_news.title }}</h3>
+      <p>{{ latest_news.text }}</p>
+      {% if latest_news.url %}<a class="text-link" href="{{ latest_news.url | relative_url }}">Read signal <i class="ti ti-arrow-right"></i></a>{% endif %}
+    </aside>
+  </section>
+
+  <section class="home-section home-join nomad-panel">
+    <div>
+      <p class="micro-label">Join the route</p>
+      <h2>Bring a difficult question.</h2>
+      <p>We welcome research collaborations, thesis projects, and motivated students whose interests intersect with our research routes.</p>
+    </div>
+    <a class="lab-button lab-button--primary" href="{{ '/join/' | relative_url }}">Work with NomadLab <i class="ti ti-arrow-up-right"></i></a>
+  </section>
+</div>
