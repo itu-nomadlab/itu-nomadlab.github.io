@@ -23,6 +23,83 @@ yusuf-huseyin-sahin:
     pdf: /assets/pdf/theses/yusuf-huseyin-sahin-thesis.pdf
     available: false
 
+
+ahmed-senih-yildirim:
+  name: Ahmed Senih Yıldırım
+  publication_name: Ahmed Senih Yıldırım
+  initials: ASY
+  author_type: graduate
+  profile_url: /people/ahmed-senih-yildirim/
+  role: Research Assistant
+  affiliation: Department of Computer Engineering, Istanbul Technical University
+  email: yildirima25@itu.edu.tr
+  bio: bio.
+  image: people/yusuf-huseyin-sahin.svg
+  image_alt: Abstract NomadLab profile graphic for Yusuf Hüseyin Şahin
+  interests:
+    - Reliable machine learning
+    - Vision-language models
+    - Information retrieval
+    - AI for science
+  thesis:
+    title:
+    degree:
+    institution:
+    year:
+    pdf: /assets/pdf/theses/ahmed-senih-yildirim.pdf
+    available: false
+
+
+ahmed-senih-yildirim:
+  name: Tuğçe Temel
+  publication_name: Tuğçe Temel
+  initials: TT
+  author_type: graduate
+  profile_url: /people/tugce-temel/
+  role: Research Assistant
+  affiliation: Department of Computer Engineering, Istanbul Technical University
+  email: temel@itu.edu.tr
+  bio: bio.
+  image: people/yusuf-huseyin-sahin.svg
+  image_alt: Abstract NomadLab profile graphic for Yusuf Hüseyin Şahin
+  interests:
+    - Reliable machine learning
+    - Vision-language models
+    - Information retrieval
+    - AI for science
+  thesis:
+    title:
+    degree:
+    institution:
+    year:
+    pdf: /assets/pdf/theses/tugce-temel.pdf
+    available: false
+
+zehra-demir:
+  name: Zehra Demir
+  publication_name: Zehra Demir
+  initials: ZD
+  author_type: graduate
+  profile_url: /people/zehra-demir/
+  role: Research Assistant
+  affiliation: Department of Computer Engineering, Istanbul Technical University
+  email: demirz@itu.edu.tr
+  bio: bio.
+  image: people/yusuf-huseyin-sahin.svg
+  image_alt: Abstract NomadLab profile graphic for Yusuf Hüseyin Şahin
+  interests:
+    - Reliable machine learning
+    - Vision-language models
+    - Information retrieval
+    - AI for science
+  thesis:
+    title:
+    degree:
+    institution:
+    year:
+    pdf: /assets/pdf/theses/zehra-demir.pdf
+    available: false
+
 ege-demir:
   name: Ege Demir
   publication_name: Ege Demir
