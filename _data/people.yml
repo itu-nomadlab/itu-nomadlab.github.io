@@ -3,19 +3,22 @@ groups:
     title: Principal Investigator
     description: Research leadership and lab direction.
     members:
-      - name: Yusuf Hüseyin Şahin
-        initials: YHŞ
-        role: Principal Investigator · Assistant Professor
-        affiliation: Department of Computer Engineering, Istanbul Technical University
-        email: sahinyu@itu.edu.tr
-        bio: Researcher and educator working across machine learning, computer vision, multimodal systems, information retrieval, and scientific AI.
-        image: people/yusuf-huseyin-sahin.svg
-        image_alt: Abstract NomadLab profile graphic for Yusuf Hüseyin Şahin
-        interests:
-          - Reliable machine learning
-          - Vision-language models
-          - Information retrieval
-          - AI for science
+      - yusuf-huseyin-sahin
+
+  - id: graduate-researchers
+    title: Graduate Researchers
+    description: Researchers pursuing advanced study and thesis work.
+    members:
+      - ege-demir
+
+  - id: undergraduate-researchers
+    title: Undergraduate Researchers
+    description: Undergraduate collaborators contributing to research and graduation projects.
+    members:
+      - emir-bugra-sahin
+      - bilgehan-altintas
+      - mirac-merthan-durdag
+      - mustafa-orcun-ucgun
 
 recruiting:
   enabled: true

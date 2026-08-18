@@ -1,0 +1,15 @@
+{% assign publication_count = 0 %}
+<div class="publication-list publication-list--author">
+  {% for publication_id in site.data.publications.order %}
+    {% assign publication = site.data.publications.items[publication_id] %}
+    {% if publication.authors contains include.author_id %}
+      {% assign publication_count = publication_count | plus: 1 %}
+      {% include publication-card.liquid publication=publication compact=true %}
+    {% endif %}
+  {% endfor %}
+</div>
+{% if publication_count == 0 %}
+  <div class="publication-empty publication-empty--small">
+    <div><i class="ti ti-books"></i><strong>No publication has been linked to this profile yet.</strong></div>
+  </div>
+{% endif %}

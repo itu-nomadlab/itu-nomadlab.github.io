@@ -1,0 +1,124 @@
+yusuf-huseyin-sahin:
+  name: Yusuf Hüseyin Şahin
+  publication_name: Yusuf H Şahin
+  initials: YHŞ
+  author_type: graduate
+  profile_url: /people/yusuf-huseyin-sahin/
+  role: Principal Investigator · Assistant Professor
+  affiliation: Department of Computer Engineering, Istanbul Technical University
+  email: sahinyu@itu.edu.tr
+  bio: Researcher and educator working across machine learning, computer vision, multimodal systems, information retrieval, and scientific AI.
+  image: people/yusuf-huseyin-sahin.svg
+  image_alt: Abstract NomadLab profile graphic for Yusuf Hüseyin Şahin
+  interests:
+    - Reliable machine learning
+    - Vision-language models
+    - Information retrieval
+    - AI for science
+  thesis:
+    title:
+    degree:
+    institution:
+    year:
+    pdf: /assets/pdf/theses/yusuf-huseyin-sahin-thesis.pdf
+    available: false
+
+ege-demir:
+  name: Ege Demir
+  publication_name: Ege Demir
+  initials: ED
+  author_type: graduate
+  profile_url: /people/ege-demir/
+  role: Graduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Graduate researcher and co-author working on evolutionary design, graph learning, and data-driven analysis of sports.
+  interests:
+    - Evolutionary computation
+    - Graph neural networks
+    - Sports analytics
+  thesis:
+    title:
+    degree:
+    institution: Istanbul Technical University
+    year:
+    pdf: /assets/pdf/theses/ege-demir-thesis.pdf
+    available: false
+
+emir-bugra-sahin:
+  name: Emir Buğra Şahin
+  publication_name: Emir Buğra Şahin
+  initials: EBŞ
+  author_type: undergraduate
+  profile_url: /people/emir-bugra-sahin/
+  role: Undergraduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Undergraduate researcher and co-author of LLMigrate.
+  interests:
+    - Large language models
+    - Evolutionary robotics
+    - Soft-robot design
+  poster:
+    title: "LLMigrate: Large Language Models as Migration Controllers in Island-Based Evolutionary Design of Soft Robots"
+    pdf: /assets/pdf/posters/emir-bugra-sahin-graduation-poster.pdf
+    available: false
+
+bilgehan-altintas:
+  name: Bilgehan Altıntaş
+  publication_name: Bilgehan Altıntaş
+  initials: BA
+  author_type: undergraduate
+  profile_url: /people/bilgehan-altintas/
+  role: Undergraduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Undergraduate researcher and co-author of LLMigrate.
+  interests:
+    - Evolutionary computation
+    - Soft robotics
+    - Generative AI
+  poster:
+    title: "LLMigrate: Large Language Models as Migration Controllers in Island-Based Evolutionary Design of Soft Robots"
+    pdf: /assets/pdf/posters/bilgehan-altintas-graduation-poster.pdf
+    available: false
+
+mirac-merthan-durdag:
+  name: Miraç Merthan Durdağ
+  publication_name: Miraç Merthan Durdağ
+  initials: MMD
+  author_type: undergraduate
+  profile_url: /people/mirac-merthan-durdag/
+  role: Undergraduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Undergraduate researcher and co-author of a temporal graph-attention study for real-time football prediction.
+  interests:
+    - Graph neural networks
+    - Temporal modelling
+    - Football analytics
+  poster:
+    title: "The Past Informs the Future: Temporal Sliding Window Graph Attention Networks for Real-Time Football Match Outcome Prediction"
+    pdf: /assets/pdf/posters/mirac-merthan-durdag-graduation-poster.pdf
+    available: false
+
+mustafa-orcun-ucgun:
+  name: Mustafa Orçun Uçgun
+  publication_name: Mustafa Orçun Uçgun
+  initials: MOU
+  author_type: undergraduate
+  profile_url: /people/mustafa-orcun-ucgun/
+  role: Undergraduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Undergraduate researcher and co-author of a temporal graph-attention study for real-time football prediction.
+  interests:
+    - Graph learning
+    - Sequential prediction
+    - Sports analytics
+  poster:
+    title: "The Past Informs the Future: Temporal Sliding Window Graph Attention Networks for Real-Time Football Match Outcome Prediction"
+    pdf: /assets/pdf/posters/mustafa-orcun-ucgun-graduation-poster.pdf
+    available: false
+
+nazim-kemal-ure:
+  name: Nazım Kemal Üre
+  publication_name: Nazım Kemal Üre
+  initials: NKÜ
+  author_type: external
+  role: External Co-author

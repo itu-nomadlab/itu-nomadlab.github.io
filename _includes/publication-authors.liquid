@@ -1,0 +1,21 @@
+{% assign author_ids = include.authors %}
+<p class="publication-author-list" aria-label="Authors">
+  {% for author_id in author_ids %}
+    {% assign author = site.data.authors[author_id] %}
+    {% unless forloop.first %}<span class="publication-author-separator" aria-hidden="true">,</span>{% endunless %}
+    {% if author and author.author_type != 'external' and author.profile_url %}
+      <a
+        class="publication-author publication-author--{{ author.author_type }}"
+        href="{{ author.profile_url | relative_url }}"
+        title="Open {{ author.author_type }} author profile for {{ author.name }}"
+      >
+        <span>{{ author.publication_name | default: author.name }}</span>
+        <span class="publication-author__type" aria-hidden="true">{% if author.author_type == 'undergraduate' %}UG{% else %}GR{% endif %}</span>
+      </a>
+    {% elsif author %}
+      <span class="publication-author publication-author--external">{{ author.publication_name | default: author.name }}</span>
+    {% else %}
+      <span class="publication-author publication-author--external">{{ author_id }}</span>
+    {% endif %}
+  {% endfor %}
+</p>

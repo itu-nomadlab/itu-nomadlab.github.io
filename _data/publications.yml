@@ -1,0 +1,60 @@
+order:
+  - llmigrate
+  - temporal-sliding-window-gat
+  - football-playing-styles-dec
+
+selected:
+  - llmigrate
+  - temporal-sliding-window-gat
+  - football-playing-styles-dec
+
+items:
+  llmigrate:
+    id: llmigrate
+    url: /publications/llmigrate/
+    title: "LLMigrate: Large Language Models as Migration Controllers in Island-Based Evolutionary Design of Soft Robots"
+    description: A NomadLab publication presented at GECCO.
+    venue: GECCO
+    venue_type: Conference
+    authors:
+      - emir-bugra-sahin
+      - ege-demir
+      - bilgehan-altintas
+      - yusuf-huseyin-sahin
+    paper_url:
+    code_url:
+    project_url:
+    abstract:
+
+  temporal-sliding-window-gat:
+    id: temporal-sliding-window-gat
+    url: /publications/temporal-sliding-window-gat/
+    title: "The Past Informs the Future: Temporal Sliding Window Graph Attention Networks for Real-Time Football Match Outcome Prediction"
+    description: A NomadLab publication presented at ISACE.
+    venue: ISACE
+    venue_type: Conference
+    authors:
+      - mirac-merthan-durdag
+      - mustafa-orcun-ucgun
+      - ege-demir
+      - yusuf-huseyin-sahin
+    paper_url:
+    code_url:
+    project_url:
+    abstract:
+
+  football-playing-styles-dec:
+    id: football-playing-styles-dec
+    url: /publications/football-playing-styles-dec/
+    title: "How Do Football Teams Play? An Extended DEC Analysis to Uncover Playing Styles"
+    description: A NomadLab journal publication in SN Computer Science.
+    venue: SN Computer Science
+    venue_type: Journal
+    authors:
+      - ege-demir
+      - nazim-kemal-ure
+      - yusuf-huseyin-sahin
+    paper_url:
+    code_url:
+    project_url:
+    abstract:

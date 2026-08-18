@@ -1,3 +1,8 @@
-<div class="publications">
-  {% bibliography --group_by none --query @*[selected=true]* %}
-</div>
+{% assign selected_ids = site.data.publications.selected %}
+{% if selected_ids and selected_ids.size > 0 %}
+  {% include publication-list.liquid publication_ids=selected_ids compact=true limit=3 %}
+{% else %}
+  <div class="publication-empty">
+    <div><i class="ti ti-books"></i><strong>No selected publication has been added yet.</strong></div>
+  </div>
+{% endif %}

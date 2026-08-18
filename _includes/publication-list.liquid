@@ -1,0 +1,8 @@
+{% assign publication_ids = include.publication_ids | default: site.data.publications.order %}
+{% assign publication_limit = include.limit | default: 999 %}
+<div class="publication-list{% if include.compact %} publication-list--compact{% endif %}">
+  {% for publication_id in publication_ids limit: publication_limit %}
+    {% assign publication = site.data.publications.items[publication_id] %}
+    {% if publication %}{% include publication-card.liquid publication=publication compact=include.compact %}{% endif %}
+  {% endfor %}
+</div>

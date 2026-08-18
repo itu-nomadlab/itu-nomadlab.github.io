@@ -1,0 +1,19 @@
+{% assign publication = include.publication %}
+<article class="publication-card{% if include.compact %} publication-card--compact{% endif %} nomad-panel">
+  <div class="publication-card__topline">
+    <span class="publication-card__venue">{{ publication.venue }}</span>
+    <span class="publication-card__type">{{ publication.venue_type }}</span>
+  </div>
+
+  {% if include.compact %}
+    <h3 class="publication-card__title"><a href="{{ publication.url | relative_url }}">{{ publication.title }}</a></h3>
+  {% else %}
+    <h2 class="publication-card__title"><a href="{{ publication.url | relative_url }}">{{ publication.title }}</a></h2>
+  {% endif %}
+
+  {% include publication-authors.liquid authors=publication.authors %}
+
+  <a class="publication-card__open" href="{{ publication.url | relative_url }}">
+    Publication page <i class="ti ti-arrow-up-right" aria-hidden="true"></i>
+  </a>
+</article>

@@ -35,9 +35,10 @@ layout: default
     </div>
   </section>
 
+  {% assign publication_count = site.data.publications.order | size %}
   <section class="home-metrics" aria-label="NomadLab at a glance">
     <div><strong>04</strong><span>research routes</span></div>
-    <div><strong>OPEN</strong><span>to collaboration</span></div>
+    <div><strong>{% if publication_count < 10 %}0{% endif %}{{ publication_count }}</strong><span>publications</span></div>
     <div><strong>01</strong><span>experimental interface</span></div>
   </section>
 
@@ -86,14 +87,8 @@ layout: default
         </div>
         <a class="text-link" href="{{ '/publications/' | relative_url }}">Full list <i class="ti ti-arrow-right"></i></a>
       </div>
-      <div class="publication-shell nomad-panel">
-        {% if site.nomadlab.publications_ready %}
-          {% include selected_papers.liquid %}
-        {% else %}
-          <div class="publication-empty">
-            <div><i class="ti ti-books"></i><strong>Publication records are being migrated.</strong><br>The BibTeX pipeline is ready for the lab bibliography.</div>
-          </div>
-        {% endif %}
+      <div class="publication-shell publication-shell--home">
+        {% include selected_papers.liquid %}
       </div>
     </div>
 

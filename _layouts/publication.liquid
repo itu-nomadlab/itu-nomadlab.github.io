@@ -1,0 +1,32 @@
+---
+layout: default
+---
+{% assign publication = site.data.publications.items[page.publication_id] %}
+<article class="publication-detail">
+  <nav class="detail-breadcrumb" aria-label="Breadcrumb"><a href="{{ '/publications/' | relative_url }}"><i class="ti ti-arrow-left" aria-hidden="true"></i> Publications</a></nav>
+  <header class="publication-detail__hero nomad-panel">
+    <div class="publication-detail__venue-row"><span class="publication-detail__venue">{{ publication.venue }}</span><span class="publication-detail__type">{{ publication.venue_type }}</span></div>
+    <h1>{{ publication.title }}</h1>
+    {% include publication-authors.liquid authors=publication.authors %}
+  </header>
+  <div class="publication-detail__grid">
+    <section class="publication-detail__main nomad-panel">
+      <p class="micro-label">About the work</p><h2>Abstract</h2>
+      {% if publication.abstract %}<p>{{ publication.abstract }}</p>{% else %}
+        <div class="artifact-placeholder artifact-placeholder--quiet"><i class="ti ti-align-box-left-top" aria-hidden="true"></i><div><strong>Abstract will be added.</strong><p>This publication page is ready for the abstract and final research materials.</p></div></div>
+      {% endif %}
+      {% assign body_content = content | strip %}{% if body_content != '' %}<div class="publication-detail__content">{{ content }}</div>{% endif %}
+    </section>
+    <aside class="publication-detail__side nomad-panel">
+      <p class="micro-label">Publication details</p>
+      <dl class="publication-metadata"><div><dt>Venue</dt><dd>{{ publication.venue }}</dd></div><div><dt>Type</dt><dd>{{ publication.venue_type }}</dd></div><div><dt>Authors</dt><dd>{{ publication.authors | size }}</dd></div></dl>
+      <div class="publication-resources">
+        <h2>Resources</h2>{% assign has_resource = false %}
+        {% if publication.paper_url %}{% assign has_resource = true %}<a class="lab-button lab-button--primary" href="{{ publication.paper_url }}" target="_blank" rel="noopener"><i class="ti ti-file-type-pdf"></i> Paper</a>{% endif %}
+        {% if publication.code_url %}{% assign has_resource = true %}<a class="lab-button lab-button--secondary" href="{{ publication.code_url }}" target="_blank" rel="noopener"><i class="ti ti-code"></i> Code</a>{% endif %}
+        {% if publication.project_url %}{% assign has_resource = true %}<a class="lab-button lab-button--secondary" href="{{ publication.project_url }}" target="_blank" rel="noopener"><i class="ti ti-world"></i> Project</a>{% endif %}
+        {% unless has_resource %}<p class="publication-resources__empty">Paper, code, and project links will appear here when they are available.</p>{% endunless %}
+      </div>
+    </aside>
+  </div>
+</article>
