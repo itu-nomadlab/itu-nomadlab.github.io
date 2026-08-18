@@ -130,13 +130,15 @@ body.fixed-top-nav {
   padding-top: 72px;
 }
 
-.site-header,
-.site-main,
-.site-footer,
-#back-to-top,
-ninja-keys {
+.site-header {
   position: relative;
-  z-index: 2;
+  z-index: 1030;
+}
+
+.site-main,
+.site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 .site-main {
