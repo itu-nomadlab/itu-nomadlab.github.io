@@ -10,7 +10,6 @@
         title="Open {{ author.author_type }} author profile for {{ author.name }}"
       >
         <span>{{ author.publication_name | default: author.name }}</span>
-        <span class="publication-author__type" aria-hidden="true">{% if author.author_type == 'undergraduate' %}UG{% else %}GR{% endif %}</span>
       </a>
     {% elsif author %}
       <span class="publication-author publication-author--external">{{ author.publication_name | default: author.name }}</span>
