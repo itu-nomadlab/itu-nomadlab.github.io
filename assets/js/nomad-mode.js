@@ -65,13 +65,12 @@
     const button = document.getElementById("nomad-mode-toggle");
     if (!button) return;
 
-    const label = button.querySelector(".nomad-mode-toggle__label");
     button.setAttribute("aria-pressed", String(enabled));
     button.setAttribute(
-      "title",
-      enabled ? `Exit Nomad Mode — palette: ${palette}` : "Enter Nomad Mode",
+      "aria-label",
+      enabled ? `Disable Nomad Mode; current palette: ${palette}` : "Enable Nomad Mode",
     );
-    if (label) label.textContent = enabled ? "Exit Nomad Mode" : "Nomad Mode";
+    button.removeAttribute("title");
   };
 
   const setPalette = (palette, persist = true) => {
