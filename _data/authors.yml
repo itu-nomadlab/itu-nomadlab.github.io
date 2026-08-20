@@ -23,83 +23,6 @@ yusuf-huseyin-sahin:
     pdf: /assets/pdf/theses/yusuf-huseyin-sahin-thesis.pdf
     available: false
 
-
-ahmed-senih-yildirim:
-  name: Ahmed Senih Yıldırım
-  publication_name: Ahmed Senih Yıldırım
-  initials: ASY
-  author_type: graduate
-  profile_url: /people/ahmed-senih-yildirim/
-  role: Research Assistant
-  affiliation: Department of Computer Engineering, Istanbul Technical University
-  email: yildirima25@itu.edu.tr
-  bio: bio.
-  image: people/yusuf-huseyin-sahin.svg
-  image_alt: Abstract NomadLab profile graphic for Yusuf Hüseyin Şahin
-  interests:
-    - Reliable machine learning
-    - Vision-language models
-    - Information retrieval
-    - AI for science
-  thesis:
-    title:
-    degree:
-    institution:
-    year:
-    pdf: /assets/pdf/theses/ahmed-senih-yildirim.pdf
-    available: false
-
-
-ahmed-senih-yildirim:
-  name: Tuğçe Temel
-  publication_name: Tuğçe Temel
-  initials: TT
-  author_type: graduate
-  profile_url: /people/tugce-temel/
-  role: Research Assistant
-  affiliation: Department of Computer Engineering, Istanbul Technical University
-  email: temel@itu.edu.tr
-  bio: bio.
-  image: people/yusuf-huseyin-sahin.svg
-  image_alt: Abstract NomadLab profile graphic for Yusuf Hüseyin Şahin
-  interests:
-    - Reliable machine learning
-    - Vision-language models
-    - Information retrieval
-    - AI for science
-  thesis:
-    title:
-    degree:
-    institution:
-    year:
-    pdf: /assets/pdf/theses/tugce-temel.pdf
-    available: false
-
-zehra-demir:
-  name: Zehra Demir
-  publication_name: Zehra Demir
-  initials: ZD
-  author_type: graduate
-  profile_url: /people/zehra-demir/
-  role: Research Assistant
-  affiliation: Department of Computer Engineering, Istanbul Technical University
-  email: demirz@itu.edu.tr
-  bio: bio.
-  image: people/yusuf-huseyin-sahin.svg
-  image_alt: Abstract NomadLab profile graphic for Yusuf Hüseyin Şahin
-  interests:
-    - Reliable machine learning
-    - Vision-language models
-    - Information retrieval
-    - AI for science
-  thesis:
-    title:
-    degree:
-    institution:
-    year:
-    pdf: /assets/pdf/theses/zehra-demir.pdf
-    available: false
-
 ege-demir:
   name: Ege Demir
   publication_name: Ege Demir
@@ -197,5 +120,265 @@ nazim-kemal-ure:
   name: Nazım Kemal Üre
   publication_name: Nazım Kemal Üre
   initials: NKÜ
+  author_type: external
+  role: External Co-author
+
+enis-teper:
+  name: Enis Teper
+  publication_name: Enis Teper
+  initials: ET
+  author_type: graduate
+  profile_url: /people/enis-teper/
+  role: Graduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Graduate researcher working on image retrieval, rank fusion, and robust visual representation learning.
+  interests:
+    - Image retrieval
+    - Rank fusion
+    - Visual representation learning
+  thesis:
+    title:
+    degree:
+    institution: Istanbul Technical University
+    year:
+    pdf: /assets/pdf/theses/enis-teper-thesis.pdf
+    available: false
+
+ilayda-kara:
+  name: İlayda Kara
+  publication_name: İlayda Kara
+  initials: İK
+  author_type: undergraduate
+  profile_url: /people/ilayda-kara/
+  role: Undergraduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Undergraduate researcher and co-author working on color-aware fashion image retrieval.
+  interests:
+    - Fashion image retrieval
+    - Color representation
+    - Computer vision
+  poster:
+    title: "Color-Aware Re-Ranking for Fashion Image Retrieval"
+    pdf: /assets/pdf/posters/ilayda-kara-graduation-poster.pdf
+    available: false
+
+selcuk-acikalin:
+  name: Selçuk Açıkalın
+  publication_name: Selçuk Açıkalın
+  initials: SA
+  author_type: external
+  role: External Co-author
+
+yunus-emre-gundogmus:
+  name: Yunus Emre Gündoğmuş
+  publication_name: Yunus Emre Gündoğmuş
+  initials: YEG
+  author_type: external
+  role: External Co-author
+
+ayberk-gurses:
+  name: Ayberk Gürses
+  publication_name: Ayberk Gürses
+  initials: AG
+  author_type: undergraduate
+  profile_url: /people/ayberk-gurses/
+  role: Undergraduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Undergraduate researcher and co-author working on self-supervised learning for remote-sensing change detection.
+  interests:
+    - Change detection
+    - Self-supervised learning
+    - Remote sensing
+  poster:
+    title: "Enhancing Change Detection with Self-Supervised Jigsaw Loss"
+    pdf: /assets/pdf/posters/ayberk-gurses-graduation-poster.pdf
+    available: false
+
+berke-algul:
+  name: Berke Algül
+  publication_name: Berke Algül
+  initials: BA
+  author_type: undergraduate
+  profile_url: /people/berke-algul/
+  role: Undergraduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Undergraduate researcher and co-author working on self-supervised learning for remote-sensing change detection.
+  interests:
+    - Change detection
+    - Semantic segmentation
+    - Self-supervised learning
+  poster:
+    title: "Enhancing Change Detection with Self-Supervised Jigsaw Loss"
+    pdf: /assets/pdf/posters/berke-algul-graduation-poster.pdf
+    available: false
+
+a-senih-yildirim:
+  name: A. Senih Yıldırım
+  publication_name: A. Senih Yıldırım
+  initials: ASY
+  author_type: graduate
+  profile_url: /people/a-senih-yildirim/
+  role: Graduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Graduate researcher working on medical image analysis, accelerated MRI, and lesion segmentation.
+  interests:
+    - Medical image analysis
+    - Diffusion MRI
+    - Lesion segmentation
+  thesis:
+    title:
+    degree:
+    institution: Istanbul Technical University
+    year:
+    pdf: /assets/pdf/theses/a-senih-yildirim-thesis.pdf
+    available: false
+
+ayca-pektas:
+  name: Ayça Pektaş
+  publication_name: Ayça Pektaş
+  initials: AP
+  author_type: undergraduate
+  profile_url: /people/ayca-pektas/
+  role: Undergraduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Undergraduate researcher and co-author working on neonatal MRI lesion segmentation under simulated undersampling.
+  interests:
+    - Medical imaging
+    - Image segmentation
+    - Accelerated MRI
+  poster:
+    title: "Lesion Segmentation of Neonatal Diffusion MRI Under Simulated K-space Undersampling"
+    pdf: /assets/pdf/posters/ayca-pektas-graduation-poster.pdf
+    available: false
+
+busra-koyun:
+  name: Büşra Koyun
+  publication_name: Büşra Koyun
+  initials: BK
+  author_type: undergraduate
+  profile_url: /people/busra-koyun/
+  role: Undergraduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Undergraduate researcher and co-author working on neonatal MRI lesion segmentation under simulated undersampling.
+  interests:
+    - Medical imaging
+    - Frequency-domain learning
+    - Image segmentation
+  poster:
+    title: "Lesion Segmentation of Neonatal Diffusion MRI Under Simulated K-space Undersampling"
+    pdf: /assets/pdf/posters/busra-koyun-graduation-poster.pdf
+    available: false
+
+mustafa-keskin:
+  name: Mustafa Keskin
+  publication_name: Mustafa Keskin
+  initials: MK
+  author_type: external
+  role: External Co-author
+
+emre-rencberoglu:
+  name: Emre Rençberoğlu
+  publication_name: Emre Rençberoğlu
+  initials: ER
+  author_type: external
+  role: External Co-author
+
+alp-arda-yalman:
+  name: Alp Arda Yalman
+  publication_name: Alp Arda Yalman
+  initials: AAY
+  author_type: external
+  role: External Co-author
+
+dilge-karakas:
+  name: Dilge Karakaş
+  publication_name: Dilge Karakaş
+  initials: DK
+  author_type: external
+  role: External Co-author
+
+serena-tomakyan:
+  name: Serena Tomakyan
+  publication_name: Serena Tomakyan
+  initials: ST
+  author_type: external
+  role: External Co-author
+
+nazrin-abdinli:
+  name: Nazrin Abdinli
+  publication_name: Nazrin Abdinli
+  initials: NA
+  author_type: undergraduate
+  profile_url: /people/nazrin-abdinli/
+  role: Undergraduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Undergraduate researcher and co-author working on accurate segmentation of tiny objects.
+  interests:
+    - Tiny-object segmentation
+    - Anomaly detection
+    - UAV imagery
+  poster:
+    title: "TinyRXNet: A Local RX-Based Architecture for Accurate Segmentation of Small-Scale Objects"
+    pdf: /assets/pdf/posters/nazrin-abdinli-graduation-poster.pdf
+    available: false
+
+m-arda-aydin:
+  name: M. Arda Aydın
+  publication_name: M. Arda Aydın
+  initials: MAA
+  author_type: undergraduate
+  profile_url: /people/m-arda-aydin/
+  role: Undergraduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Undergraduate researcher and co-author working on training-free open-vocabulary semantic segmentation.
+  interests:
+    - Open-vocabulary segmentation
+    - Vision-language models
+    - Training-free adaptation
+  poster:
+    title: "ITACLIP: Boosting Training-Free Semantic Segmentation with Image, Text, and Architectural Enhancements"
+    pdf: /assets/pdf/posters/m-arda-aydin-graduation-poster.pdf
+    available: false
+
+efe-mert-cirpar:
+  name: Efe Mert Çırpar
+  publication_name: Efe Mert Çırpar
+  initials: EMÇ
+  author_type: undergraduate
+  profile_url: /people/efe-mert-cirpar/
+  role: Undergraduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Undergraduate researcher and co-author working on training-free open-vocabulary semantic segmentation.
+  interests:
+    - Semantic segmentation
+    - Vision-language models
+    - Attention mechanisms
+  poster:
+    title: "ITACLIP: Boosting Training-Free Semantic Segmentation with Image, Text, and Architectural Enhancements"
+    pdf: /assets/pdf/posters/efe-mert-cirpar-graduation-poster.pdf
+    available: false
+
+elvin-abdinli:
+  name: Elvin Abdinli
+  publication_name: Elvin Abdinli
+  initials: EA
+  author_type: undergraduate
+  profile_url: /people/elvin-abdinli/
+  role: Undergraduate Researcher
+  affiliation: NomadLab · Istanbul Technical University
+  bio: Undergraduate researcher and co-author working on training-free open-vocabulary semantic segmentation.
+  interests:
+    - Open-vocabulary learning
+    - Semantic segmentation
+    - Multimodal learning
+  poster:
+    title: "ITACLIP: Boosting Training-Free Semantic Segmentation with Image, Text, and Architectural Enhancements"
+    pdf: /assets/pdf/posters/elvin-abdinli-graduation-poster.pdf
+    available: false
+
+gozde-unal:
+  name: Gözde Ünal
+  publication_name: Gözde Ünal
+  initials: GÜ
   author_type: external
   role: External Co-author

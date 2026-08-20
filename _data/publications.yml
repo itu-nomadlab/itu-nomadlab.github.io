@@ -1,4 +1,14 @@
 order:
+  - color-aware-fashion-reranking
+  - occlusion-aware-face-retrieval
+  - self-supervised-jigsaw-change-detection
+  - neonatal-mri-kspace-lesion-segmentation
+  - skewfuse
+  - retrieval-oriented-dimensionality-reduction
+  - football-playing-styles-isace
+  - open-vocabulary-product-discovery
+  - tinyrxnet
+  - itaclip
   - llmigrate
   - temporal-sliding-window-gat
   - football-playing-styles-dec
@@ -9,6 +19,193 @@ selected:
   - football-playing-styles-dec
 
 items:
+  color-aware-fashion-reranking:
+    id: color-aware-fashion-reranking
+    url: /publications/color-aware-fashion-reranking/
+    title: "Color-Aware Re-Ranking for Fashion Image Retrieval"
+    description: A NomadLab conference publication at ICCDE 2026.
+    venue: ICCDE 2026
+    venue_type: Conference
+    authors:
+      - enis-teper
+      - ilayda-kara
+      - yusuf-huseyin-sahin
+    paper_url: https://doi.org/10.1145/3801839.3801868
+    scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:TFP_iSt0sucC"
+    code_url:
+    project_url:
+    abstract: >-
+      CA-Rank uses garment segmentation and perceptual color similarity to re-rank fashion retrieval results, improving chromatic consistency without retraining the underlying retrieval model.
+
+  occlusion-aware-face-retrieval:
+    id: occlusion-aware-face-retrieval
+    url: /publications/occlusion-aware-face-retrieval/
+    title: "Occlusion-Aware Face Retrieval: Identity Restoration through Generative Inpainting"
+    description: A NomadLab conference publication at AICCC 2025.
+    venue: AICCC 2025
+    venue_type: Conference
+    authors:
+      - enis-teper
+      - selcuk-acikalin
+      - yunus-emre-gundogmus
+      - yusuf-huseyin-sahin
+    paper_url: https://doi.org/10.1145/3789982.3790067
+    scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:r0BpntZqJG4C"
+    code_url:
+    project_url:
+    abstract: >-
+      This work studies how facial occlusions alter identity embeddings and evaluates generative inpainting as a way to restore identity-preserving information for face retrieval.
+
+  self-supervised-jigsaw-change-detection:
+    id: self-supervised-jigsaw-change-detection
+    url: /publications/self-supervised-jigsaw-change-detection/
+    title: "Enhancing Change Detection with Self-Supervised Jigsaw Loss"
+    description: A NomadLab conference publication at AICCC 2025.
+    venue: AICCC 2025
+    venue_type: Conference
+    authors:
+      - ayberk-gurses
+      - berke-algul
+      - yusuf-huseyin-sahin
+    paper_url: https://doi.org/10.1145/3789982.3790069
+    scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:j3f4tGmQtD8C"
+    code_url:
+    project_url:
+    abstract: >-
+      The study augments change-detection training with a self-supervised jigsaw objective designed to strengthen spatial reasoning and improve segmentation of changed regions.
+
+  neonatal-mri-kspace-lesion-segmentation:
+    id: neonatal-mri-kspace-lesion-segmentation
+    url: /publications/neonatal-mri-kspace-lesion-segmentation/
+    title: "Lesion Segmentation of Neonatal Diffusion MRI Under Simulated K-space Undersampling"
+    description: A NomadLab conference publication at AICCC 2025.
+    venue: AICCC 2025
+    venue_type: Conference
+    authors:
+      - a-senih-yildirim
+      - ayca-pektas
+      - busra-koyun
+      - yusuf-huseyin-sahin
+    paper_url: https://doi.org/10.1145/3789982.3790068
+    scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:4JMBOYKVnBMC"
+    code_url:
+    project_url:
+    abstract: >-
+      This work evaluates neonatal diffusion-MRI lesion segmentation under simulated four-fold k-space undersampling and investigates frequency-aware variants of SwinUNETR for robust low-resolution analysis.
+
+  skewfuse:
+    id: skewfuse
+    url: /publications/skewfuse/
+    title: "SkewFuse: Unsupervised Confidence-Guided Rank Fusion for Multi-View Image Retrieval"
+    description: A NomadLab conference publication at ICMLA 2025.
+    venue: ICMLA 2025
+    venue_type: Conference
+    authors:
+      - enis-teper
+      - mustafa-keskin
+      - emre-rencberoglu
+      - yusuf-huseyin-sahin
+    paper_url: https://doi.org/10.1109/ICMLA66185.2025.00036
+    scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:RHpTSmoSYBkC"
+    code_url:
+    project_url:
+    abstract: >-
+      SkewFuse performs unsupervised, query-aware fusion of retrieval rankings by accounting for differences in confidence across multiple visual embedding models.
+
+  retrieval-oriented-dimensionality-reduction:
+    id: retrieval-oriented-dimensionality-reduction
+    url: /publications/retrieval-oriented-dimensionality-reduction/
+    title: "Image Retrieval through Retrieval-Oriented Dimensionality Reduction"
+    description: A NomadLab conference publication at ISMSIT 2025.
+    venue: ISMSIT 2025
+    venue_type: Conference
+    authors:
+      - enis-teper
+      - alp-arda-yalman
+      - dilge-karakas
+      - serena-tomakyan
+      - yusuf-huseyin-sahin
+    paper_url: https://doi.org/10.1109/ISMSIT67332.2025.11268102
+    scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:R3hNpaxXUhUC"
+    code_url:
+    project_url:
+    abstract: >-
+      The paper compares linear, nonlinear, and neural dimensionality-reduction strategies for large-scale fashion image retrieval, emphasizing preservation of neighborhood structure and retrieval quality.
+
+  football-playing-styles-isace:
+    id: football-playing-styles-isace
+    url: /publications/football-playing-styles-isace/
+    title: "How Do Football Teams Play? A Deep Embedded Clustering Approach to Reveal Playing Styles"
+    description: A NomadLab conference publication in the ISACE 2025 proceedings.
+    venue: ISACE 2025
+    venue_type: Conference
+    authors:
+      - ege-demir
+      - yusuf-huseyin-sahin
+      - nazim-kemal-ure
+    paper_url: https://doi.org/10.1007/978-3-032-06167-6_4
+    scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:dhFuZR0502QC"
+    code_url:
+    project_url:
+    abstract: >-
+      The study applies Deep Embedded Clustering to more than three million football events from 1,826 matches to identify data-driven playing-style groups.
+
+  open-vocabulary-product-discovery:
+    id: open-vocabulary-product-discovery
+    url: /publications/open-vocabulary-product-discovery/
+    title: "Open-Vocabulary Product Discovery via Fusion Based Visual Retrieval in E-Commerce"
+    description: A NomadLab conference publication at UBMK 2025.
+    venue: UBMK 2025
+    venue_type: Conference
+    authors:
+      - enis-teper
+      - mustafa-keskin
+      - emre-rencberoglu
+      - yusuf-huseyin-sahin
+    paper_url: https://doi.org/10.1109/UBMK67458.2025.11206995
+    scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:L8Ckcad2t8MC"
+    code_url:
+    project_url:
+    abstract: >-
+      A fusion-based visual retrieval pipeline supports open-vocabulary discovery of complementary products without requiring a category-specific detector to be retrained for every new product class.
+
+  tinyrxnet:
+    id: tinyrxnet
+    url: /publications/tinyrxnet/
+    title: "TinyRXNet: A Local RX-Based Architecture for Accurate Segmentation of Small-Scale Objects"
+    description: A NomadLab conference publication at UBMK 2025.
+    venue: UBMK 2025
+    venue_type: Conference
+    authors:
+      - nazrin-abdinli
+      - yusuf-huseyin-sahin
+    paper_url: https://doi.org/10.1109/UBMK67458.2025.11206877
+    scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:7PzlFSSx8tAC"
+    code_url:
+    project_url:
+    abstract: >-
+      TinyRXNet combines SAM-derived features with Local RX blocks to improve segmentation of very small objects, including pedestrians in top-down UAV imagery.
+
+  itaclip:
+    id: itaclip
+    url: /publications/itaclip/
+    title: "ITACLIP: Boosting Training-Free Semantic Segmentation with Image, Text, and Architectural Enhancements"
+    description: A NomadLab workshop publication at CVPR Workshops 2025.
+    venue: CVPR Workshops 2025
+    venue_type: Workshop
+    authors:
+      - m-arda-aydin
+      - efe-mert-cirpar
+      - elvin-abdinli
+      - gozde-unal
+      - yusuf-huseyin-sahin
+    paper_url: https://openaccess.thecvf.com/content/CVPR2025W/PixFoundation/html/Aydin_ITACLIP_Boosting_Training-Free_Semantic_Segmentation_with_Image_Text_and_Architectural_CVPRW_2025_paper.html
+    scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:qxL8FJ1GzNcC"
+    code_url: https://github.com/m-arda-aydn/ITACLIP
+    project_url:
+    abstract: >-
+      ITACLIP improves training-free open-vocabulary semantic segmentation through ViT attention modifications, image-level augmentations, and LLM-generated class definitions and synonyms.
+
   llmigrate:
     id: llmigrate
     url: /publications/llmigrate/
@@ -22,6 +219,7 @@ items:
       - bilgehan-altintas
       - yusuf-huseyin-sahin
     paper_url:
+    scholar_url:
     code_url:
     project_url:
     abstract:
@@ -39,6 +237,7 @@ items:
       - ege-demir
       - yusuf-huseyin-sahin
     paper_url:
+    scholar_url:
     code_url:
     project_url:
     abstract:
@@ -55,6 +254,7 @@ items:
       - nazim-kemal-ure
       - yusuf-huseyin-sahin
     paper_url:
+    scholar_url:
     code_url:
     project_url:
     abstract:

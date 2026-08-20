@@ -23,6 +23,7 @@ layout: default
       <div class="publication-resources">
         <h2>Resources</h2>{% assign has_resource = false %}
         {% if publication.paper_url %}{% assign has_resource = true %}<a class="lab-button lab-button--primary" href="{{ publication.paper_url }}" target="_blank" rel="noopener"><i class="ti ti-file-type-pdf"></i> Paper</a>{% endif %}
+        {% if publication.scholar_url %}{% assign has_resource = true %}<a class="lab-button lab-button--secondary" href="{{ publication.scholar_url }}" target="_blank" rel="noopener"><i class="ti ti-school"></i> Google Scholar</a>{% endif %}
         {% if publication.code_url %}{% assign has_resource = true %}<a class="lab-button lab-button--secondary" href="{{ publication.code_url }}" target="_blank" rel="noopener"><i class="ti ti-code"></i> Code</a>{% endif %}
         {% if publication.project_url %}{% assign has_resource = true %}<a class="lab-button lab-button--secondary" href="{{ publication.project_url }}" target="_blank" rel="noopener"><i class="ti ti-world"></i> Project</a>{% endif %}
         {% unless has_resource %}<p class="publication-resources__empty">Paper, code, and project links will appear here when they are available.</p>{% endunless %}

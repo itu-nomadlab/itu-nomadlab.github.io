@@ -10,6 +10,8 @@ groups:
     description: Researchers pursuing advanced study and thesis work.
     members:
       - ege-demir
+      - enis-teper
+      - a-senih-yildirim
 
   - id: undergraduate-researchers
     title: Undergraduate Researchers
@@ -19,6 +21,15 @@ groups:
       - bilgehan-altintas
       - mirac-merthan-durdag
       - mustafa-orcun-ucgun
+      - ilayda-kara
+      - ayberk-gurses
+      - berke-algul
+      - ayca-pektas
+      - busra-koyun
+      - nazrin-abdinli
+      - m-arda-aydin
+      - efe-mert-cirpar
+      - elvin-abdinli
 
 recruiting:
   enabled: true
