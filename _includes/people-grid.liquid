@@ -5,7 +5,7 @@
     {% if person %}
       <article class="person-card nomad-panel">
         {% if person.profile_url %}<a class="person-card__portrait-link" href="{{ person.profile_url | relative_url }}" aria-label="Open profile for {{ person.name }}">{% endif %}
-          <div{% if person.image %} class="person-card__portrait nomad-portrait" data-nomad-portrait data-nomad-pixel-columns="24" data-nomad-dither="20"{% else %} class="person-card__portrait"{% endif %}>
+          <div{% if person.image %} class="person-card__portrait nomad-portrait" data-nomad-portrait data-nomad-pixel-columns="64" data-nomad-dither="20"{% else %} class="person-card__portrait"{% endif %}>
             {% if person.image %}
               {% assign portrait_path = '/assets/img/' | append: person.image %}
               <img class="nomad-portrait__source" src="{{ portrait_path | relative_url }}" alt="{{ person.image_alt | default: person.name }}" loading="lazy">
