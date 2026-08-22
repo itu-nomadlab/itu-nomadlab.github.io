@@ -1,0 +1,128 @@
+order:
+  - imat-ai
+  - uzdes
+
+items:
+  imat-ai:
+    id: imat-ai
+    code: COL-01
+    short_name: iMAT
+    title: "Yapay Zekâ Destekli Otonom Malzeme Mikroyapı Analiz Platformu"
+    subtitle: AI-assisted autonomous materials microstructure analysis
+    url: /collaborations/imat-ai/
+    type: İSTKA-funded applied AI project
+    status: active
+    status_label: Active
+    start_date: "1 October 2025"
+    end_date: "1 October 2026"
+    period_label: "1 Oct 2025 — 1 Oct 2026"
+    date_note: The dates correspond to the official İSTKA project record.
+    funder: İstanbul Kalkınma Ajansı (İSTKA)
+    lead: Istanbul Technical University
+    summary: >-
+      iMAT develops a deep-learning-based platform for faster and more consistent
+      analysis of material microstructures and data-driven prediction of mechanical
+      properties for the metal-production ecosystem.
+    overview: >-
+      The project combines materials science, microscopy, artificial intelligence,
+      and data infrastructure to turn microstructure images into interpretable phase
+      distributions, quality-control signals, and mechanical-property estimates. Its
+      broader goal is to support the digital transformation of metal production through
+      an autonomous and continuously improving analysis workflow.
+    nomadlab_role: >-
+      NomadLab contributes to the computer-vision workstream. A. Senih Yıldırım and
+      Yusuf Hüseyin Şahin work on image-processing methods for analysing material
+      microstructures and converting microscopy data into reliable visual evidence for
+      downstream prediction and decision support.
+    team:
+      - a-senih-yildirim
+      - yusuf-huseyin-sahin
+    partners:
+      - İTÜ Artificial Intelligence and Data Science Application and Research Center
+      - İTÜ Central Laboratory
+      - İTÜ Faculty of Chemical and Metallurgical Engineering
+      - Turkish Foundry Association (TÜDÖKSAD)
+    highlights:
+      - Automated segmentation and quantification of microstructural phases
+      - Visualisation of graphite and phase distributions with interpretable statistics
+      - Prediction of mechanical properties from polished or etched microstructure images
+      - Detection of material defects and sample-preparation artefacts
+      - Continuous learning from newly collected microscopy data
+    tags:
+      - materials AI
+      - computer vision
+      - microstructure analysis
+      - deep learning
+    resources:
+      - label: Visit iMAT
+        url: https://imat-ai.itu.edu.tr/index.html
+        kind: primary
+      - label: Official project record
+        url: https://research.itu.edu.tr/tr/projects/yapay-zeka-destekli-otonom-malzeme-mikroyap%C4%B1-analiz-platformu-2/
+        kind: secondary
+
+  uzdes:
+    id: uzdes
+    code: COL-02
+    short_name: UZDES
+    title: "UZDES — Uzay Destek Sistemleri"
+    subtitle: Mission control and integrated support systems for the Milli Uzay Programı
+    url: /collaborations/uzdes/
+    type: TUA–İTÜ space-systems collaboration
+    status: ongoing
+    status_label: Ongoing collaboration
+    start_date: "January 2025"
+    end_date: "December 2025"
+    period_label: "Documented phase · Jan — Dec 2025"
+    date_note: >-
+      These dates refer to the 12-month implementation phase documented in the supplied
+      UZDES–KKM project plan. The UZDES center and the broader TUA–İTÜ collaboration
+      continue beyond this phase.
+    funder: Türkiye Uzay Ajansı (TUA) and Istanbul Technical University
+    lead: Integrated TUA–İTÜ collaboration
+    summary: >-
+      UZDES develops mission-management, command-and-control, data-processing, and
+      research infrastructure intended to support the safe and effective execution of
+      Türkiye's space missions.
+    overview: >-
+      The documented UZDES–KKM phase brings together a data center, an operations center,
+      command-control and communication capabilities, real-time analytics, digital twins,
+      anomaly detection, forecasting, early warning, risk management, visualisation, and
+      a multidisciplinary R&D laboratory. The structure is designed as an umbrella for
+      connecting systems, transforming data into operational information, and delivering
+      services across space-mission workflows.
+    nomadlab_role: >-
+      Yusuf Hüseyin Şahin contributes to the image-processing component of UZDES. The
+      work is connected to visual data analysis within the wider mission-support stack,
+      including astronomical and satellite imagery, data fusion, visualisation, and
+      image-derived operational information.
+    team:
+      - yusuf-huseyin-sahin
+    partners:
+      - Türkiye Uzay Ajansı (TUA)
+      - Istanbul Technical University
+    highlights:
+      - Mission-control and C4 command, control, and communication infrastructure
+      - Data-center and operations-center design, installation, and integration
+      - Real-time data processing, digital twins, anomaly detection, and forecasting
+      - Astronomical image processing, storage, mosaicking, and spatiotemporal access
+      - Integration of UHUM as a related early-warning and monitoring application
+      - Pilot mission applications, performance reporting, testing, and improvement
+    related_program:
+      title: UHUM integration
+      text: >-
+        The UZDES plan treats the Uzay Havası Uygulama Merkezi (UHUM) as a separately
+        budgeted but connected application. UZDES provides the umbrella integration,
+        communication, data-to-information transformation, and service-delivery layer.
+    tags:
+      - space systems
+      - image processing
+      - mission control
+      - real-time analytics
+    resources:
+      - label: UZDES center record
+        url: https://itulabs.itu.edu.tr/Birim/Detay/4536
+        kind: primary
+      - label: Read the İTÜ announcement
+        url: https://haberler.itu.edu.tr/haberdetay/2025/07/30/itu-ve-tua-dan-milli-uzay-programina-guc-verecek-adim
+        kind: secondary

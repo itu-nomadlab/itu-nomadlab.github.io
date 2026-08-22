@@ -4,7 +4,7 @@ title: Join Us
 permalink: /join/
 description: Opportunities for students, researchers, and collaborators to work with NomadLab.
 nav: true
-nav_order: 6
+nav_order: 7
 ---
 
 <div class="join-hero nomad-panel">

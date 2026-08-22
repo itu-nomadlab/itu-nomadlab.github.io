@@ -1,0 +1,45 @@
+{% assign project = site.data.collaborations.items[include.id] %}
+{% if project %}
+<article class="collaboration-card nomad-panel">
+  <div class="collaboration-card__meta">
+    <span class="collaboration-card__code">{{ project.code }} · {{ project.short_name }}</span>
+    <span class="collaboration-status collaboration-status--{{ project.status }}">{{ project.status_label }}</span>
+  </div>
+
+  <p class="collaboration-card__type">{{ project.type }}</p>
+  <h2 class="collaboration-card__title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
+  <p class="collaboration-card__summary">{{ project.summary }}</p>
+
+  <div class="collaboration-card__dates" aria-label="Project dates">
+    <div>
+      <span>Start</span>
+      <strong>{{ project.start_date }}</strong>
+    </div>
+    <div>
+      <span>End</span>
+      <strong>{{ project.end_date }}</strong>
+    </div>
+  </div>
+
+  {% if project.team and project.team.size > 0 %}
+  <div class="collaboration-card__team">
+    <span>NomadLab</span>
+    <p>
+      {% for person_id in project.team %}
+        {% assign person = site.data.authors[person_id] %}
+        {% unless forloop.first %}<span aria-hidden="true"> · </span>{% endunless %}
+        {% if person and person.profile_url %}<a href="{{ person.profile_url | relative_url }}">{{ person.name }}</a>{% elsif person %}{{ person.name }}{% else %}{{ person_id }}{% endif %}
+      {% endfor %}
+    </p>
+  </div>
+  {% endif %}
+
+  <ul class="tag-list" aria-label="Topics for {{ project.title }}">
+    {% for tag in project.tags %}<li>{{ tag }}</li>{% endfor %}
+  </ul>
+
+  <a class="collaboration-card__open" href="{{ project.url | relative_url }}">
+    Explore collaboration <i class="ti ti-arrow-up-right" aria-hidden="true"></i>
+  </a>
+</article>
+{% endif %}

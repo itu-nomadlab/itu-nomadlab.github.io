@@ -1,0 +1,132 @@
+---
+layout: default
+---
+{% assign project = site.data.collaborations.items[page.collaboration_id] %}
+
+{% if project %}
+<article class="collaboration-detail">
+  <nav class="detail-breadcrumb" aria-label="Breadcrumb">
+    <a href="{{ '/collaborations/' | relative_url }}"><i class="ti ti-arrow-left" aria-hidden="true"></i> All collaborations</a>
+  </nav>
+
+  <header class="collaboration-detail__hero nomad-panel">
+    <div class="collaboration-detail__topline">
+      <span class="collaboration-detail__code">{{ project.code }} · {{ project.short_name }}</span>
+      <span class="collaboration-status collaboration-status--{{ project.status }}">{{ project.status_label }}</span>
+    </div>
+    <p class="collaboration-detail__type">{{ project.type }}</p>
+    <h1>{{ project.title }}</h1>
+    <p class="collaboration-detail__subtitle">{{ project.subtitle }}</p>
+    <p class="collaboration-detail__summary">{{ project.summary }}</p>
+
+    <div class="collaboration-timeline" aria-label="Project period">
+      <div>
+        <span>Start date</span>
+        <strong>{{ project.start_date }}</strong>
+      </div>
+      <div>
+        <span>End date</span>
+        <strong>{{ project.end_date }}</strong>
+      </div>
+      <div>
+        <span>Period</span>
+        <strong>{{ project.period_label }}</strong>
+      </div>
+    </div>
+    {% if project.date_note %}<p class="collaboration-detail__date-note"><i class="ti ti-info-circle" aria-hidden="true"></i>{{ project.date_note }}</p>{% endif %}
+  </header>
+
+  <div class="collaboration-detail__grid">
+    <div class="collaboration-detail__main">
+      <section class="collaboration-section nomad-panel">
+        <p class="micro-label">Project overview</p>
+        <h2>From domain challenge to operational system</h2>
+        <p>{{ project.overview }}</p>
+      </section>
+
+      <section class="collaboration-section collaboration-section--accent nomad-panel">
+        <p class="micro-label">NomadLab contribution</p>
+        <h2>Image processing and visual intelligence</h2>
+        <p>{{ project.nomadlab_role }}</p>
+
+        {% if project.team and project.team.size > 0 %}
+        <div class="collaboration-team" aria-label="NomadLab participants">
+          {% for person_id in project.team %}
+            {% assign person = site.data.authors[person_id] %}
+            {% if person %}
+            <a class="collaboration-team__member" href="{{ person.profile_url | relative_url }}">
+              <span class="collaboration-team__initials" aria-hidden="true">{{ person.initials }}</span>
+              <span><strong>{{ person.name }}</strong><small>{{ person.role }}</small></span>
+              <i class="ti ti-arrow-up-right" aria-hidden="true"></i>
+            </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </section>
+
+      {% if project.highlights and project.highlights.size > 0 %}
+      <section class="collaboration-section nomad-panel">
+        <p class="micro-label">Focus areas</p>
+        <h2>What the collaboration brings together</h2>
+        <ul class="collaboration-highlights">
+          {% for highlight in project.highlights %}<li><i class="ti ti-circle-check" aria-hidden="true"></i><span>{{ highlight }}</span></li>{% endfor %}
+        </ul>
+      </section>
+      {% endif %}
+
+      {% if project.related_program %}
+      <section class="collaboration-related nomad-panel">
+        <div class="collaboration-related__mark" aria-hidden="true"><i class="ti ti-route"></i></div>
+        <div>
+          <p class="micro-label">Related program</p>
+          <h2>{{ project.related_program.title }}</h2>
+          <p>{{ project.related_program.text }}</p>
+        </div>
+      </section>
+      {% endif %}
+
+      {% if content and content != empty %}
+      <section class="collaboration-section collaboration-detail__content nomad-panel">{{ content }}</section>
+      {% endif %}
+    </div>
+
+    <aside class="collaboration-detail__side">
+      <section class="collaboration-facts nomad-panel">
+        <p class="micro-label">Project facts</p>
+        <dl>
+          <div><dt>Funder / framework</dt><dd>{{ project.funder }}</dd></div>
+          <div><dt>Lead structure</dt><dd>{{ project.lead }}</dd></div>
+          <div><dt>Start</dt><dd>{{ project.start_date }}</dd></div>
+          <div><dt>End</dt><dd>{{ project.end_date }}</dd></div>
+          <div><dt>Status</dt><dd>{{ project.status_label }}</dd></div>
+        </dl>
+      </section>
+
+      {% if project.partners and project.partners.size > 0 %}
+      <section class="collaboration-partners nomad-panel">
+        <p class="micro-label">Partners</p>
+        <ul>{% for partner in project.partners %}<li>{{ partner }}</li>{% endfor %}</ul>
+      </section>
+      {% endif %}
+
+      {% if project.resources and project.resources.size > 0 %}
+      <section class="collaboration-resources nomad-panel">
+        <p class="micro-label">Resources</p>
+        {% for resource in project.resources %}
+        <a class="lab-button {% if resource.kind == 'primary' %}lab-button--primary{% else %}lab-button--secondary{% endif %}" href="{{ resource.url }}" target="_blank" rel="noopener noreferrer">
+          {{ resource.label }} <i class="ti ti-external-link" aria-hidden="true"></i>
+        </a>
+        {% endfor %}
+      </section>
+      {% endif %}
+    </aside>
+  </div>
+</article>
+{% else %}
+<div class="nomad-panel collaboration-missing">
+  <p class="micro-label">Missing route</p>
+  <h1>Collaboration record not found.</h1>
+  <p>Check the <code>collaboration_id</code> value in this page and the corresponding entry in <code>_data/collaborations.yml</code>.</p>
+</div>
+{% endif %}
