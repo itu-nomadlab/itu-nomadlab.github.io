@@ -14,7 +14,7 @@
   const CANVAS_SELECTOR = ".nomad-portrait__canvas";
   const READY_CLASS = "nomad-portrait--ready";
 
-  const DEFAULT_PIXEL_COLUMNS = 48;
+  const DEFAULT_PIXEL_COLUMNS = 200;
   const DEFAULT_DITHER_STRENGTH = 6;
 
   // Ordered dithering. The result still contains exactly two palette colours.
