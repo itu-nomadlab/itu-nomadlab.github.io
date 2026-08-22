@@ -7,7 +7,7 @@
   </nav>
 
   <header class="author-profile__hero nomad-panel">
-    <div{% if author.image %} class="author-profile__portrait nomad-portrait" data-nomad-portrait data-nomad-pixel-columns="30" data-nomad-dither="20"{% else %} class="author-profile__portrait"{% endif %}>
+    <div{% if author.image %} class="author-profile__portrait nomad-portrait" data-nomad-portrait data-nomad-pixel-columns="64" data-nomad-dither="20"{% else %} class="author-profile__portrait"{% endif %}>
       {% if author.image %}
         {% assign portrait_path = '/assets/img/' | append: author.image %}
         <img class="nomad-portrait__source" src="{{ portrait_path | relative_url }}" alt="{{ author.image_alt | default: author.name }}">
