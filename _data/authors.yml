@@ -133,6 +133,7 @@ enis-teper:
   role: Graduate Researcher
   affiliation: NomadLab · Istanbul Technical University
   bio: Graduate researcher working on image retrieval, rank fusion, and robust visual representation learning.
+  image: people/enis-teper.jpg 
   interests:
     - Image retrieval
     - Rank fusion
