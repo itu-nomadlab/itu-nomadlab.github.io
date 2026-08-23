@@ -1,5 +1,4 @@
 order:
-  - ai-automation-labor-market
   - color-aware-fashion-reranking
   - occlusion-aware-face-retrieval
   - self-supervised-jigsaw-change-detection
@@ -259,22 +258,3 @@ items:
     code_url:
     project_url:
     abstract:
-
-  ai-automation-labor-market:
-    id: ai-automation-labor-market
-    url: /publications/ai-automation-labor-market/
-    title: "AI and Automation in the Labor Market: Literature Review on Implications for Employment, Skills, and Inclusive Growth"
-    description: A NomadLab conference publication at the 47th IBIMA Conference 2026.
-    venue: 47th IBIMA Conference 2026
-    venue_type: Conference
-    authors:
-      - marcin-hofman
-      - tugce-temel
-      - yusuf-huseyin-sahin
-      - jacek-winiarski
-    paper_url: "https://repozytorium.bg.ug.edu.pl/info/article/UOG71aa054b9ed643b1a3254e480e579ff9/"
-    scholar_url:
-    code_url:
-    project_url:
-    abstract: >-
-      This literature review examines how AI-driven automation reshapes employment structures and skill requirements in Poland and Türkiye. It highlights the displacement risk for routine and low- to medium-skill work, the growing importance of advanced digital competencies, and the role of lifelong learning, human-capital investment, and active public policy in supporting inclusive growth.
