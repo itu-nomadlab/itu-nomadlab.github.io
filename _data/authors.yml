@@ -32,6 +32,7 @@ ege-demir:
   role: Graduate Researcher
   affiliation: NomadLab · Istanbul Technical University
   bio: Graduate researcher and co-author working on evolutionary design, graph learning, and data-driven analysis of sports.
+  image: people/ege_demir.jpg
   interests:
     - Evolutionary computation
     - Graph neural networks
@@ -240,6 +241,7 @@ tugce-temel:
   initials: TT
   author_type: research-assistant
   profile_url: /people/tugce-temel/
+  image: people/tugce-temel.jpeg
   role: Research Assistant
   affiliation: NomadLab · Istanbul Technical University
 
@@ -249,6 +251,7 @@ zehra-demir:
   initials: ZD
   author_type: research-assistant
   profile_url: /people/zehra-demir/
+  image: people/zehra_demir.jpg
   role: Research Assistant
   affiliation: NomadLab · Istanbul Technical University
 
