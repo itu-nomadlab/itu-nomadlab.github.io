@@ -1433,7 +1433,19 @@ html[data-theme="dark"] .status-pill--active {
 
 
 /* Data-driven publication and author profiles ------------------------------ */
-.person-card__portrait-link { display: block; min-width: 0; color: inherit; text-decoration: none; }
+.person-card__portrait-link {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.person-card__portrait-link > .person-card__portrait {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+}
 .person-card__name a { color: inherit; text-decoration: none; &:hover, &:focus-visible { color: var(--lab-accent-strong); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.18em; } }
 .author-type-key, .publication-author__type { display: inline-grid; place-items: center; min-width: 1.65rem; height: 1.18rem; padding: 0 0.3rem; border: 1px solid var(--lab-line-strong); border-radius: 999px; font-family: "IBM Plex Mono", monospace; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1; vertical-align: 0.12em; }
 .author-type-key--undergraduate, .publication-author--undergraduate .publication-author__type { color: var(--lab-accent-strong); background: color-mix(in srgb, var(--lab-accent) 13%, var(--lab-surface)); }
@@ -1497,8 +1509,11 @@ a.publication-author { display: inline-flex; align-items: center; gap: 0.34rem; 
 }
 
 .nomad-portrait__source {
-  position: relative;
+  position: absolute;
   z-index: 1;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
   opacity: 1;
   transition: opacity 90ms steps(2, end), transform 400ms ease;
 }
