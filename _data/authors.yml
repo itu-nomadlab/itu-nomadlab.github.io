@@ -8,8 +8,8 @@ yusuf-huseyin-sahin:
   affiliation: Department of Computer Engineering, Istanbul Technical University
   email: sahinyu@itu.edu.tr
   bio: Researcher and educator working across machine learning, computer vision, multimodal systems, information retrieval, and scientific AI.
-  image: people/yusuf-sahin.jpg
-  image_alt: Portrait of Yusuf Hüseyin Şahin
+  image: people/yusuf-huseyin-sahin.svg
+  image_alt: Abstract NomadLab profile graphic for Yusuf Hüseyin Şahin
   interests:
     - Reliable machine learning
     - Vision-language models
@@ -32,7 +32,6 @@ ege-demir:
   role: Graduate Researcher
   affiliation: NomadLab · Istanbul Technical University
   bio: Graduate researcher and co-author working on evolutionary design, graph learning, and data-driven analysis of sports.
-  image: people/ege_demir.jpg
   interests:
     - Evolutionary computation
     - Graph neural networks
@@ -133,7 +132,6 @@ enis-teper:
   role: Graduate Researcher
   affiliation: NomadLab · Istanbul Technical University
   bio: Graduate researcher working on image retrieval, rank fusion, and robust visual representation learning.
-  image: people/enis-teper.jpg 
   interests:
     - Image retrieval
     - Rank fusion
@@ -215,19 +213,18 @@ berke-algul:
     available: false
 
 a-senih-yildirim:
-  name: Ahmet Senih Yıldırım
+  name: A. Senih Yıldırım
   publication_name: A. Senih Yıldırım
   initials: ASY
-  author_type: research-assistant
+  author_type: graduate
   profile_url: /people/a-senih-yildirim/
-  role: Research Assistant
+  role: Graduate Researcher
   affiliation: NomadLab · Istanbul Technical University
-  image: people/ahmet_yildirim.jpeg
-  bio: Research assistant working on medical image analysis, accelerated MRI, and lesion segmentation.
+  bio: Graduate researcher working on medical image analysis, accelerated MRI, and lesion segmentation.
   interests:
     - Medical image analysis
-    - Foundational models
-    - Game development
+    - Diffusion MRI
+    - Lesion segmentation
   thesis:
     title:
     degree:
@@ -235,26 +232,6 @@ a-senih-yildirim:
     year:
     pdf: /assets/pdf/theses/a-senih-yildirim-thesis.pdf
     available: false
-
-tugce-temel:
-  name: Tuğçe Temel
-  publication_name: Tuğçe Temel
-  initials: TT
-  author_type: research-assistant
-  profile_url: /people/tugce-temel/
-  image: people/tugce-temel.jpeg
-  role: Research Assistant
-  affiliation: NomadLab · Istanbul Technical University
-
-zehra-demir:
-  name: Zehra Demir
-  publication_name: Zehra Demir
-  initials: ZD
-  author_type: research-assistant
-  profile_url: /people/zehra-demir/
-  image: people/zehra_demir.jpg
-  role: Research Assistant
-  affiliation: NomadLab · Istanbul Technical University
 
 ayca-pektas:
   name: Ayça Pektaş
@@ -405,3 +382,42 @@ gozde-unal:
   initials: GÜ
   author_type: external
   role: External Co-author
+
+marcin-hofman:
+  name: Marcin Hofman
+  publication_name: Marcin Hofman
+  initials: MH
+  author_type: external
+  role: External Co-author
+
+tugce-temel:
+  name: Tuğçe Temel
+  publication_name: Tuğçe Temel
+  initials: TT
+  author_type: graduate
+  profile_url: /people/tugce-temel/
+  role: Research Assistant
+  affiliation: NomadLab · Istanbul Technical University
+  email: temel21@itu.edu.tr
+  homepage: https://research.itu.edu.tr/en/persons/temel21/
+  scholar: "https://scholar.google.com/citations?hl=tr&user=-KS8qgoAAAAJ"
+  bio: Research assistant in the Department of Computer Engineering at Istanbul Technical University and graduate researcher at NomadLab.
+  interests:
+    - Artificial intelligence
+    - Labor-market analysis
+    - Digital transformation
+  thesis:
+    title:
+    degree:
+    institution: Istanbul Technical University
+    year:
+    pdf: /assets/pdf/theses/tugce-temel-thesis.pdf
+    available: false
+
+jacek-winiarski:
+  name: Jacek Winiarski
+  publication_name: Jacek Winiarski
+  initials: JW
+  author_type: external
+  role: External Co-author
+
