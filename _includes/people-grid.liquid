@@ -3,9 +3,13 @@
   {% for person_id in people %}
     {% assign person = site.data.authors[person_id] %}
     {% if person %}
+      {% assign nomad_pixel_columns = person.nomad_pixel_columns | default: 64 %}
+      {% assign nomad_dither = person.nomad_dither | default: 20 %}
+      {% assign nomad_threshold_shift = person.nomad_threshold_shift | default: 0 %}
+      {% assign nomad_detail_recovery = person.nomad_detail_recovery | default: 1 %}
       <article class="person-card nomad-panel">
         {% if person.profile_url %}<a class="person-card__portrait-link" href="{{ person.profile_url | relative_url }}" aria-label="Open profile for {{ person.name }}">{% endif %}
-          <div{% if person.image %} class="person-card__portrait nomad-portrait" data-nomad-portrait data-nomad-pixel-columns="64" data-nomad-dither="20"{% else %} class="person-card__portrait"{% endif %}>
+          <div{% if person.image %} class="person-card__portrait nomad-portrait" data-nomad-portrait data-nomad-pixel-columns="{{ nomad_pixel_columns }}" data-nomad-dither="{{ nomad_dither }}" data-nomad-threshold-shift="{{ nomad_threshold_shift }}" data-nomad-detail-recovery="{{ nomad_detail_recovery }}"{% else %} class="person-card__portrait"{% endif %}>
             {% if person.image %}
               {% assign portrait_path = '/assets/img/' | append: person.image %}
               <img class="nomad-portrait__source" src="{{ portrait_path | relative_url }}" alt="{{ person.image_alt | default: person.name }}" loading="lazy">

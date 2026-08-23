@@ -14,8 +14,12 @@
   const CANVAS_SELECTOR = ".nomad-portrait__canvas";
   const READY_CLASS = "nomad-portrait--ready";
 
-  const DEFAULT_PIXEL_COLUMNS = 200;
-  const DEFAULT_DITHER_STRENGTH = 6;
+  // Default detail level when a portrait does not define its own setting.
+  // Higher values retain more facial detail while remaining visibly pixelated.
+  const DEFAULT_PIXEL_COLUMNS = 64;
+  const DEFAULT_DITHER_STRENGTH = 20;
+  const MAX_PIXEL_COLUMNS = 256;
+  const MAX_PIXEL_ROWS = 384;
 
   // Ordered dithering. The result still contains exactly two palette colours.
   const BAYER_4X4 = [
@@ -154,6 +158,76 @@
     return threshold;
   };
 
+
+  /**
+   * Global Otsu thresholding can occasionally classify the entire person as
+   * one dark mass when the background is much brighter than the face. In that
+   * case the portrait has enough pixels, but almost no internal facial detail.
+   *
+   * This recovery pass inspects the central portrait region. When that region
+   * is overwhelmingly assigned to the shadow class and still contains real
+   * tonal variation, it computes a second threshold inside the shadow class
+   * and blends toward it. The output remains strictly two-colour.
+   *
+   * A truly flat silhouette/placeholder has almost zero variation, so the
+   * recovery deliberately leaves it unchanged rather than inventing detail.
+   */
+  const recoverCollapsedPortraitThreshold = (
+    luminanceValues,
+    pixels,
+    width,
+    height,
+    baseThreshold,
+    recoveryStrength,
+  ) => {
+    if (recoveryStrength <= 0 || width < 16 || height < 16) return baseThreshold;
+
+    const startX = Math.floor(width * 0.18);
+    const endX = Math.ceil(width * 0.82);
+    const startY = Math.floor(height * 0.06);
+    const endY = Math.ceil(height * 0.88);
+    const centralValues = [];
+    const centralShadowValues = [];
+
+    for (let y = startY; y < endY; y += 1) {
+      for (let x = startX; x < endX; x += 1) {
+        const pixelIndex = y * width + x;
+        const alpha = pixels[pixelIndex * 4 + 3];
+        if (alpha < 16) continue;
+
+        const value = luminanceValues[pixelIndex];
+        centralValues.push(value);
+        if (value < baseThreshold) centralShadowValues.push(value);
+      }
+    }
+
+    if (centralValues.length < 32 || centralShadowValues.length < 24) return baseThreshold;
+
+    const shadowRatio = centralShadowValues.length / centralValues.length;
+    if (shadowRatio < 0.66) return baseThreshold;
+
+    const shadowMean = centralShadowValues.reduce((sum, value) => sum + value, 0)
+      / centralShadowValues.length;
+    const shadowVariance = centralShadowValues.reduce(
+      (sum, value) => sum + (value - shadowMean) ** 2,
+      0,
+    ) / centralShadowValues.length;
+    const shadowDeviation = Math.sqrt(shadowVariance);
+
+    // No tonal information exists in a flat avatar/silhouette.
+    if (shadowDeviation < 7) return baseThreshold;
+
+    const detailThreshold = otsuThreshold(centralShadowValues);
+    const thresholdGap = baseThreshold - detailThreshold;
+    if (thresholdGap < 14) return baseThreshold;
+
+    const collapseSeverity = clamp((shadowRatio - 0.66) / 0.29, 0, 1);
+    const automaticBlend = 0.46 + collapseSeverity * 0.30;
+    const blend = clamp(automaticBlend * recoveryStrength, 0, 0.88);
+
+    return Math.round(baseThreshold * (1 - blend) + detailThreshold * blend);
+  };
+
   const renderPortrait = (portrait) => {
     const image = portrait.querySelector(SOURCE_SELECTOR);
     const canvas = portrait.querySelector(CANVAS_SELECTOR);
@@ -167,9 +241,17 @@
     if (displayedWidth <= 0 || displayedHeight <= 0) return;
 
     const columns = Math.round(
-      numericDataValue(portrait, "nomadPixelColumns", DEFAULT_PIXEL_COLUMNS, 12, 64),
+      numericDataValue(
+        portrait,
+        "nomadPixelColumns",
+        DEFAULT_PIXEL_COLUMNS,
+        12,
+        MAX_PIXEL_COLUMNS,
+      ),
     );
-    const rows = Math.round(clamp(columns * (displayedHeight / displayedWidth), 12, 96));
+    const rows = Math.round(
+      clamp(columns * (displayedHeight / displayedWidth), 12, MAX_PIXEL_ROWS),
+    );
     const ditherStrength = numericDataValue(
       portrait,
       "nomadDither",
@@ -178,6 +260,13 @@
       64,
     );
     const thresholdShift = numericDataValue(portrait, "nomadThresholdShift", 0, -80, 80);
+    const detailRecovery = numericDataValue(
+      portrait,
+      "nomadDetailRecovery",
+      1,
+      0,
+      1.5,
+    );
 
     canvas.width = columns;
     canvas.height = rows;
@@ -220,7 +309,16 @@
       if (pixels[dataIndex + 3] >= 16) visibleLuminance.push(value);
     }
 
-    const threshold = clamp(otsuThreshold(visibleLuminance) + thresholdShift, 0, 255);
+    const baseThreshold = otsuThreshold(visibleLuminance);
+    const recoveredThreshold = recoverCollapsedPortraitThreshold(
+      luminanceValues,
+      pixels,
+      columns,
+      rows,
+      baseThreshold,
+      detailRecovery,
+    );
+    const threshold = clamp(recoveredThreshold + thresholdShift, 0, 255);
     const palette = activePalette();
 
     for (let pixelIndex = 0; pixelIndex < pixelCount; pixelIndex += 1) {

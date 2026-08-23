@@ -2,6 +2,8 @@
 {% assign profile_variant = include.profile_variant %}
 {% assign nomad_pixel_columns = author.nomad_pixel_columns | default: 80 %}
 {% assign nomad_dither = author.nomad_dither | default: 20 %}
+{% assign nomad_threshold_shift = author.nomad_threshold_shift | default: 0 %}
+{% assign nomad_detail_recovery = author.nomad_detail_recovery | default: 1 %}
 
 <article class="author-profile author-profile--{{ profile_variant }}">
   <nav class="detail-breadcrumb" aria-label="Breadcrumb">
@@ -9,7 +11,7 @@
   </nav>
 
   <header class="author-profile__hero nomad-panel">
-    <div{% if author.image %} class="author-profile__portrait nomad-portrait" data-nomad-portrait data-nomad-pixel-columns="{{ nomad_pixel_columns }}" data-nomad-dither="{{ nomad_dither }}"{% else %} class="author-profile__portrait"{% endif %}>
+    <div{% if author.image %} class="author-profile__portrait nomad-portrait" data-nomad-portrait data-nomad-pixel-columns="{{ nomad_pixel_columns }}" data-nomad-dither="{{ nomad_dither }}" data-nomad-threshold-shift="{{ nomad_threshold_shift }}" data-nomad-detail-recovery="{{ nomad_detail_recovery }}"{% else %} class="author-profile__portrait"{% endif %}>
       {% if author.image %}
         {% assign portrait_path = '/assets/img/' | append: author.image %}
         <img class="nomad-portrait__source" src="{{ portrait_path | relative_url }}" alt="{{ author.image_alt | default: author.name }}">
