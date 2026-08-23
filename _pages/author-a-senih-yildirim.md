@@ -1,7 +1,7 @@
 ---
-layout: graduate-author
-title: "A. Senih Yıldırım"
+layout: research-assistant-author
+title: "Ahmet Senih Yıldırım"
 permalink: /people/a-senih-yildirim/
 author_id: a-senih-yildirim
-description: Graduate researcher and author at NomadLab.
+description: Research assistant and author at NomadLab.
 ---

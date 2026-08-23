@@ -5,13 +5,20 @@ groups:
     members:
       - yusuf-huseyin-sahin
 
+  - id: research-assistants
+    title: Research Assistants
+    description: Research staff contributing to ongoing NomadLab studies and projects.
+    members:
+      - a-senih-yildirim
+      - tugce-temel
+      - zehra-demir
+
   - id: graduate-researchers
     title: Graduate Researchers
     description: Researchers pursuing advanced study and thesis work.
     members:
       - ege-demir
       - enis-teper
-      - a-senih-yildirim
 
   - id: undergraduate-researchers
     title: Undergraduate Researchers

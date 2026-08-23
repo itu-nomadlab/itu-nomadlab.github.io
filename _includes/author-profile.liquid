@@ -1,5 +1,7 @@
 {% assign author = site.data.authors[page.author_id] %}
 {% assign profile_variant = include.profile_variant %}
+{% assign nomad_pixel_columns = author.nomad_pixel_columns | default: 80 %}
+{% assign nomad_dither = author.nomad_dither | default: 20 %}
 
 <article class="author-profile author-profile--{{ profile_variant }}">
   <nav class="detail-breadcrumb" aria-label="Breadcrumb">
@@ -7,7 +9,7 @@
   </nav>
 
   <header class="author-profile__hero nomad-panel">
-    <div{% if author.image %} class="author-profile__portrait nomad-portrait" data-nomad-portrait data-nomad-pixel-columns="64" data-nomad-dither="20"{% else %} class="author-profile__portrait"{% endif %}>
+    <div{% if author.image %} class="author-profile__portrait nomad-portrait" data-nomad-portrait data-nomad-pixel-columns="{{ nomad_pixel_columns }}" data-nomad-dither="{{ nomad_dither }}"{% else %} class="author-profile__portrait"{% endif %}>
       {% if author.image %}
         {% assign portrait_path = '/assets/img/' | append: author.image %}
         <img class="nomad-portrait__source" src="{{ portrait_path | relative_url }}" alt="{{ author.image_alt | default: author.name }}">
@@ -18,7 +20,7 @@
     </div>
 
     <div class="author-profile__identity">
-      <p class="micro-label">{% if profile_variant == 'undergraduate' %}Undergraduate author{% else %}Graduate author{% endif %}</p>
+      <p class="micro-label">{% if profile_variant == 'undergraduate' %}Undergraduate author{% elsif profile_variant == 'research-assistant' %}Research assistant{% else %}Graduate author{% endif %}</p>
       <h1>{{ author.name }}</h1>
       <p class="author-profile__role">{{ author.role }}</p>
       {% if author.affiliation %}<p class="author-profile__affiliation">{{ author.affiliation }}</p>{% endif %}
@@ -55,7 +57,7 @@
         </div>
       {% endif %}
     </section>
-  {% else %}
+  {% elsif profile_variant == 'graduate' %}
     <section class="author-artifact nomad-panel">
       <div class="author-artifact__heading">
         <div><p class="micro-label">Graduate record</p><h2>Thesis</h2></div>

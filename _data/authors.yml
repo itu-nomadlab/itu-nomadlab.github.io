@@ -9,7 +9,7 @@ yusuf-huseyin-sahin:
   email: sahinyu@itu.edu.tr
   bio: Researcher and educator working across machine learning, computer vision, multimodal systems, information retrieval, and scientific AI.
   image: people/yusuf-sahin.jpg
-  image_alt: Abstract NomadLab profile graphic for Yusuf Hüseyin Şahin
+  image_alt: Portrait of Yusuf Hüseyin Şahin
   interests:
     - Reliable machine learning
     - Vision-language models
@@ -36,7 +36,6 @@ ege-demir:
     - Evolutionary computation
     - Graph neural networks
     - Sports analytics
-  image: people/ege_demir.jpg
   thesis:
     title:
     degree:
@@ -214,14 +213,14 @@ berke-algul:
     available: false
 
 a-senih-yildirim:
-  name: A. Senih Yıldırım
+  name: Ahmet Senih Yıldırım
   publication_name: A. Senih Yıldırım
   initials: ASY
-  author_type: graduate
+  author_type: research-assistant
   profile_url: /people/a-senih-yildirim/
-  role: Graduate Researcher
+  role: Research Assistant
   affiliation: NomadLab · Istanbul Technical University
-  bio: Graduate researcher working on medical image analysis, accelerated MRI, and lesion segmentation.
+  bio: Research assistant working on medical image analysis, accelerated MRI, and lesion segmentation.
   interests:
     - Medical image analysis
     - Diffusion MRI
@@ -233,6 +232,24 @@ a-senih-yildirim:
     year:
     pdf: /assets/pdf/theses/a-senih-yildirim-thesis.pdf
     available: false
+
+tugce-temel:
+  name: Tuğçe Temel
+  publication_name: Tuğçe Temel
+  initials: TT
+  author_type: research-assistant
+  profile_url: /people/tugce-temel/
+  role: Research Assistant
+  affiliation: NomadLab · Istanbul Technical University
+
+zehra-demir:
+  name: Zehra Demir
+  publication_name: Zehra Demir
+  initials: ZD
+  author_type: research-assistant
+  profile_url: /people/zehra-demir/
+  role: Research Assistant
+  affiliation: NomadLab · Istanbul Technical University
 
 ayca-pektas:
   name: Ayça Pektaş
