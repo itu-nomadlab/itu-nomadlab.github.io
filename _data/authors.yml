@@ -220,6 +220,7 @@ a-senih-yildirim:
   profile_url: /people/a-senih-yildirim/
   role: Research Assistant
   affiliation: NomadLab · Istanbul Technical University
+  image: people/ahmet_yildirim.jpeg
   bio: Research assistant working on medical image analysis, accelerated MRI, and lesion segmentation.
   interests:
     - Medical image analysis
