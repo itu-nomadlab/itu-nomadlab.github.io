@@ -1,0 +1,102 @@
+/* Home hero NOMAD acronym ----------------------------------------------- */
+
+.nomad-acronym {
+  position: relative;
+  display: grid;
+  align-items: center;
+  cursor: help;
+  isolation: isolate;
+  outline: none;
+}
+
+.nomad-acronym__face {
+  grid-area: 1 / 1;
+  transform-origin: left center;
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease,
+    filter 220ms ease;
+}
+
+.nomad-acronym__face--default {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nomad-acronym__face--expanded {
+  display: flex;
+  flex-direction: column;
+  gap: 0.02em;
+  opacity: 0;
+  transform: translateY(0.16em);
+  font-size: clamp(2.55rem, 5.15vw, 5.25rem);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.nomad-acronym__line {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.2em;
+  white-space: nowrap;
+}
+
+.nomad-acronym__word {
+  display: inline-block;
+}
+
+.nomad-acronym__key {
+  color: var(--lab-accent-strong);
+  font-weight: 850;
+  text-decoration: underline;
+  text-decoration-thickness: 0.065em;
+  text-underline-offset: 0.08em;
+}
+
+.nomad-acronym:hover .nomad-acronym__face--default,
+.nomad-acronym:focus .nomad-acronym__face--default {
+  opacity: 0;
+  transform: translateY(-0.12em);
+  filter: blur(2px);
+}
+
+.nomad-acronym:hover .nomad-acronym__face--expanded,
+.nomad-acronym:focus .nomad-acronym__face--expanded {
+  opacity: 1;
+  transform: translateY(0);
+  filter: none;
+}
+
+.nomad-acronym:focus-visible {
+  outline: 3px solid var(--lab-accent-strong);
+  outline-offset: 0.16em;
+  border-radius: 0.04em;
+}
+
+html[data-nomad-mode="on"] .nomad-acronym__key {
+  color: var(--nomad-bg);
+  background: var(--nomad-ink);
+  padding: 0 0.035em;
+  text-decoration: none;
+  text-shadow: none;
+  box-shadow: 2px 2px 0 var(--nomad-glow);
+}
+
+@media (max-width: 767.98px) {
+  .nomad-acronym__face--expanded {
+    font-size: clamp(1.9rem, 10vw, 3rem);
+    letter-spacing: -0.035em;
+  }
+
+  .nomad-acronym__line {
+    gap: 0.16em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nomad-acronym__face {
+    transition: none;
+  }
+}

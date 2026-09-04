@@ -5,13 +5,30 @@ layout: default
   <section class="lab-hero nomad-panel">
     <div class="lab-hero__copy">
       <p class="eyebrow"><span>NOMADLAB</span> / {{ site.institution | upcase }}</p>
-      <h1>Nomadic intelligence.<br>Grounded science.</h1>
+      <h1
+        class="nomad-acronym"
+        tabindex="0"
+        aria-label="Nomadic intelligence. Grounded science. NOMAD means: No Model Alone Decides."
+      >
+        <span class="nomad-acronym__face nomad-acronym__face--default" aria-hidden="true">
+          Nomadic intelligence.<br>Grounded science.
+        </span>
+        <span class="nomad-acronym__face nomad-acronym__face--expanded" aria-hidden="true">
+          <span class="nomad-acronym__line">
+            <span class="nomad-acronym__word"><span class="nomad-acronym__key">NO</span></span>
+            <span class="nomad-acronym__word"><span class="nomad-acronym__key">M</span>odel</span>
+          </span>
+          <span class="nomad-acronym__line">
+            <span class="nomad-acronym__word"><span class="nomad-acronym__key">A</span>lone</span>
+            <span class="nomad-acronym__word"><span class="nomad-acronym__key">D</span>ecides.</span>
+          </span>
+        </span>
+      </h1>
       <p class="lab-hero__lead">{{ site.data.site.short_description }}</p>
       <div class="hero-actions">
         <a class="lab-button lab-button--primary" href="{{ '/research/' | relative_url }}">Explore our research <i class="ti ti-arrow-up-right"></i></a>
         <a class="lab-button lab-button--secondary" href="{{ '/people/' | relative_url }}">Meet the lab</a>
       </div>
-      <p class="hero-hint"><i class="ti ti-sparkles"></i> Try <strong>Nomad Mode</strong> in the navigation.</p>
     </div>
 
     <div class="lab-hero__map" aria-hidden="true">
