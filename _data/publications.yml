@@ -35,7 +35,8 @@ items:
     code_url:
     project_url:
     abstract: >-
-      CA-Rank uses garment segmentation and perceptual color similarity to re-rank fashion retrieval results, improving chromatic consistency without retraining the underlying retrieval model.
+      Color plays a central role in fashion perception and user preference, yet modern embedding-based image retrieval systems primarily optimize for semantic and structural similarity, often neglecting chromatic coherence. As a result, retrieved garments may be category-correct but visually inconsistent in color. This paper introduces CA-Rank, a segmentation-driven, model-agnostic post-retrieval framework that enhances fashion image retrieval by explicitly incorporating perceptual color similarity.Each image is first processed by a class-agnostic segmentation model to isolate garment pixels, ensuring that both embeddings and color descriptors are computed on garment-only regions. CA-Rank evaluates two color similarity strategies:Weighted Color Matching (WCM), which compares discrete HSV-based color compositions, and Weighted Chamfer Similarity (WCS), which operates in the CIE-LAB color space on quantized palettes using a symmetric, weight-aware Chamfer formulation. While WCM provides a simple baseline, WCS demonstrates substantially higher robustness to illumination, mixed hues, and fine-grained chromatic variation; therefore, the final re-ranking relies on WCS to refine the top-K candidates without any additional training or modification of the underlying retrieval model. Experiments on a segmented subset of the In-Shop Clothes Retrieval benchmark show consistent improvements in Hit@K across diverse backbones, with the largest gains at top ranks where users are most sensitive to color mismatches. Qualitative analyses further indicate that CA-Rank produces retrieval results that are both semantically accurate and perceptually color-consistent, offering a simple and effective mechanism for improving the visual coherence of fashion search systems.
+
 
   occlusion-aware-face-retrieval:
     id: occlusion-aware-face-retrieval
@@ -54,7 +55,8 @@ items:
     code_url:
     project_url:
     abstract: >-
-      This work studies how facial occlusions alter identity embeddings and evaluates generative inpainting as a way to restore identity-preserving information for face retrieval.
+      Occlusions remain a major obstacle for reliable face recognition and person re-identification, as they obscure critical identity features and distort embedding representations. In this work, we present a unified and reproducible pipeline for evaluating both the impact of occlusion and the effectiveness of generative inpainting in restoring identity-preserving facial information. Using the LFW dataset, we generate realistic occlusions via semantically guided masks with Stable Diffusion, and subsequently apply state-of-the-art inpainting methods for occlusion removal. Reconstruction quality is assessed using a comprehensive set of structural and perceptual metrics, while identity preservation is evaluated through retrieval experiments across diverse embedding architectures representing both supervised and self-supervised learning paradigms. Experimental results demonstrate that inpainting can significantly mitigate the adverse effects of occlusion on retrieval performance. Furthermore, our findings reveal that conventional perceptual metrics do not fully capture identity consistency, highlighting the need for embedding-aware evaluation. This study offers a complete benchmarking framework and cross-model analysis to advance research on occlusion-robust face recognition.
+
 
   self-supervised-jigsaw-change-detection:
     id: self-supervised-jigsaw-change-detection
@@ -72,7 +74,7 @@ items:
     code_url:
     project_url:
     abstract: >-
-      The study augments change-detection training with a self-supervised jigsaw objective designed to strengthen spatial reasoning and improve segmentation of changed regions.
+      The ability of humans to adapt is dependent on learning from both labeled data and unlabeled experiences. Since supervised learning is inherently limited and cannot encompass all scenarios, the integration of unsupervised learning is essential since it allows models to uncover underlying patterns and invariances that aid in broader generalization. Inspired by this principle, we present a novel method for tackling change detection that blends supervised semantic segmentation with a complementary self-supervised objective. Specifically, our method not only identifies changed pixels in images, but also enhances spatial reasoning by training the model to solve jigsaw puzzles constructed from shuffled segmentation masks. We introduce Jigsaw Change Detection (JCD), a dual-task architecture designed to leverage spatial structure within the data. The auxiliary deshuffling task encourages the model to learn spatial dependencies, effectively regularizing the primary segmentation process. The integration of these tasks leads to improved performance in change detection. Our extensive evaluations across CDD, SYSU, and NJDS benchmarks demonstrate the effectiveness of our approach, consistently outperforming existing methods. Code is made publicly accessible at https://github.com/berkealgul/JDS.
 
   neonatal-mri-kspace-lesion-segmentation:
     id: neonatal-mri-kspace-lesion-segmentation
