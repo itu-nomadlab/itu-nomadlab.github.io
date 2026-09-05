@@ -1,0 +1,657 @@
+/* --------------------------------------------------------------------------
+ * Nomad sentinel — inline SVG brain/eye emblem for the home hero.
+ * No raster image is used: every shape is drawn by SVG and animated by CSS/JS.
+ * -------------------------------------------------------------------------- */
+
+.lab-hero__map--nomadic {
+  padding: clamp(0.85rem, 2.4vw, 2rem);
+  background:
+    radial-gradient(circle at 50% 38%, color-mix(in srgb, var(--lab-accent) 12%, transparent), transparent 47%),
+    color-mix(in srgb, var(--lab-ink) 2.5%, transparent);
+}
+
+.nomadic-atlas,
+.nomad-sentinel {
+  --sentinel-paper: #f8f1e7;
+  --sentinel-paper-strong: #fffaf1;
+  --sentinel-ink: #172035;
+  --sentinel-ink-soft: rgba(23, 32, 53, 0.25);
+  --sentinel-ink-faint: rgba(23, 32, 53, 0.09);
+  --sentinel-brain: #f49d9b;
+  --sentinel-brain-light: #ffc1b8;
+  --sentinel-brain-dark: #e87d79;
+  --sentinel-sclera: #fff9ed;
+  --sentinel-iris: #829daa;
+  --sentinel-iris-light: #b9ccd2;
+  --sentinel-iris-dark: #5f7b8b;
+  --sentinel-accent: #ef6a47;
+  --sentinel-map: #dce5e3;
+  --sentinel-map-strong: #c7d5d5;
+
+  position: relative;
+  width: min(100%, 535px);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  color: var(--sentinel-ink);
+  background: var(--sentinel-paper);
+  border: 1px solid color-mix(in srgb, var(--sentinel-ink) 22%, transparent);
+  border-radius: 28px;
+  box-shadow:
+    0 24px 58px rgba(45, 31, 24, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  isolation: isolate;
+}
+
+.nomad-sentinel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(118deg, rgba(255, 255, 255, 0.22), transparent 30%),
+    radial-gradient(circle at center, transparent 56%, rgba(23, 32, 53, 0.08) 100%);
+  mix-blend-mode: soft-light;
+}
+
+.nomad-sentinel__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.nomad-sentinel__field {
+  fill: var(--sentinel-paper);
+}
+
+.nomad-sentinel__grid {
+  opacity: 0.72;
+}
+
+.nomad-sentinel__grid-line {
+  stroke: var(--sentinel-ink-faint);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__globe-stop--inner {
+  stop-color: var(--sentinel-map);
+  stop-opacity: 0.74;
+}
+
+.nomad-sentinel__globe-stop--outer {
+  stop-color: var(--sentinel-map-strong);
+  stop-opacity: 0.28;
+}
+
+.nomad-sentinel__brain-stop--light {
+  stop-color: var(--sentinel-brain-light);
+}
+
+.nomad-sentinel__brain-stop--dark {
+  stop-color: var(--sentinel-brain-dark);
+}
+
+.nomad-sentinel__iris-stop--light {
+  stop-color: var(--sentinel-iris-light);
+}
+
+.nomad-sentinel__iris-stop--dark {
+  stop-color: var(--sentinel-iris-dark);
+}
+
+.nomad-sentinel__globe {
+  stroke: color-mix(in srgb, var(--sentinel-ink) 24%, transparent);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__latitude,
+.nomad-sentinel__longitude {
+  fill: none;
+  stroke: color-mix(in srgb, var(--sentinel-ink) 18%, transparent);
+  stroke-width: 1.15;
+  stroke-dasharray: 4 8;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__map-mark {
+  fill: color-mix(in srgb, var(--sentinel-ink) 7%, transparent);
+  stroke: color-mix(in srgb, var(--sentinel-ink) 10%, transparent);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__orbits {
+  transform-origin: 400px 351px;
+  transform-box: view-box;
+}
+
+.nomad-sentinel__orbits--slow {
+  animation: nomad-sentinel-orbit 28s linear infinite;
+}
+
+.nomad-sentinel__orbits--fast {
+  animation: nomad-sentinel-orbit-reverse 21s linear infinite;
+}
+
+.nomad-sentinel__orbit {
+  fill: none;
+  stroke: var(--sentinel-ink);
+  stroke-width: 2.4;
+  opacity: 0.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__orbit--dashed {
+  stroke: var(--sentinel-accent);
+  stroke-width: 2.1;
+  stroke-dasharray: 6 10;
+  opacity: 0.85;
+}
+
+.nomad-sentinel__planet {
+  stroke: var(--sentinel-ink);
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__planet--coral { fill: var(--sentinel-accent); }
+.nomad-sentinel__planet--ink { fill: var(--sentinel-ink); }
+.nomad-sentinel__planet--paper { fill: var(--sentinel-paper-strong); }
+.nomad-sentinel__planet--small { fill: var(--sentinel-iris); }
+
+.nomad-sentinel__axis path,
+.nomad-sentinel__axis circle,
+.nomad-sentinel__compass-line {
+  fill: none;
+  stroke: color-mix(in srgb, var(--sentinel-ink) 55%, transparent);
+  stroke-width: 1.2;
+  stroke-dasharray: 5 8;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__axis circle {
+  fill: var(--sentinel-ink);
+  stroke: none;
+}
+
+.nomad-sentinel__compass-arrow {
+  fill: var(--sentinel-accent);
+  stroke: var(--sentinel-ink);
+  stroke-width: 3.2;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__compass-star,
+.nomad-sentinel__stars path,
+.nomad-sentinel__stars circle {
+  fill: var(--sentinel-ink);
+  stroke: none;
+}
+
+.nomad-sentinel__stars path:nth-child(2),
+.nomad-sentinel__stars path:nth-child(3) {
+  fill: var(--sentinel-accent);
+}
+
+.nomad-sentinel__organism {
+  transform-origin: 400px 390px;
+  transform-box: view-box;
+  animation: nomad-sentinel-float 5.8s ease-in-out infinite;
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.nomad-sentinel__brain {
+  transform-origin: 400px 350px;
+  transform-box: view-box;
+  animation: nomad-sentinel-breathe 5.1s ease-in-out infinite;
+}
+
+.nomad-sentinel__brain-shadow {
+  fill: color-mix(in srgb, var(--sentinel-ink) 18%, transparent);
+  stroke: none;
+  transform: translate(8px, 10px);
+  opacity: 0.42;
+}
+
+.nomad-sentinel__brain-shape {
+  fill: url(#nomad-sentinel-brain-gradient);
+  stroke: var(--sentinel-ink);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__folds path {
+  fill: none;
+  stroke: color-mix(in srgb, var(--sentinel-ink) 80%, transparent);
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.88;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__eye {
+  transform-origin: 400px 333px;
+  transform-box: view-box;
+  transition: transform 90ms ease-in;
+}
+
+.nomad-sentinel.is-blinking .nomad-sentinel__eye {
+  transform: scaleY(0.055);
+}
+
+.nomad-sentinel__sclera {
+  fill: var(--sentinel-sclera);
+  stroke: var(--sentinel-ink);
+  stroke-width: 5;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__lid {
+  fill: none;
+  stroke: var(--sentinel-ink);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__gaze {
+  transition: transform 130ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.nomad-sentinel__iris-ring {
+  fill: color-mix(in srgb, var(--sentinel-ink) 10%, transparent);
+  stroke: var(--sentinel-ink);
+  stroke-width: 3.3;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__iris {
+  stroke: var(--sentinel-ink);
+  stroke-width: 2.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__iris-rays path {
+  stroke: color-mix(in srgb, var(--sentinel-ink) 72%, transparent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__pupil {
+  fill: var(--sentinel-ink);
+}
+
+.nomad-sentinel__eye-glint {
+  fill: var(--sentinel-paper-strong);
+}
+
+.nomad-sentinel__eye-glint--small {
+  opacity: 0.75;
+}
+
+.nomad-sentinel__tendril {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+}
+
+.nomad-sentinel__tendril-outline,
+.nomad-sentinel__tendril-fill,
+.nomad-sentinel__branch-outline,
+.nomad-sentinel__branch-fill {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__tendril-outline {
+  stroke: var(--sentinel-ink);
+  stroke-width: 22;
+}
+
+.nomad-sentinel__tendril-fill {
+  stroke: var(--sentinel-brain);
+  stroke-width: 15;
+}
+
+.nomad-sentinel__branch-outline {
+  stroke: var(--sentinel-ink);
+  stroke-width: 12;
+}
+
+.nomad-sentinel__branch-fill {
+  stroke: var(--sentinel-brain);
+  stroke-width: 7;
+}
+
+.nomad-sentinel__tendril--1,
+.nomad-sentinel__tendril--5 {
+  animation: nomad-sentinel-sway-a 4.9s ease-in-out infinite alternate;
+}
+
+.nomad-sentinel__tendril--2,
+.nomad-sentinel__tendril--6,
+.nomad-sentinel__tendril--branch-right {
+  animation: nomad-sentinel-sway-b 5.6s ease-in-out -1.2s infinite alternate;
+}
+
+.nomad-sentinel__tendril--3,
+.nomad-sentinel__tendril--7,
+.nomad-sentinel__tendril--branch-left {
+  animation: nomad-sentinel-sway-a 6.2s ease-in-out -2.1s infinite alternate-reverse;
+}
+
+.nomad-sentinel__tendril--4,
+.nomad-sentinel__tendril--8 {
+  animation: nomad-sentinel-sway-b 5.2s ease-in-out -0.6s infinite alternate-reverse;
+}
+
+.nomad-sentinel__terminal circle:first-child {
+  fill: var(--sentinel-accent);
+  stroke: var(--sentinel-ink);
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__terminal circle:last-child {
+  fill: var(--sentinel-paper-strong);
+  stroke: none;
+}
+
+.nomad-sentinel__terminal:nth-child(2n) circle:first-child {
+  fill: var(--sentinel-iris);
+}
+
+.nomad-sentinel__terminal.is-signaling circle:first-child {
+  animation: nomad-sentinel-terminal-pulse 720ms ease-out 1;
+  filter: url(#nomad-sentinel-glow);
+}
+
+.nomad-sentinel__signal-marks circle {
+  fill: var(--sentinel-accent);
+}
+
+.nomad-sentinel__signal-marks path {
+  fill: none;
+  stroke: var(--sentinel-ink);
+  stroke-width: 1.4;
+  opacity: 0.65;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel__frame {
+  fill: none;
+  stroke: color-mix(in srgb, var(--sentinel-ink) 25%, transparent);
+  stroke-width: 1.25;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-sentinel.is-recalibrating .nomad-sentinel__organism {
+  animation: nomad-sentinel-recalibrate 360ms steps(4, end) 1;
+}
+
+/* Dark interface keeps the full-colour emblem, but shifts it into a night map. */
+html[data-theme="dark"] .lab-hero__map--nomadic {
+  background: color-mix(in srgb, var(--lab-surface-strong) 88%, transparent);
+}
+
+html[data-theme="dark"] .nomad-sentinel {
+  --sentinel-paper: #161b24;
+  --sentinel-paper-strong: #f7efe4;
+  --sentinel-ink: #f3ecdf;
+  --sentinel-ink-soft: rgba(243, 236, 223, 0.25);
+  --sentinel-ink-faint: rgba(243, 236, 223, 0.08);
+  --sentinel-brain: #ef928e;
+  --sentinel-brain-light: #ffb1a8;
+  --sentinel-brain-dark: #d96e6a;
+  --sentinel-sclera: #fbf2e5;
+  --sentinel-iris: #819ca8;
+  --sentinel-iris-light: #bed0d4;
+  --sentinel-iris-dark: #526e7e;
+  --sentinel-map: #26343c;
+  --sentinel-map-strong: #1e2b33;
+
+  box-shadow:
+    0 28px 64px rgba(0, 0, 0, 0.31),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+}
+
+/* Nomad Mode becomes a two-colour edge drawing rather than a raster effect. */
+html[data-nomad-mode="on"] .lab-hero__map--nomadic {
+  background: color-mix(in srgb, var(--nomad-bg) 88%, transparent);
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel {
+  --sentinel-paper: var(--nomad-bg);
+  --sentinel-paper-strong: var(--nomad-paper);
+  --sentinel-ink: var(--nomad-ink);
+  --sentinel-ink-soft: color-mix(in srgb, var(--nomad-ink) 44%, transparent);
+  --sentinel-ink-faint: color-mix(in srgb, var(--nomad-ink) 18%, transparent);
+  --sentinel-brain: var(--nomad-bg);
+  --sentinel-brain-light: var(--nomad-bg);
+  --sentinel-brain-dark: var(--nomad-bg);
+  --sentinel-sclera: var(--nomad-paper);
+  --sentinel-iris: var(--nomad-bg);
+  --sentinel-iris-light: var(--nomad-bg);
+  --sentinel-iris-dark: var(--nomad-bg);
+  --sentinel-accent: var(--nomad-ink);
+  --sentinel-map: var(--nomad-bg);
+  --sentinel-map-strong: var(--nomad-bg);
+
+  border: 3px solid var(--nomad-ink);
+  border-radius: 0;
+  box-shadow: 9px 9px 0 var(--nomad-ink);
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel::after {
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0 18px,
+    color-mix(in srgb, var(--nomad-ink) 7%, transparent) 18px 20px
+  );
+  mix-blend-mode: normal;
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__field,
+html[data-nomad-mode="on"] .nomad-sentinel__grid {
+  rx: 0;
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__globe {
+  fill: none;
+  stroke: var(--nomad-ink);
+  stroke-width: 3;
+  opacity: 0.3;
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__map-mark {
+  fill: none;
+  stroke: var(--nomad-ink);
+  stroke-width: 2;
+  stroke-dasharray: 4 5;
+  opacity: 0.28;
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__orbit,
+html[data-nomad-mode="on"] .nomad-sentinel__axis path,
+html[data-nomad-mode="on"] .nomad-sentinel__compass-line,
+html[data-nomad-mode="on"] .nomad-sentinel__signal-marks path {
+  stroke: var(--nomad-ink);
+  stroke-width: 3;
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__orbit--dashed {
+  stroke-dasharray: 6 6;
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__organism {
+  filter: url(#nomad-sentinel-rough-edge);
+  animation-timing-function: steps(8, end);
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__brain-shadow {
+  fill: var(--nomad-ink);
+  opacity: 1;
+  transform: translate(8px, 8px);
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__brain-shape {
+  fill: var(--nomad-bg);
+  stroke: var(--nomad-ink);
+  stroke-width: 6;
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__folds path {
+  stroke: var(--nomad-ink);
+  stroke-width: 3.2;
+  opacity: 1;
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__sclera {
+  fill: var(--nomad-paper);
+  stroke: var(--nomad-ink);
+  stroke-width: 6;
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__lid,
+html[data-nomad-mode="on"] .nomad-sentinel__iris-ring,
+html[data-nomad-mode="on"] .nomad-sentinel__iris {
+  stroke: var(--nomad-ink);
+  stroke-width: 4;
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__iris-ring,
+html[data-nomad-mode="on"] .nomad-sentinel__iris {
+  fill: var(--nomad-bg);
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__iris-rays path {
+  stroke: var(--nomad-ink);
+  stroke-width: 3;
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__pupil {
+  fill: var(--nomad-ink);
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__tendril-outline,
+html[data-nomad-mode="on"] .nomad-sentinel__branch-outline {
+  stroke: var(--nomad-ink);
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__tendril-fill,
+html[data-nomad-mode="on"] .nomad-sentinel__branch-fill {
+  stroke: var(--nomad-bg);
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__terminal circle:first-child {
+  fill: var(--nomad-bg);
+  stroke: var(--nomad-ink);
+  stroke-width: 4;
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__terminal:nth-child(3n) circle:first-child {
+  fill: var(--nomad-ink);
+  stroke: var(--nomad-paper);
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__terminal circle:last-child {
+  fill: var(--nomad-ink);
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__frame {
+  stroke: var(--nomad-ink);
+  stroke-width: 3;
+  rx: 0;
+}
+
+html[data-nomad-mode="on"] .nomad-sentinel__orbits--slow,
+html[data-nomad-mode="on"] .nomad-sentinel__orbits--fast,
+html[data-nomad-mode="on"] .nomad-sentinel__tendril,
+html[data-nomad-mode="on"] .nomad-sentinel__brain {
+  animation-timing-function: steps(12, end);
+}
+
+@keyframes nomad-sentinel-orbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes nomad-sentinel-orbit-reverse {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes nomad-sentinel-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes nomad-sentinel-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.012); }
+}
+
+@keyframes nomad-sentinel-sway-a {
+  from { transform: rotate(-1.6deg) translateX(-1px); }
+  to { transform: rotate(1.9deg) translateX(2px); }
+}
+
+@keyframes nomad-sentinel-sway-b {
+  from { transform: rotate(1.7deg) translateX(1px); }
+  to { transform: rotate(-1.9deg) translateX(-2px); }
+}
+
+@keyframes nomad-sentinel-terminal-pulse {
+  0% { transform: scale(0.82); opacity: 0.8; }
+  52% { transform: scale(1.65); opacity: 0.28; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes nomad-sentinel-recalibrate {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-5px, 1px); }
+  50% { transform: translate(4px, -2px); }
+  75% { transform: translate(-2px, 3px); }
+  100% { transform: translate(0, 0); }
+}
+
+@media (max-width: 991.98px) {
+  .nomad-sentinel {
+    width: min(100%, 500px);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .lab-hero__map--nomadic {
+    min-height: 370px;
+    padding: 0.9rem;
+  }
+
+  .nomad-sentinel {
+    width: min(100%, 355px);
+    border-radius: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nomad-sentinel__orbits,
+  .nomad-sentinel__organism,
+  .nomad-sentinel__brain,
+  .nomad-sentinel__tendril,
+  .nomad-sentinel__terminal.is-signaling circle:first-child {
+    animation: none;
+  }
+
+  .nomad-sentinel__gaze,
+  .nomad-sentinel__eye,
+  .nomad-sentinel__organism {
+    transition: none;
+  }
+}

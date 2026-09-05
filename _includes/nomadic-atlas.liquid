@@ -1,0 +1,236 @@
+<div class="nomadic-atlas nomad-sentinel" data-nomadic-sentinel="">
+  <svg
+    class="nomad-sentinel__svg"
+    viewBox="0 0 800 800"
+    focusable="false"
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <pattern id="nomad-sentinel-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+        <path class="nomad-sentinel__grid-line" d="M48 0H0V48" fill="none" />
+      </pattern>
+
+      <radialGradient id="nomad-sentinel-globe-gradient" cx="50%" cy="42%" r="58%">
+        <stop offset="0%" class="nomad-sentinel__globe-stop nomad-sentinel__globe-stop--inner" />
+        <stop offset="100%" class="nomad-sentinel__globe-stop nomad-sentinel__globe-stop--outer" />
+      </radialGradient>
+
+      <linearGradient id="nomad-sentinel-brain-gradient" x1="0" y1="0" x2="0.82" y2="1">
+        <stop offset="0%" class="nomad-sentinel__brain-stop nomad-sentinel__brain-stop--light" />
+        <stop offset="100%" class="nomad-sentinel__brain-stop nomad-sentinel__brain-stop--dark" />
+      </linearGradient>
+
+      <radialGradient id="nomad-sentinel-iris-gradient" cx="42%" cy="35%" r="62%">
+        <stop offset="0%" class="nomad-sentinel__iris-stop nomad-sentinel__iris-stop--light" />
+        <stop offset="100%" class="nomad-sentinel__iris-stop nomad-sentinel__iris-stop--dark" />
+      </radialGradient>
+
+      <filter id="nomad-sentinel-glow" x="-100%" y="-100%" width="300%" height="300%">
+        <feGaussianBlur stdDeviation="7" result="blur" />
+        <feMerge>
+          <feMergeNode in="blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+
+      <filter id="nomad-sentinel-rough-edge" x="-15%" y="-15%" width="130%" height="130%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012 0.035" numOctaves="1" seed="31" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2" xChannelSelector="R" yChannelSelector="B" />
+      </filter>
+
+      <clipPath id="nomad-sentinel-panel-clip">
+        <rect x="18" y="18" width="764" height="764" rx="30" />
+      </clipPath>
+
+      <path id="nomad-tendril-1" d="M278 447 C250 496 269 535 231 574 C202 605 219 650 185 704" />
+      <path id="nomad-tendril-2" d="M310 462 C278 511 319 552 287 602 C258 647 288 687 263 737" />
+      <path id="nomad-tendril-3" d="M344 471 C326 521 353 565 332 618 C317 658 339 699 324 754" />
+      <path id="nomad-tendril-4" d="M380 477 C366 529 392 572 378 628 C366 674 383 712 374 760" />
+      <path id="nomad-tendril-5" d="M417 478 C429 526 408 573 426 622 C442 666 424 708 440 754" />
+      <path id="nomad-tendril-6" d="M453 472 C480 513 452 560 484 602 C511 638 483 679 510 729" />
+      <path id="nomad-tendril-7" d="M487 462 C520 506 498 543 536 580 C572 616 544 653 585 701" />
+      <path id="nomad-tendril-8" d="M519 446 C554 488 540 525 583 554 C620 579 595 621 641 663" />
+      <path id="nomad-branch-left" d="M257 528 C218 537 194 565 174 604 C160 631 142 642 118 650" />
+      <path id="nomad-branch-right" d="M548 531 C592 533 622 554 643 587 C664 619 687 632 716 633" />
+    </defs>
+
+    <g clip-path="url(#nomad-sentinel-panel-clip)">
+      <rect class="nomad-sentinel__field" x="18" y="18" width="764" height="764" rx="30" />
+      <rect class="nomad-sentinel__grid" x="18" y="18" width="764" height="764" rx="30" fill="url(#nomad-sentinel-grid)" />
+
+      <g class="nomad-sentinel__cartography">
+        <circle class="nomad-sentinel__globe" cx="400" cy="351" r="271" fill="url(#nomad-sentinel-globe-gradient)" />
+        <ellipse class="nomad-sentinel__latitude" cx="400" cy="351" rx="254" ry="92" />
+        <ellipse class="nomad-sentinel__latitude" cx="400" cy="351" rx="267" ry="170" />
+        <ellipse class="nomad-sentinel__longitude" cx="400" cy="351" rx="104" ry="270" />
+        <ellipse class="nomad-sentinel__longitude" cx="400" cy="351" rx="188" ry="270" />
+
+        <path class="nomad-sentinel__map-mark" d="M210 290 C246 254 282 258 303 281 C320 301 309 324 278 330 C254 336 246 359 261 380 C223 374 194 348 193 320 C192 308 198 298 210 290Z" />
+        <path class="nomad-sentinel__map-mark" d="M519 209 C555 202 589 216 608 242 C624 264 615 290 591 300 C569 309 564 329 577 351 C542 343 517 322 510 292 C503 261 507 229 519 209Z" />
+        <path class="nomad-sentinel__map-mark" d="M497 476 C530 455 564 462 582 486 C600 510 587 538 557 545 C534 550 522 570 529 594 C493 575 475 546 480 514 C483 497 488 485 497 476Z" />
+      </g>
+
+      <g class="nomad-sentinel__orbits nomad-sentinel__orbits--slow" data-sentinel-orbit="slow">
+        <ellipse class="nomad-sentinel__orbit nomad-sentinel__orbit--solid" cx="400" cy="343" rx="327" ry="159" transform="rotate(-12 400 343)" />
+        <circle class="nomad-sentinel__planet nomad-sentinel__planet--coral" cx="107" cy="240" r="17" />
+        <circle class="nomad-sentinel__planet nomad-sentinel__planet--ink" cx="695" cy="437" r="13" />
+      </g>
+
+      <g class="nomad-sentinel__orbits nomad-sentinel__orbits--fast" data-sentinel-orbit="fast">
+        <ellipse class="nomad-sentinel__orbit nomad-sentinel__orbit--dashed" cx="401" cy="363" rx="291" ry="215" transform="rotate(19 401 363)" />
+        <circle class="nomad-sentinel__planet nomad-sentinel__planet--paper" cx="624" cy="187" r="10" />
+        <circle class="nomad-sentinel__planet nomad-sentinel__planet--small" cx="195" cy="507" r="7" />
+      </g>
+
+      <g class="nomad-sentinel__axis">
+        <path d="M400 37 V118" />
+        <path d="M400 603 V762" />
+        <path d="M43 351 H118" />
+        <path d="M682 351 H757" />
+        <circle cx="400" cy="26" r="5" />
+        <circle cx="400" cy="774" r="5" />
+        <circle cx="31" cy="351" r="5" />
+        <circle cx="769" cy="351" r="5" />
+      </g>
+
+      <g class="nomad-sentinel__compass">
+        <path class="nomad-sentinel__compass-arrow" d="M400 44 L382 102 L400 88 L418 102 Z" />
+        <path class="nomad-sentinel__compass-line" d="M400 44 V125" />
+        <path class="nomad-sentinel__compass-star" d="M400 744 L408 765 L430 773 L408 781 L400 802 L392 781 L370 773 L392 765 Z" />
+      </g>
+
+      <g class="nomad-sentinel__stars">
+        <path d="M104 157 l5 13 13 5-13 5-5 13-5-13-13-5 13-5Z" />
+        <path d="M679 141 l4 11 11 4-11 4-4 11-4-11-11-4 11-4Z" />
+        <path d="M694 568 l5 14 14 5-14 5-5 14-5-14-14-5 14-5Z" />
+        <circle cx="154" cy="444" r="4" />
+        <circle cx="658" cy="296" r="4" />
+        <circle cx="552" cy="93" r="3" />
+        <circle cx="244" cy="114" r="3" />
+      </g>
+
+      <g class="nomad-sentinel__organism" data-sentinel-organism="">
+        <g class="nomad-sentinel__tendrils">
+          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--1">
+            <use href="#nomad-tendril-1" class="nomad-sentinel__tendril-outline" />
+            <use href="#nomad-tendril-1" class="nomad-sentinel__tendril-fill" />
+          </g>
+          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--2">
+            <use href="#nomad-tendril-2" class="nomad-sentinel__tendril-outline" />
+            <use href="#nomad-tendril-2" class="nomad-sentinel__tendril-fill" />
+          </g>
+          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--3">
+            <use href="#nomad-tendril-3" class="nomad-sentinel__tendril-outline" />
+            <use href="#nomad-tendril-3" class="nomad-sentinel__tendril-fill" />
+          </g>
+          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--4">
+            <use href="#nomad-tendril-4" class="nomad-sentinel__tendril-outline" />
+            <use href="#nomad-tendril-4" class="nomad-sentinel__tendril-fill" />
+          </g>
+          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--5">
+            <use href="#nomad-tendril-5" class="nomad-sentinel__tendril-outline" />
+            <use href="#nomad-tendril-5" class="nomad-sentinel__tendril-fill" />
+          </g>
+          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--6">
+            <use href="#nomad-tendril-6" class="nomad-sentinel__tendril-outline" />
+            <use href="#nomad-tendril-6" class="nomad-sentinel__tendril-fill" />
+          </g>
+          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--7">
+            <use href="#nomad-tendril-7" class="nomad-sentinel__tendril-outline" />
+            <use href="#nomad-tendril-7" class="nomad-sentinel__tendril-fill" />
+          </g>
+          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--8">
+            <use href="#nomad-tendril-8" class="nomad-sentinel__tendril-outline" />
+            <use href="#nomad-tendril-8" class="nomad-sentinel__tendril-fill" />
+          </g>
+          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--branch-left">
+            <use href="#nomad-branch-left" class="nomad-sentinel__branch-outline" />
+            <use href="#nomad-branch-left" class="nomad-sentinel__branch-fill" />
+          </g>
+          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--branch-right">
+            <use href="#nomad-branch-right" class="nomad-sentinel__branch-outline" />
+            <use href="#nomad-branch-right" class="nomad-sentinel__branch-fill" />
+          </g>
+        </g>
+
+        <g class="nomad-sentinel__terminal-nodes" data-sentinel-terminals="">
+          <g class="nomad-sentinel__terminal" transform="translate(185 704)"><circle r="13" /><circle r="4" /></g>
+          <g class="nomad-sentinel__terminal" transform="translate(263 737)"><circle r="10" /><circle r="3" /></g>
+          <g class="nomad-sentinel__terminal" transform="translate(324 754)"><circle r="8" /><circle r="2.5" /></g>
+          <g class="nomad-sentinel__terminal" transform="translate(374 760)"><circle r="11" /><circle r="3" /></g>
+          <g class="nomad-sentinel__terminal" transform="translate(440 754)"><circle r="8" /><circle r="2.5" /></g>
+          <g class="nomad-sentinel__terminal" transform="translate(510 729)"><circle r="12" /><circle r="3.5" /></g>
+          <g class="nomad-sentinel__terminal" transform="translate(585 701)"><circle r="9" /><circle r="3" /></g>
+          <g class="nomad-sentinel__terminal" transform="translate(641 663)"><circle r="13" /><circle r="4" /></g>
+          <g class="nomad-sentinel__terminal" transform="translate(118 650)"><circle r="8" /><circle r="2.5" /></g>
+          <g class="nomad-sentinel__terminal" transform="translate(716 633)"><circle r="8" /><circle r="2.5" /></g>
+        </g>
+
+        <g class="nomad-sentinel__brain" data-sentinel-brain="">
+          <path
+            class="nomad-sentinel__brain-shadow"
+            d="M400 163 C367 137 326 139 298 160 C263 150 225 168 210 201 C171 211 150 247 157 282 C128 308 128 351 151 376 C137 410 151 448 182 464 C184 501 219 528 255 524 C276 555 318 563 348 542 C365 563 389 570 408 551 C432 568 470 558 486 532 C528 539 565 512 567 474 C602 460 617 421 601 389 C628 363 629 319 600 291 C609 252 585 214 549 203 C532 169 493 151 458 161 C440 145 418 145 400 163 Z"
+          />
+          <path
+            class="nomad-sentinel__brain-shape"
+            d="M400 163 C367 137 326 139 298 160 C263 150 225 168 210 201 C171 211 150 247 157 282 C128 308 128 351 151 376 C137 410 151 448 182 464 C184 501 219 528 255 524 C276 555 318 563 348 542 C365 563 389 570 408 551 C432 568 470 558 486 532 C528 539 565 512 567 474 C602 460 617 421 601 389 C628 363 629 319 600 291 C609 252 585 214 549 203 C532 169 493 151 458 161 C440 145 418 145 400 163 Z"
+          />
+
+          <g class="nomad-sentinel__folds">
+            <path d="M400 164 C389 191 398 218 421 237" />
+            <path d="M349 155 C368 178 361 207 337 222 C316 235 316 258 335 272" />
+            <path d="M298 160 C316 182 306 208 282 219 C252 233 253 264 277 277" />
+            <path d="M211 202 C244 195 263 214 258 239 C254 260 234 272 210 267" />
+            <path d="M158 282 C188 270 213 287 212 315 C211 341 192 354 163 350" />
+            <path d="M151 377 C179 360 207 373 214 399 C220 422 204 444 180 448" />
+            <path d="M184 463 C211 442 242 452 250 478 C258 502 243 519 222 524" />
+            <path d="M255 524 C267 494 298 486 320 502 C341 517 339 541 322 554" />
+            <path d="M458 161 C441 185 448 213 472 224 C498 236 500 264 479 279" />
+            <path d="M549 203 C520 198 499 218 504 244 C508 265 530 278 553 269" />
+            <path d="M600 291 C569 276 543 291 543 318 C543 343 565 360 594 353" />
+            <path d="M601 389 C572 371 544 382 536 408 C529 431 546 453 569 459" />
+            <path d="M567 474 C543 451 510 458 501 485 C494 509 510 529 532 536" />
+            <path d="M486 532 C474 501 445 490 421 505 C401 518 399 542 412 554" />
+            <path d="M270 308 C291 287 322 287 343 306" />
+            <path d="M457 305 C478 287 510 289 529 310" />
+            <path d="M282 397 C310 420 344 419 365 397" />
+            <path d="M438 397 C460 420 495 419 520 395" />
+          </g>
+
+          <g class="nomad-sentinel__eye" data-sentinel-eye="">
+            <path
+              class="nomad-sentinel__sclera"
+              d="M220 333 C268 275 328 244 400 244 C472 244 532 275 580 333 C531 391 471 418 400 418 C328 418 269 391 220 333 Z"
+            />
+            <path class="nomad-sentinel__lid nomad-sentinel__lid--upper" d="M220 333 C269 274 329 244 400 244 C472 244 531 274 580 333" />
+            <path class="nomad-sentinel__lid nomad-sentinel__lid--lower" d="M220 333 C269 391 329 418 400 418 C471 418 531 391 580 333" />
+
+            <g class="nomad-sentinel__gaze" data-sentinel-gaze="">
+              <circle class="nomad-sentinel__iris-ring" cx="400" cy="333" r="72" />
+              <circle class="nomad-sentinel__iris" cx="400" cy="333" r="61" fill="url(#nomad-sentinel-iris-gradient)" />
+              <g class="nomad-sentinel__iris-rays">
+                {% for index in (0..23) %}
+                  <path d="M400 278 V295" transform="rotate({{ index | times: 15 }} 400 333)" />
+                {% endfor %}
+              </g>
+              <circle class="nomad-sentinel__pupil" cx="400" cy="333" r="27" />
+              <circle class="nomad-sentinel__eye-glint" cx="420" cy="313" r="10" />
+              <circle class="nomad-sentinel__eye-glint nomad-sentinel__eye-glint--small" cx="386" cy="348" r="4" />
+            </g>
+          </g>
+        </g>
+      </g>
+
+      <g class="nomad-sentinel__signal-marks" aria-hidden="true">
+        <circle cx="88" cy="583" r="5" />
+        <circle cx="731" cy="219" r="5" />
+        <path d="M135 116 h26 M148 103 v26" />
+        <path d="M645 640 h26 M658 627 v26" />
+        <path d="M704 93 h20 M714 83 v20" />
+      </g>
+    </g>
+
+    <rect class="nomad-sentinel__frame" x="18" y="18" width="764" height="764" rx="30" />
+  </svg>
+</div>
