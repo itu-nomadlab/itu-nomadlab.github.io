@@ -31,24 +31,8 @@ layout: default
       </div>
     </div>
 
-    <div class="lab-hero__map" aria-hidden="true">
-      <div class="route-map">
-        <span class="route-map__label route-map__label--a">ADAPT</span>
-        <span class="route-map__label route-map__label--b">RETRIEVE</span>
-        <span class="route-map__label route-map__label--c">VERIFY</span>
-        <span class="route-map__label route-map__label--d">DISCOVER</span>
-        <span class="route-map__node route-map__node--a"></span>
-        <span class="route-map__node route-map__node--b"></span>
-        <span class="route-map__node route-map__node--c"></span>
-        <span class="route-map__node route-map__node--d"></span>
-        <span class="route-map__path route-map__path--one"></span>
-        <span class="route-map__path route-map__path--two"></span>
-        <span class="route-map__path route-map__path--three"></span>
-        <div class="route-map__mark">
-          <span>N</span>
-          <small>ISTANBUL<br>TÜRKİYE</small>
-        </div>
-      </div>
+    <div class="lab-hero__map lab-hero__map--nomadic" aria-hidden="true">
+      {% include nomadic-atlas.liquid %}
     </div>
   </section>
 
@@ -128,3 +112,5 @@ layout: default
     <a class="lab-button lab-button--primary" href="{{ '/join/' | relative_url }}">Work with NomadLab <i class="ti ti-arrow-up-right"></i></a>
   </section>
 </div>
+
+<script defer src="{{ '/assets/js/nomadic-atlas.js' | relative_url | bust_file_cache }}"></script>
