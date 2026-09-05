@@ -2,7 +2,7 @@
   <nav id="navbar" class="navbar navbar-light navbar-expand-lg {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation" aria-label="Primary navigation">
     <div class="container">
       <a class="navbar-brand nomad-brand" href="{{ '/' | relative_url }}" aria-label="NomadLab home">
-        <span class="nomad-brand__mark" aria-hidden="true">N</span>
+        {% include brand-mark.liquid class="nomad-brand__mark" %}
         <span class="nomad-brand__name">NomadLab</span>
         <span class="nomad-brand__cursor" aria-hidden="true"></span>
       </a>

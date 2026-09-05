@@ -1,0 +1,16 @@
+{% assign mark_class = include.class | default: '' %}
+{% assign mark_label = include.label | default: '' %}
+<svg
+  class="nomad-mark{% if mark_class != blank %} {{ mark_class }}{% endif %}"
+  viewBox="0 0 64 64"
+  xmlns="http://www.w3.org/2000/svg"
+  focusable="false"
+  {% if mark_label != blank %}role="img" aria-label="{{ mark_label | escape }}"{% else %}aria-hidden="true"{% endif %}
+>
+  {% if mark_label != blank %}<title>{{ mark_label | escape }}</title>{% endif %}
+  <rect class="nomad-mark__plate" x="3" y="3" width="58" height="58" rx="12" />
+  <path
+    class="nomad-mark__glyph"
+    d="M17 48V16h8.5L39 35.55V16h8v32h-8.5L25 28.45V48Z"
+  />
+</svg>

@@ -2,8 +2,8 @@
   <div class="container">
     <div class="site-footer__grid">
       <div>
-        <a class="nomad-brand nomad-brand--footer" href="{{ '/' | relative_url }}">
-          <span class="nomad-brand__mark" aria-hidden="true">N</span>
+        <a class="nomad-brand nomad-brand--footer" href="{{ '/' | relative_url }}" aria-label="NomadLab home">
+          {% include brand-mark.liquid class="nomad-brand__mark" %}
           <span class="nomad-brand__name">NomadLab</span>
         </a>
         <p>Adaptive, reliable, and multimodal intelligence.</p>

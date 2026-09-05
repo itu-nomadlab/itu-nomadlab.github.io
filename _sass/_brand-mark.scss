@@ -1,0 +1,98 @@
+/* NomadLab official N symbol ---------------------------------------------- */
+
+.nomad-mark {
+  --nomad-mark-fill: var(--lab-accent, #ef6a47);
+  --nomad-mark-ink: #111318;
+
+  display: block;
+  flex: 0 0 auto;
+  overflow: visible;
+  shape-rendering: geometricPrecision;
+}
+
+.nomad-mark__plate {
+  fill: var(--nomad-mark-fill);
+  stroke: var(--nomad-mark-ink);
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+  transition: fill 180ms ease, stroke 180ms ease, rx 180ms ease;
+}
+
+.nomad-mark__glyph {
+  fill: var(--nomad-mark-ink);
+  transition: fill 180ms ease;
+}
+
+/* Reset the former text-based badge styles now that the mark is an SVG. */
+.nomad-brand__mark.nomad-mark {
+  display: block;
+  width: 2.15rem;
+  height: 2.15rem;
+  padding: 0;
+  color: inherit;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(3px 3px 0 color-mix(in srgb, var(--lab-ink) 18%, transparent));
+  transform-origin: 50% 50%;
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.nomad-brand:focus-visible {
+  outline: 0;
+}
+
+.nomad-brand:focus-visible .nomad-brand__mark {
+  filter:
+    drop-shadow(0 0 0.08rem var(--lab-bg))
+    drop-shadow(0 0 0.24rem var(--lab-ink));
+}
+
+.nomad-brand--footer .nomad-brand__mark.nomad-mark {
+  filter: none;
+}
+
+.nomad-brand--footer .nomad-mark {
+  --nomad-mark-fill: var(--lab-accent, #ef6a47);
+  --nomad-mark-ink: #111318;
+}
+
+/* The exact same N becomes a hard-edged two-colour mark in Nomad Mode. */
+html[data-nomad-mode="on"] .nomad-mark {
+  --nomad-mark-fill: var(--nomad-ink);
+  --nomad-mark-ink: var(--nomad-bg);
+  shape-rendering: crispEdges;
+}
+
+html[data-nomad-mode="on"] .nomad-mark__plate {
+  rx: 0;
+  stroke-width: 3.5;
+}
+
+html[data-nomad-mode="on"] .nomad-brand__mark.nomad-mark {
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(4px 4px 0 var(--nomad-paper));
+}
+
+html[data-nomad-mode="on"] .nomad-brand:hover .nomad-brand__mark.nomad-mark {
+  transform: translate(-1px, -1px) rotate(-2deg);
+}
+
+html[data-nomad-mode="on"] .nomad-brand:focus-visible .nomad-brand__mark {
+  filter:
+    drop-shadow(4px 4px 0 var(--nomad-paper))
+    drop-shadow(0 0 0.16rem var(--nomad-ink));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nomad-mark__plate,
+  .nomad-mark__glyph,
+  .nomad-brand__mark.nomad-mark {
+    transition: none;
+  }
+}
