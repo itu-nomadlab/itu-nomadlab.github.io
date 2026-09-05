@@ -1,236 +1,250 @@
-<div class="nomadic-atlas nomad-sentinel" data-nomadic-sentinel="">
+<div class="nomadic-atlas nomad-ibex" data-nomadic-ibex="" data-phase="0">
   <svg
-    class="nomad-sentinel__svg"
+    class="nomad-ibex__svg"
     viewBox="0 0 800 800"
     focusable="false"
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
   >
     <defs>
-      <pattern id="nomad-sentinel-grid" width="48" height="48" patternUnits="userSpaceOnUse">
-        <path class="nomad-sentinel__grid-line" d="M48 0H0V48" fill="none" />
+      <pattern id="nomad-ibex-grid" width="42" height="42" patternUnits="userSpaceOnUse">
+        <path class="nomad-ibex__grid-line" d="M42 0H0V42" fill="none" />
       </pattern>
 
-      <radialGradient id="nomad-sentinel-globe-gradient" cx="50%" cy="42%" r="58%">
-        <stop offset="0%" class="nomad-sentinel__globe-stop nomad-sentinel__globe-stop--inner" />
-        <stop offset="100%" class="nomad-sentinel__globe-stop nomad-sentinel__globe-stop--outer" />
+      <radialGradient id="nomad-ibex-moon" cx="42%" cy="35%" r="66%">
+        <stop offset="0%" class="nomad-ibex__moon-stop nomad-ibex__moon-stop--inner" />
+        <stop offset="100%" class="nomad-ibex__moon-stop nomad-ibex__moon-stop--outer" />
       </radialGradient>
 
-      <linearGradient id="nomad-sentinel-brain-gradient" x1="0" y1="0" x2="0.82" y2="1">
-        <stop offset="0%" class="nomad-sentinel__brain-stop nomad-sentinel__brain-stop--light" />
-        <stop offset="100%" class="nomad-sentinel__brain-stop nomad-sentinel__brain-stop--dark" />
+      <linearGradient id="nomad-ibex-haze" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" class="nomad-ibex__haze-stop nomad-ibex__haze-stop--top" />
+        <stop offset="100%" class="nomad-ibex__haze-stop nomad-ibex__haze-stop--bottom" />
       </linearGradient>
 
-      <radialGradient id="nomad-sentinel-iris-gradient" cx="42%" cy="35%" r="62%">
-        <stop offset="0%" class="nomad-sentinel__iris-stop nomad-sentinel__iris-stop--light" />
-        <stop offset="100%" class="nomad-sentinel__iris-stop nomad-sentinel__iris-stop--dark" />
-      </radialGradient>
-
-      <filter id="nomad-sentinel-glow" x="-100%" y="-100%" width="300%" height="300%">
-        <feGaussianBlur stdDeviation="7" result="blur" />
+      <filter id="nomad-ibex-node-glow" x="-150%" y="-150%" width="400%" height="400%">
+        <feGaussianBlur stdDeviation="5" result="blur" />
         <feMerge>
           <feMergeNode in="blur" />
           <feMergeNode in="SourceGraphic" />
         </feMerge>
       </filter>
 
-      <filter id="nomad-sentinel-rough-edge" x="-15%" y="-15%" width="130%" height="130%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.012 0.035" numOctaves="1" seed="31" result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2" xChannelSelector="R" yChannelSelector="B" />
+      <filter id="nomad-ibex-rough" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.018 0.045" numOctaves="1" seed="19" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.4" xChannelSelector="R" yChannelSelector="B" />
       </filter>
 
-      <clipPath id="nomad-sentinel-panel-clip">
-        <rect x="18" y="18" width="764" height="764" rx="30" />
+      <clipPath id="nomad-ibex-clip">
+        <rect x="14" y="14" width="772" height="772" rx="26" />
       </clipPath>
 
-      <path id="nomad-tendril-1" d="M278 447 C250 496 269 535 231 574 C202 605 219 650 185 704" />
-      <path id="nomad-tendril-2" d="M310 462 C278 511 319 552 287 602 C258 647 288 687 263 737" />
-      <path id="nomad-tendril-3" d="M344 471 C326 521 353 565 332 618 C317 658 339 699 324 754" />
-      <path id="nomad-tendril-4" d="M380 477 C366 529 392 572 378 628 C366 674 383 712 374 760" />
-      <path id="nomad-tendril-5" d="M417 478 C429 526 408 573 426 622 C442 666 424 708 440 754" />
-      <path id="nomad-tendril-6" d="M453 472 C480 513 452 560 484 602 C511 638 483 679 510 729" />
-      <path id="nomad-tendril-7" d="M487 462 C520 506 498 543 536 580 C572 616 544 653 585 701" />
-      <path id="nomad-tendril-8" d="M519 446 C554 488 540 525 583 554 C620 579 595 621 641 663" />
-      <path id="nomad-branch-left" d="M257 528 C218 537 194 565 174 604 C160 631 142 642 118 650" />
-      <path id="nomad-branch-right" d="M548 531 C592 533 622 554 643 587 C664 619 687 632 716 633" />
+      <clipPath id="nomad-ibex-far-mountain-clip">
+        <path d="M0 520L76 458L136 486L210 390L276 457L354 348L425 446L503 372L578 459L654 369L727 445L800 390V800H0Z" />
+      </clipPath>
+
+      <clipPath id="nomad-ibex-mid-mountain-clip">
+        <path d="M0 624L86 551L161 590L249 474L325 570L407 448L493 575L582 472L664 559L742 484L800 523V800H0Z" />
+      </clipPath>
+
+      <clipPath id="nomad-ibex-near-mountain-clip">
+        <path d="M0 697L92 629L179 670L267 566L342 645L427 542L512 664L603 575L688 646L760 591L800 620V800H0Z" />
+      </clipPath>
+
+      <path id="nomad-ibex-route-a" d="M102 575C198 506 286 521 363 572C444 626 520 637 704 552" />
+      <path id="nomad-ibex-route-b" d="M175 455C261 397 342 424 413 476C488 530 565 508 685 423" />
+      <path id="nomad-ibex-route-c" d="M236 680C326 602 423 595 512 650C578 691 637 680 716 632" />
     </defs>
 
-    <g clip-path="url(#nomad-sentinel-panel-clip)">
-      <rect class="nomad-sentinel__field" x="18" y="18" width="764" height="764" rx="30" />
-      <rect class="nomad-sentinel__grid" x="18" y="18" width="764" height="764" rx="30" fill="url(#nomad-sentinel-grid)" />
+    <g clip-path="url(#nomad-ibex-clip)">
+      <rect class="nomad-ibex__field" x="14" y="14" width="772" height="772" rx="26" />
+      <rect class="nomad-ibex__grid" x="14" y="14" width="772" height="772" rx="26" fill="url(#nomad-ibex-grid)" />
+      <rect class="nomad-ibex__haze" x="14" y="14" width="772" height="772" rx="26" fill="url(#nomad-ibex-haze)" />
 
-      <g class="nomad-sentinel__cartography">
-        <circle class="nomad-sentinel__globe" cx="400" cy="351" r="271" fill="url(#nomad-sentinel-globe-gradient)" />
-        <ellipse class="nomad-sentinel__latitude" cx="400" cy="351" rx="254" ry="92" />
-        <ellipse class="nomad-sentinel__latitude" cx="400" cy="351" rx="267" ry="170" />
-        <ellipse class="nomad-sentinel__longitude" cx="400" cy="351" rx="104" ry="270" />
-        <ellipse class="nomad-sentinel__longitude" cx="400" cy="351" rx="188" ry="270" />
+      <g class="nomad-ibex__sky" data-ibex-layer="sky">
+        <circle class="nomad-ibex__moon-halo" cx="449" cy="279" r="214" />
+        <circle class="nomad-ibex__moon" cx="449" cy="279" r="183" fill="url(#nomad-ibex-moon)" />
+        <circle class="nomad-ibex__moon-ring nomad-ibex__moon-ring--outer" cx="449" cy="279" r="206" />
+        <circle class="nomad-ibex__moon-ring nomad-ibex__moon-ring--inner" cx="449" cy="279" r="157" />
 
-        <path class="nomad-sentinel__map-mark" d="M210 290 C246 254 282 258 303 281 C320 301 309 324 278 330 C254 336 246 359 261 380 C223 374 194 348 193 320 C192 308 198 298 210 290Z" />
-        <path class="nomad-sentinel__map-mark" d="M519 209 C555 202 589 216 608 242 C624 264 615 290 591 300 C569 309 564 329 577 351 C542 343 517 322 510 292 C503 261 507 229 519 209Z" />
-        <path class="nomad-sentinel__map-mark" d="M497 476 C530 455 564 462 582 486 C600 510 587 538 557 545 C534 550 522 570 529 594 C493 575 475 546 480 514 C483 497 488 485 497 476Z" />
-      </g>
-
-      <g class="nomad-sentinel__orbits nomad-sentinel__orbits--slow" data-sentinel-orbit="slow">
-        <ellipse class="nomad-sentinel__orbit nomad-sentinel__orbit--solid" cx="400" cy="343" rx="327" ry="159" transform="rotate(-12 400 343)" />
-        <circle class="nomad-sentinel__planet nomad-sentinel__planet--coral" cx="107" cy="240" r="17" />
-        <circle class="nomad-sentinel__planet nomad-sentinel__planet--ink" cx="695" cy="437" r="13" />
-      </g>
-
-      <g class="nomad-sentinel__orbits nomad-sentinel__orbits--fast" data-sentinel-orbit="fast">
-        <ellipse class="nomad-sentinel__orbit nomad-sentinel__orbit--dashed" cx="401" cy="363" rx="291" ry="215" transform="rotate(19 401 363)" />
-        <circle class="nomad-sentinel__planet nomad-sentinel__planet--paper" cx="624" cy="187" r="10" />
-        <circle class="nomad-sentinel__planet nomad-sentinel__planet--small" cx="195" cy="507" r="7" />
-      </g>
-
-      <g class="nomad-sentinel__axis">
-        <path d="M400 37 V118" />
-        <path d="M400 603 V762" />
-        <path d="M43 351 H118" />
-        <path d="M682 351 H757" />
-        <circle cx="400" cy="26" r="5" />
-        <circle cx="400" cy="774" r="5" />
-        <circle cx="31" cy="351" r="5" />
-        <circle cx="769" cy="351" r="5" />
-      </g>
-
-      <g class="nomad-sentinel__compass">
-        <path class="nomad-sentinel__compass-arrow" d="M400 44 L382 102 L400 88 L418 102 Z" />
-        <path class="nomad-sentinel__compass-line" d="M400 44 V125" />
-        <path class="nomad-sentinel__compass-star" d="M400 744 L408 765 L430 773 L408 781 L400 802 L392 781 L370 773 L392 765 Z" />
-      </g>
-
-      <g class="nomad-sentinel__stars">
-        <path d="M104 157 l5 13 13 5-13 5-5 13-5-13-13-5 13-5Z" />
-        <path d="M679 141 l4 11 11 4-11 4-4 11-4-11-11-4 11-4Z" />
-        <path d="M694 568 l5 14 14 5-14 5-5 14-5-14-14-5 14-5Z" />
-        <circle cx="154" cy="444" r="4" />
-        <circle cx="658" cy="296" r="4" />
-        <circle cx="552" cy="93" r="3" />
-        <circle cx="244" cy="114" r="3" />
-      </g>
-
-      <g class="nomad-sentinel__organism" data-sentinel-organism="">
-        <g class="nomad-sentinel__tendrils">
-          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--1">
-            <use href="#nomad-tendril-1" class="nomad-sentinel__tendril-outline" />
-            <use href="#nomad-tendril-1" class="nomad-sentinel__tendril-fill" />
-          </g>
-          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--2">
-            <use href="#nomad-tendril-2" class="nomad-sentinel__tendril-outline" />
-            <use href="#nomad-tendril-2" class="nomad-sentinel__tendril-fill" />
-          </g>
-          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--3">
-            <use href="#nomad-tendril-3" class="nomad-sentinel__tendril-outline" />
-            <use href="#nomad-tendril-3" class="nomad-sentinel__tendril-fill" />
-          </g>
-          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--4">
-            <use href="#nomad-tendril-4" class="nomad-sentinel__tendril-outline" />
-            <use href="#nomad-tendril-4" class="nomad-sentinel__tendril-fill" />
-          </g>
-          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--5">
-            <use href="#nomad-tendril-5" class="nomad-sentinel__tendril-outline" />
-            <use href="#nomad-tendril-5" class="nomad-sentinel__tendril-fill" />
-          </g>
-          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--6">
-            <use href="#nomad-tendril-6" class="nomad-sentinel__tendril-outline" />
-            <use href="#nomad-tendril-6" class="nomad-sentinel__tendril-fill" />
-          </g>
-          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--7">
-            <use href="#nomad-tendril-7" class="nomad-sentinel__tendril-outline" />
-            <use href="#nomad-tendril-7" class="nomad-sentinel__tendril-fill" />
-          </g>
-          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--8">
-            <use href="#nomad-tendril-8" class="nomad-sentinel__tendril-outline" />
-            <use href="#nomad-tendril-8" class="nomad-sentinel__tendril-fill" />
-          </g>
-          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--branch-left">
-            <use href="#nomad-branch-left" class="nomad-sentinel__branch-outline" />
-            <use href="#nomad-branch-left" class="nomad-sentinel__branch-fill" />
-          </g>
-          <g class="nomad-sentinel__tendril nomad-sentinel__tendril--branch-right">
-            <use href="#nomad-branch-right" class="nomad-sentinel__branch-outline" />
-            <use href="#nomad-branch-right" class="nomad-sentinel__branch-fill" />
-          </g>
+        <g class="nomad-ibex__stars">
+          <circle cx="95" cy="119" r="3" />
+          <circle cx="157" cy="180" r="5" />
+          <circle cx="696" cy="137" r="4" />
+          <circle cx="731" cy="246" r="2.5" />
+          <circle cx="98" cy="311" r="2.5" />
+          <path d="M681 82l5 13 13 5-13 5-5 13-5-13-13-5 13-5Z" />
+          <path d="M116 229l4 10 10 4-10 4-4 10-4-10-10-4 10-4Z" />
         </g>
 
-        <g class="nomad-sentinel__terminal-nodes" data-sentinel-terminals="">
-          <g class="nomad-sentinel__terminal" transform="translate(185 704)"><circle r="13" /><circle r="4" /></g>
-          <g class="nomad-sentinel__terminal" transform="translate(263 737)"><circle r="10" /><circle r="3" /></g>
-          <g class="nomad-sentinel__terminal" transform="translate(324 754)"><circle r="8" /><circle r="2.5" /></g>
-          <g class="nomad-sentinel__terminal" transform="translate(374 760)"><circle r="11" /><circle r="3" /></g>
-          <g class="nomad-sentinel__terminal" transform="translate(440 754)"><circle r="8" /><circle r="2.5" /></g>
-          <g class="nomad-sentinel__terminal" transform="translate(510 729)"><circle r="12" /><circle r="3.5" /></g>
-          <g class="nomad-sentinel__terminal" transform="translate(585 701)"><circle r="9" /><circle r="3" /></g>
-          <g class="nomad-sentinel__terminal" transform="translate(641 663)"><circle r="13" /><circle r="4" /></g>
-          <g class="nomad-sentinel__terminal" transform="translate(118 650)"><circle r="8" /><circle r="2.5" /></g>
-          <g class="nomad-sentinel__terminal" transform="translate(716 633)"><circle r="8" /><circle r="2.5" /></g>
+        <g class="nomad-ibex__telemetry">
+          <path d="M75 91h77M75 101h34M648 92h77M691 102h34" />
+          <path d="M58 361h68M674 361h68" />
+          <circle cx="55" cy="361" r="4" />
+          <circle cx="745" cy="361" r="4" />
+          <path d="M400 40v54M400 706v54" />
+          <circle cx="400" cy="34" r="4" />
+          <circle cx="400" cy="766" r="4" />
         </g>
+      </g>
 
-        <g class="nomad-sentinel__brain" data-sentinel-brain="">
-          <path
-            class="nomad-sentinel__brain-shadow"
-            d="M400 163 C367 137 326 139 298 160 C263 150 225 168 210 201 C171 211 150 247 157 282 C128 308 128 351 151 376 C137 410 151 448 182 464 C184 501 219 528 255 524 C276 555 318 563 348 542 C365 563 389 570 408 551 C432 568 470 558 486 532 C528 539 565 512 567 474 C602 460 617 421 601 389 C628 363 629 319 600 291 C609 252 585 214 549 203 C532 169 493 151 458 161 C440 145 418 145 400 163 Z"
-          />
-          <path
-            class="nomad-sentinel__brain-shape"
-            d="M400 163 C367 137 326 139 298 160 C263 150 225 168 210 201 C171 211 150 247 157 282 C128 308 128 351 151 376 C137 410 151 448 182 464 C184 501 219 528 255 524 C276 555 318 563 348 542 C365 563 389 570 408 551 C432 568 470 558 486 532 C528 539 565 512 567 474 C602 460 617 421 601 389 C628 363 629 319 600 291 C609 252 585 214 549 203 C532 169 493 151 458 161 C440 145 418 145 400 163 Z"
-          />
+      <g class="nomad-ibex__mountains nomad-ibex__mountains--far" data-ibex-layer="far">
+        <path class="nomad-ibex__mountain-shape nomad-ibex__mountain-shape--far" d="M0 520L76 458L136 486L210 390L276 457L354 348L425 446L503 372L578 459L654 369L727 445L800 390V800H0Z" />
+        <g class="nomad-ibex__contours" clip-path="url(#nomad-ibex-far-mountain-clip)">
+          <path d="M-15 482C96 432 142 447 225 421C306 396 355 373 438 411C525 451 625 388 817 416" />
+          <path d="M-20 500C85 460 157 472 235 449C318 425 368 405 449 438C536 474 646 414 820 442" />
+          <path d="M-18 523C94 487 171 498 246 475C326 451 390 434 465 466C552 503 662 445 820 471" />
+          <path d="M-14 548C102 512 177 526 257 502C341 477 408 465 483 497C568 533 677 480 821 503" />
+        </g>
+      </g>
 
-          <g class="nomad-sentinel__folds">
-            <path d="M400 164 C389 191 398 218 421 237" />
-            <path d="M349 155 C368 178 361 207 337 222 C316 235 316 258 335 272" />
-            <path d="M298 160 C316 182 306 208 282 219 C252 233 253 264 277 277" />
-            <path d="M211 202 C244 195 263 214 258 239 C254 260 234 272 210 267" />
-            <path d="M158 282 C188 270 213 287 212 315 C211 341 192 354 163 350" />
-            <path d="M151 377 C179 360 207 373 214 399 C220 422 204 444 180 448" />
-            <path d="M184 463 C211 442 242 452 250 478 C258 502 243 519 222 524" />
-            <path d="M255 524 C267 494 298 486 320 502 C341 517 339 541 322 554" />
-            <path d="M458 161 C441 185 448 213 472 224 C498 236 500 264 479 279" />
-            <path d="M549 203 C520 198 499 218 504 244 C508 265 530 278 553 269" />
-            <path d="M600 291 C569 276 543 291 543 318 C543 343 565 360 594 353" />
-            <path d="M601 389 C572 371 544 382 536 408 C529 431 546 453 569 459" />
-            <path d="M567 474 C543 451 510 458 501 485 C494 509 510 529 532 536" />
-            <path d="M486 532 C474 501 445 490 421 505 C401 518 399 542 412 554" />
-            <path d="M270 308 C291 287 322 287 343 306" />
-            <path d="M457 305 C478 287 510 289 529 310" />
-            <path d="M282 397 C310 420 344 419 365 397" />
-            <path d="M438 397 C460 420 495 419 520 395" />
+      <g class="nomad-ibex__mountains nomad-ibex__mountains--mid" data-ibex-layer="mid">
+        <path class="nomad-ibex__mountain-shape nomad-ibex__mountain-shape--mid" d="M0 624L86 551L161 590L249 474L325 570L407 448L493 575L582 472L664 559L742 484L800 523V800H0Z" />
+        <g class="nomad-ibex__contours" clip-path="url(#nomad-ibex-mid-mountain-clip)">
+          <path d="M-20 573C82 527 154 554 245 510C337 466 401 482 482 523C562 563 661 508 823 524" />
+          <path d="M-15 601C89 555 170 582 258 539C350 494 416 516 495 553C581 593 680 541 823 557" />
+          <path d="M-18 630C96 582 177 615 271 568C364 522 428 548 510 584C596 622 690 573 821 589" />
+          <path d="M-18 661C102 613 190 647 285 600C378 554 445 581 525 616C612 653 706 608 823 621" />
+        </g>
+      </g>
+
+      <g class="nomad-ibex__network nomad-ibex__network--mountain" aria-hidden="true">
+        <g class="nomad-ibex__network-common">
+          <path d="M91 552L165 588L249 475L324 569L407 449L493 575L583 473L665 558L742 485" />
+          <path d="M91 552L249 475L407 449L583 473L742 485" />
+          <path d="M165 588L324 569L493 575L665 558" />
+        </g>
+        <g class="nomad-ibex__network-phase" data-ibex-phase="0">
+          <path d="M91 552L324 569L583 473L742 485" />
+          <path d="M249 475L493 575L665 558" />
+        </g>
+        <g class="nomad-ibex__network-phase" data-ibex-phase="1">
+          <path d="M165 588L407 449L665 558" />
+          <path d="M91 552L249 475L583 473L742 485" />
+        </g>
+        <g class="nomad-ibex__network-phase" data-ibex-phase="2">
+          <path d="M91 552L407 449L742 485" />
+          <path d="M165 588L493 575L583 473" />
+          <path d="M249 475L324 569L665 558" />
+        </g>
+        <g class="nomad-ibex__nodes">
+          <g class="nomad-ibex__node" transform="translate(91 552)"><circle r="10"/><circle r="3"/></g>
+          <g class="nomad-ibex__node" transform="translate(165 588)"><circle r="7"/><circle r="2"/></g>
+          <g class="nomad-ibex__node" transform="translate(249 475)"><circle r="9"/><circle r="2.5"/></g>
+          <g class="nomad-ibex__node" transform="translate(324 569)"><circle r="7"/><circle r="2"/></g>
+          <g class="nomad-ibex__node" transform="translate(407 449)"><circle r="11"/><circle r="3"/></g>
+          <g class="nomad-ibex__node" transform="translate(493 575)"><circle r="7"/><circle r="2"/></g>
+          <g class="nomad-ibex__node" transform="translate(583 473)"><circle r="10"/><circle r="3"/></g>
+          <g class="nomad-ibex__node" transform="translate(665 558)"><circle r="7"/><circle r="2"/></g>
+          <g class="nomad-ibex__node" transform="translate(742 485)"><circle r="9"/><circle r="2.5"/></g>
+        </g>
+      </g>
+
+      <g class="nomad-ibex__mountains nomad-ibex__mountains--near" data-ibex-layer="near">
+        <path class="nomad-ibex__mountain-shape nomad-ibex__mountain-shape--near" d="M0 697L92 629L179 670L267 566L342 645L427 542L512 664L603 575L688 646L760 591L800 620V800H0Z" />
+        <g class="nomad-ibex__contours nomad-ibex__contours--near" clip-path="url(#nomad-ibex-near-mountain-clip)">
+          <path d="M-15 649C88 608 177 638 267 598C357 558 427 579 515 617C601 655 698 611 819 627" />
+          <path d="M-17 679C96 638 184 672 280 630C373 589 444 612 529 649C617 687 710 645 821 659" />
+          <path d="M-20 709C105 669 199 704 294 662C389 620 459 647 546 681C635 717 725 679 823 691" />
+          <path d="M-18 741C115 701 210 737 310 695C406 654 477 681 562 716C652 751 740 716 822 725" />
+        </g>
+      </g>
+
+      <g class="nomad-ibex__rock" data-ibex-layer="rock">
+        <path class="nomad-ibex__rock-shape" d="M205 800L225 704L278 655L326 677L373 610L418 642L466 579L516 627L557 603L604 682L655 718L705 800Z" />
+        <g class="nomad-ibex__rock-network">
+          <path d="M235 704L279 655L326 677L373 610L418 642L466 579L516 627L557 603L604 682L655 718" />
+          <path d="M279 655L373 610L466 579L557 603L655 718" />
+          <path d="M235 704L326 677L418 642L516 627L604 682" />
+          <path d="M326 677L373 610L516 627L655 718" />
+          <g class="nomad-ibex__nodes nomad-ibex__nodes--rock">
+            <g class="nomad-ibex__node" transform="translate(235 704)"><rect x="-7" y="-7" width="14" height="14"/><circle r="2.5"/></g>
+            <g class="nomad-ibex__node" transform="translate(279 655)"><circle r="8"/><circle r="2.5"/></g>
+            <g class="nomad-ibex__node" transform="translate(326 677)"><rect x="-6" y="-6" width="12" height="12"/><circle r="2"/></g>
+            <g class="nomad-ibex__node" transform="translate(373 610)"><circle r="9"/><circle r="3"/></g>
+            <g class="nomad-ibex__node" transform="translate(418 642)"><rect x="-7" y="-7" width="14" height="14"/><circle r="2.5"/></g>
+            <g class="nomad-ibex__node" transform="translate(466 579)"><circle r="10"/><circle r="3"/></g>
+            <g class="nomad-ibex__node" transform="translate(516 627)"><rect x="-6" y="-6" width="12" height="12"/><circle r="2"/></g>
+            <g class="nomad-ibex__node" transform="translate(557 603)"><circle r="8"/><circle r="2.5"/></g>
+            <g class="nomad-ibex__node" transform="translate(604 682)"><rect x="-7" y="-7" width="14" height="14"/><circle r="2.5"/></g>
+            <g class="nomad-ibex__node" transform="translate(655 718)"><circle r="8"/><circle r="2.5"/></g>
+          </g>
+        </g>
+      </g>
+
+      <g class="nomad-ibex__animal" data-ibex-layer="animal">
+        <g class="nomad-ibex__animal-art" transform="translate(190 55) scale(1.1)">
+          <path class="nomad-ibex__silhouette" fill-rule="evenodd" d="M144 43L143 48L127 52L122 58L114 58L114 63L105 71L93 71L93 83L83 84L83 95L72 96L72 117L63 118L63 141L57 142L57 168L62 169L61 173L57 173L57 183L59 187L59 193L64 212L61 219L61 228L42 264L42 272L50 283L58 285L60 292L66 301L67 308L69 307L75 296L74 277L78 273L87 269L91 269L96 277L109 324L108 342L110 351L114 361L118 366L131 377L138 409L137 421L134 422L138 423L138 426L142 434L141 466L139 469L133 469L132 466L128 464L129 483L134 484L134 489L130 491L130 498L145 501L154 478L154 472L156 468L154 450L154 434L157 425L156 400L157 393L160 392L169 397L170 422L168 429L170 431L176 464L174 512L190 516L197 499L193 494L182 489L182 485L185 481L183 470L183 449L188 436L188 424L192 411L194 408L196 408L217 420L229 424L233 444L255 448L262 469L261 479L265 483L269 491L269 502L261 520L274 527L280 516L290 484L290 479L282 468L279 461L278 451L281 450L293 466L295 454L299 453L301 455L308 482L320 497L324 505L323 509L327 510L333 535L334 547L331 558L315 558L315 568L334 573L344 528L344 522L341 508L340 483L331 474L324 464L324 462L326 461L324 461L322 458L320 442L315 442L313 440L315 434L321 433L322 421L324 418L326 418L327 420L329 412L328 393L323 385L317 369L312 364L311 359L294 339L277 331L270 332L267 326L258 321L253 321L249 315L235 305L233 305L230 287L225 287L224 284L206 265L202 265L201 262L194 260L192 257L182 256L181 251L177 253L171 250L163 249L162 245L132 218L132 216L140 208L143 199L133 199L122 203L119 202L119 198L124 184L126 182L126 179L128 176L132 176L132 166L142 164L142 152L150 152L152 141L158 140L159 134L168 134L168 130L170 128L177 128L178 120L194 120L195 113L214 113L215 107L244 106L245 109L253 110L265 116L269 116L270 121L279 123L280 128L285 128L286 134L290 134L292 136L292 140L295 142L295 144L299 146L299 151L303 152L303 159L306 161L306 166L309 172L310 194L308 208L304 220L297 230L298 231L303 225L304 220L308 218L313 208L313 202L316 199L317 192L319 191L319 154L315 153L315 142L309 141L309 130L305 130L304 126L299 125L299 113L287 111L287 101L275 101L274 92L261 92L260 84L242 84L240 79L231 80L230 70L223 70L224 60L219 61L218 63L214 62L214 51L197 50L196 52L194 52L194 41L184 41L183 43L180 43L178 40L160 41L159 45L153 45L152 43ZM217 75L216 81L196 80L195 85L179 84L179 89L172 92L171 96L157 96L154 102L150 102L149 108L136 108L136 117L131 118L129 121L125 121L123 123L123 129L117 132L114 137L114 141L108 142L107 152L101 154L100 165L96 166L92 178L88 178L88 165L92 164L92 152L95 151L95 141L98 140L99 129L106 128L106 117L111 116L111 107L118 106L119 96L127 94L127 91L132 89L133 83L142 83L142 79L147 78L148 74L158 73L159 68L170 67L171 61L174 62L174 65L195 65L200 68L209 68L211 72Z" />
+
+          <g class="nomad-ibex__horn-circuit">
+            <path d="M60 215C48 121 112 60 199 48C270 39 324 91 318 164" />
+            <path d="M84 216C77 139 139 91 218 91C277 91 318 126 311 190" />
+            <path d="M69 159L92 123L125 114L147 77L183 78L207 53L242 61L266 91L296 104" />
+            <path d="M86 193L116 169L147 177L176 142L210 153L239 123L274 138L307 157" />
+            <g class="nomad-ibex__nodes nomad-ibex__nodes--horn">
+              <g class="nomad-ibex__node" transform="translate(69 159)"><circle r="7"/><circle r="2.2"/></g>
+              <g class="nomad-ibex__node" transform="translate(92 123)"><circle r="5"/><circle r="1.7"/></g>
+              <g class="nomad-ibex__node" transform="translate(125 114)"><circle r="7"/><circle r="2.2"/></g>
+              <g class="nomad-ibex__node" transform="translate(147 77)"><circle r="5"/><circle r="1.7"/></g>
+              <g class="nomad-ibex__node" transform="translate(183 78)"><circle r="8"/><circle r="2.5"/></g>
+              <g class="nomad-ibex__node" transform="translate(207 53)"><circle r="5"/><circle r="1.7"/></g>
+              <g class="nomad-ibex__node" transform="translate(242 61)"><circle r="7"/><circle r="2.2"/></g>
+              <g class="nomad-ibex__node" transform="translate(266 91)"><circle r="5"/><circle r="1.7"/></g>
+              <g class="nomad-ibex__node" transform="translate(296 104)"><circle r="7"/><circle r="2.2"/></g>
+              <g class="nomad-ibex__node" transform="translate(116 169)"><circle r="5"/><circle r="1.7"/></g>
+              <g class="nomad-ibex__node" transform="translate(147 177)"><circle r="7"/><circle r="2.2"/></g>
+              <g class="nomad-ibex__node" transform="translate(176 142)"><circle r="5"/><circle r="1.7"/></g>
+              <g class="nomad-ibex__node" transform="translate(210 153)"><circle r="7"/><circle r="2.2"/></g>
+              <g class="nomad-ibex__node" transform="translate(239 123)"><circle r="5"/><circle r="1.7"/></g>
+              <g class="nomad-ibex__node" transform="translate(274 138)"><circle r="7"/><circle r="2.2"/></g>
+              <g class="nomad-ibex__node" transform="translate(307 157)"><circle r="5"/><circle r="1.7"/></g>
+            </g>
           </g>
 
-          <g class="nomad-sentinel__eye" data-sentinel-eye="">
-            <path
-              class="nomad-sentinel__sclera"
-              d="M220 333 C268 275 328 244 400 244 C472 244 532 275 580 333 C531 391 471 418 400 418 C328 418 269 391 220 333 Z"
-            />
-            <path class="nomad-sentinel__lid nomad-sentinel__lid--upper" d="M220 333 C269 274 329 244 400 244 C472 244 531 274 580 333" />
-            <path class="nomad-sentinel__lid nomad-sentinel__lid--lower" d="M220 333 C269 391 329 418 400 418 C471 418 531 391 580 333" />
-
-            <g class="nomad-sentinel__gaze" data-sentinel-gaze="">
-              <circle class="nomad-sentinel__iris-ring" cx="400" cy="333" r="72" />
-              <circle class="nomad-sentinel__iris" cx="400" cy="333" r="61" fill="url(#nomad-sentinel-iris-gradient)" />
-              <g class="nomad-sentinel__iris-rays">
-                {% for index in (0..23) %}
-                  <path d="M400 278 V295" transform="rotate({{ index | times: 15 }} 400 333)" />
-                {% endfor %}
-              </g>
-              <circle class="nomad-sentinel__pupil" cx="400" cy="333" r="27" />
-              <circle class="nomad-sentinel__eye-glint" cx="420" cy="313" r="10" />
-              <circle class="nomad-sentinel__eye-glint nomad-sentinel__eye-glint--small" cx="386" cy="348" r="4" />
+          <g class="nomad-ibex__body-circuit">
+            <path d="M142 230C180 252 216 282 245 315C270 343 295 364 321 384" />
+            <path d="M158 244L181 258L202 281L224 293L245 315L273 335L295 364L321 384" />
+            <g class="nomad-ibex__nodes nomad-ibex__nodes--body">
+              <g class="nomad-ibex__node" transform="translate(158 244)"><rect x="-4" y="-4" width="8" height="8"/><circle r="1.5"/></g>
+              <g class="nomad-ibex__node" transform="translate(181 258)"><circle r="5"/><circle r="1.7"/></g>
+              <g class="nomad-ibex__node" transform="translate(202 281)"><rect x="-4" y="-4" width="8" height="8"/><circle r="1.5"/></g>
+              <g class="nomad-ibex__node" transform="translate(224 293)"><circle r="5"/><circle r="1.7"/></g>
+              <g class="nomad-ibex__node" transform="translate(245 315)"><rect x="-4" y="-4" width="8" height="8"/><circle r="1.5"/></g>
+              <g class="nomad-ibex__node" transform="translate(273 335)"><circle r="5"/><circle r="1.7"/></g>
+              <g class="nomad-ibex__node" transform="translate(295 364)"><rect x="-4" y="-4" width="8" height="8"/><circle r="1.5"/></g>
+              <g class="nomad-ibex__node" transform="translate(321 384)"><circle r="5"/><circle r="1.7"/></g>
             </g>
           </g>
         </g>
       </g>
 
-      <g class="nomad-sentinel__signal-marks" aria-hidden="true">
-        <circle cx="88" cy="583" r="5" />
-        <circle cx="731" cy="219" r="5" />
-        <path d="M135 116 h26 M148 103 v26" />
-        <path d="M645 640 h26 M658 627 v26" />
-        <path d="M704 93 h20 M714 83 v20" />
+      <g class="nomad-ibex__routes" aria-hidden="true">
+        <use href="#nomad-ibex-route-a" class="nomad-ibex__route nomad-ibex__route--a" />
+        <use href="#nomad-ibex-route-b" class="nomad-ibex__route nomad-ibex__route--b" />
+        <use href="#nomad-ibex-route-c" class="nomad-ibex__route nomad-ibex__route--c" />
+        <circle class="nomad-ibex__packet nomad-ibex__packet--a" r="5">
+          <animateMotion dur="7.4s" repeatCount="indefinite"><mpath href="#nomad-ibex-route-a" /></animateMotion>
+        </circle>
+        <circle class="nomad-ibex__packet nomad-ibex__packet--b" r="4">
+          <animateMotion dur="5.8s" begin="-2.1s" repeatCount="indefinite"><mpath href="#nomad-ibex-route-b" /></animateMotion>
+        </circle>
+        <circle class="nomad-ibex__packet nomad-ibex__packet--c" r="4.5">
+          <animateMotion dur="8.6s" begin="-4.2s" repeatCount="indefinite"><mpath href="#nomad-ibex-route-c" /></animateMotion>
+        </circle>
       </g>
-    </g>
 
-    <rect class="nomad-sentinel__frame" x="18" y="18" width="764" height="764" rx="30" />
+      <g class="nomad-ibex__foreground-waves" data-ibex-layer="foreground">
+        <path d="M-30 724C82 681 156 702 250 736C349 772 433 768 532 725C632 681 709 686 832 724" />
+        <path d="M-30 746C78 707 158 727 253 758C350 791 439 787 536 748C636 708 721 712 832 746" />
+        <path d="M-30 770C72 735 161 751 258 780C356 810 449 807 544 772C647 734 734 738 832 770" />
+      </g>
+
+      <g class="nomad-ibex__calibration-marks">
+        <path d="M34 67V34H67M733 34H766V67M34 733V766H67M733 766H766V733" />
+        <path d="M400 18v18M400 764v18M18 400h18M764 400h18" />
+      </g>
+
+      <rect class="nomad-ibex__frame" x="14" y="14" width="772" height="772" rx="26" />
+      <rect class="nomad-ibex__scanline" x="14" y="-60" width="772" height="54" />
+    </g>
   </svg>
 </div>

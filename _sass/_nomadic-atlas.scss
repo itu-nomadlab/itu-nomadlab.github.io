@@ -1,657 +1,663 @@
 /* --------------------------------------------------------------------------
- * Nomad sentinel — inline SVG brain/eye emblem for the home hero.
- * No raster image is used: every shape is drawn by SVG and animated by CSS/JS.
+ * Nomad Ibex — a code-rendered Anatolian mountain-goat silhouette.
+ * Everything in the hero artwork is inline SVG, CSS and JavaScript.
+ * No raster image is loaded by the component.
  * -------------------------------------------------------------------------- */
 
 .lab-hero__map--nomadic {
-  padding: clamp(0.85rem, 2.4vw, 2rem);
+  overflow: hidden;
+  padding: clamp(0.65rem, 1.7vw, 1.35rem);
   background:
-    radial-gradient(circle at 50% 38%, color-mix(in srgb, var(--lab-accent) 12%, transparent), transparent 47%),
-    color-mix(in srgb, var(--lab-ink) 2.5%, transparent);
+    radial-gradient(circle at 55% 35%, rgba(239, 106, 71, 0.09), transparent 42%),
+    #0b121b;
 }
 
 .nomadic-atlas,
-.nomad-sentinel {
-  --sentinel-paper: #f8f1e7;
-  --sentinel-paper-strong: #fffaf1;
-  --sentinel-ink: #172035;
-  --sentinel-ink-soft: rgba(23, 32, 53, 0.25);
-  --sentinel-ink-faint: rgba(23, 32, 53, 0.09);
-  --sentinel-brain: #f49d9b;
-  --sentinel-brain-light: #ffc1b8;
-  --sentinel-brain-dark: #e87d79;
-  --sentinel-sclera: #fff9ed;
-  --sentinel-iris: #829daa;
-  --sentinel-iris-light: #b9ccd2;
-  --sentinel-iris-dark: #5f7b8b;
-  --sentinel-accent: #ef6a47;
-  --sentinel-map: #dce5e3;
-  --sentinel-map-strong: #c7d5d5;
+.nomad-ibex {
+  --ibex-bg: #0b121b;
+  --ibex-bg-soft: #101a25;
+  --ibex-paper: #f3eddf;
+  --ibex-paper-soft: #d9d1c1;
+  --ibex-goat: #05090f;
+  --ibex-goat-edge: #111a24;
+  --ibex-far: #61727d;
+  --ibex-mid: #334752;
+  --ibex-near: #172733;
+  --ibex-rock: #0a1119;
+  --ibex-grid: rgba(225, 235, 238, 0.08);
+  --ibex-line: rgba(238, 235, 224, 0.63);
+  --ibex-line-soft: rgba(238, 235, 224, 0.26);
+  --ibex-node: #efe9db;
+  --ibex-accent: #ef6a47;
+  --ibex-cyan: #75bddf;
+  --ibex-shadow: rgba(0, 0, 0, 0.44);
+
+  --ibex-sky-x: 0px;
+  --ibex-sky-y: 0px;
+  --ibex-far-x: 0px;
+  --ibex-far-y: 0px;
+  --ibex-mid-x: 0px;
+  --ibex-mid-y: 0px;
+  --ibex-near-x: 0px;
+  --ibex-near-y: 0px;
+  --ibex-rock-x: 0px;
+  --ibex-rock-y: 0px;
+  --ibex-animal-x: 0px;
+  --ibex-animal-y: 0px;
+  --ibex-foreground-x: 0px;
+  --ibex-foreground-y: 0px;
 
   position: relative;
-  width: min(100%, 535px);
+  width: min(100%, 570px);
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  color: var(--sentinel-ink);
-  background: var(--sentinel-paper);
-  border: 1px solid color-mix(in srgb, var(--sentinel-ink) 22%, transparent);
-  border-radius: 28px;
+  color: var(--ibex-paper);
+  background: var(--ibex-bg);
+  border: 1px solid rgba(239, 234, 222, 0.22);
+  border-radius: 24px;
   box-shadow:
-    0 24px 58px rgba(45, 31, 24, 0.12),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    0 28px 68px rgba(0, 0, 0, 0.31),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.025);
   isolation: isolate;
 }
 
-.nomad-sentinel::after {
+.nomad-ibex::before,
+.nomad-ibex::after {
   content: "";
   position: absolute;
+  z-index: 3;
   inset: 0;
-  z-index: 2;
   pointer-events: none;
+}
+
+.nomad-ibex::before {
   background:
-    linear-gradient(118deg, rgba(255, 255, 255, 0.22), transparent 30%),
-    radial-gradient(circle at center, transparent 56%, rgba(23, 32, 53, 0.08) 100%);
+    radial-gradient(circle at 52% 34%, transparent 18%, rgba(6, 10, 16, 0.08) 55%, rgba(3, 6, 11, 0.48) 100%),
+    linear-gradient(122deg, rgba(255, 255, 255, 0.035), transparent 36%);
+}
+
+.nomad-ibex::after {
+  opacity: 0.22;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.24'/%3E%3C/svg%3E");
   mix-blend-mode: soft-light;
 }
 
-.nomad-sentinel__svg {
+.nomad-ibex__svg {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.nomad-sentinel__field {
-  fill: var(--sentinel-paper);
+.nomad-ibex__field {
+  fill: var(--ibex-bg);
 }
 
-.nomad-sentinel__grid {
+.nomad-ibex__grid {
+  opacity: 0.82;
+}
+
+.nomad-ibex__grid-line {
+  stroke: var(--ibex-grid);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-ibex__haze-stop--top {
+  stop-color: var(--ibex-bg-soft);
+  stop-opacity: 0.08;
+}
+
+.nomad-ibex__haze-stop--bottom {
+  stop-color: #02050a;
+  stop-opacity: 0.68;
+}
+
+.nomad-ibex__haze {
+  pointer-events: none;
+}
+
+.nomad-ibex__moon-stop--inner {
+  stop-color: #fffaf0;
+}
+
+.nomad-ibex__moon-stop--outer {
+  stop-color: var(--ibex-paper-soft);
+}
+
+.nomad-ibex__moon-halo {
+  fill: color-mix(in srgb, var(--ibex-paper) 10%, transparent);
+  stroke: color-mix(in srgb, var(--ibex-paper) 12%, transparent);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-ibex__moon {
+  stroke: color-mix(in srgb, var(--ibex-paper) 52%, transparent);
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-ibex__moon-ring {
+  fill: none;
+  stroke: var(--ibex-line-soft);
+  stroke-width: 1.15;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-ibex__moon-ring--outer {
+  stroke-dasharray: 3 8;
+}
+
+.nomad-ibex__moon-ring--inner {
+  opacity: 0.4;
+}
+
+.nomad-ibex__sky,
+.nomad-ibex__mountains,
+.nomad-ibex__rock,
+.nomad-ibex__animal,
+.nomad-ibex__foreground-waves {
+  transform-box: view-box;
+  transition: transform 650ms cubic-bezier(0.2, 0.7, 0.18, 1);
+}
+
+.nomad-ibex__sky {
+  transform: translate(var(--ibex-sky-x), var(--ibex-sky-y));
+}
+
+.nomad-ibex__mountains--far {
+  transform: translate(var(--ibex-far-x), var(--ibex-far-y));
+}
+
+.nomad-ibex__mountains--mid {
+  transform: translate(var(--ibex-mid-x), var(--ibex-mid-y));
+}
+
+.nomad-ibex__mountains--near {
+  transform: translate(var(--ibex-near-x), var(--ibex-near-y));
+}
+
+.nomad-ibex__rock {
+  transform: translate(var(--ibex-rock-x), var(--ibex-rock-y));
+}
+
+.nomad-ibex__animal {
+  transform: translate(var(--ibex-animal-x), var(--ibex-animal-y));
+  transform-origin: 470px 510px;
+}
+
+.nomad-ibex__foreground-waves {
+  transform: translate(var(--ibex-foreground-x), var(--ibex-foreground-y));
+}
+
+.nomad-ibex__stars circle,
+.nomad-ibex__stars path {
+  fill: var(--ibex-paper);
+}
+
+.nomad-ibex__stars path:last-child {
+  fill: var(--ibex-accent);
+}
+
+.nomad-ibex__telemetry path,
+.nomad-ibex__telemetry circle,
+.nomad-ibex__calibration-marks path {
+  fill: none;
+  stroke: var(--ibex-line-soft);
+  stroke-width: 1.25;
+  stroke-linecap: square;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-ibex__telemetry circle {
+  fill: var(--ibex-paper);
+  stroke: none;
+}
+
+.nomad-ibex__mountain-shape {
+  stroke: color-mix(in srgb, var(--ibex-paper) 28%, transparent);
+  stroke-width: 1.3;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-ibex__mountain-shape--far {
+  fill: var(--ibex-far);
+  opacity: 0.92;
+}
+
+.nomad-ibex__mountain-shape--mid {
+  fill: var(--ibex-mid);
+  opacity: 0.98;
+}
+
+.nomad-ibex__mountain-shape--near {
+  fill: var(--ibex-near);
+}
+
+.nomad-ibex__contours path,
+.nomad-ibex__foreground-waves path {
+  fill: none;
+  stroke: color-mix(in srgb, var(--ibex-paper) 52%, transparent);
+  stroke-width: 1.15;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-ibex__contours--near path {
+  stroke: color-mix(in srgb, var(--ibex-paper) 34%, transparent);
+}
+
+.nomad-ibex__foreground-waves path {
+  stroke: color-mix(in srgb, var(--ibex-cyan) 35%, transparent);
+  stroke-width: 1.4;
+}
+
+.nomad-ibex__network path,
+.nomad-ibex__rock-network > path,
+.nomad-ibex__horn-circuit > path,
+.nomad-ibex__body-circuit > path {
+  fill: none;
+  stroke: var(--ibex-line);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-ibex__network-common {
+  opacity: 0.46;
+}
+
+.nomad-ibex__network-phase {
+  opacity: 0;
+  transition: opacity 70ms step-end;
+}
+
+.nomad-ibex[data-phase="0"] [data-ibex-phase="0"],
+.nomad-ibex[data-phase="1"] [data-ibex-phase="1"],
+.nomad-ibex[data-phase="2"] [data-ibex-phase="2"] {
   opacity: 0.72;
 }
 
-.nomad-sentinel__grid-line {
-  stroke: var(--sentinel-ink-faint);
-  stroke-width: 1;
+.nomad-ibex.is-shifting .nomad-ibex__network-phase {
+  opacity: 0;
+}
+
+.nomad-ibex__node > circle:first-child,
+.nomad-ibex__node > rect:first-child {
+  fill: var(--ibex-node);
+  stroke: var(--ibex-bg);
+  stroke-width: 2.5;
   vector-effect: non-scaling-stroke;
+  transition: fill 80ms step-end, filter 80ms step-end, opacity 80ms step-end;
 }
 
-.nomad-sentinel__globe-stop--inner {
-  stop-color: var(--sentinel-map);
-  stop-opacity: 0.74;
+.nomad-ibex__node > circle:last-child {
+  fill: var(--ibex-bg);
+  stroke: none;
 }
 
-.nomad-sentinel__globe-stop--outer {
-  stop-color: var(--sentinel-map-strong);
-  stop-opacity: 0.28;
+.nomad-ibex__node:nth-child(3n + 1) > circle:first-child,
+.nomad-ibex__node:nth-child(3n + 1) > rect:first-child {
+  fill: var(--ibex-accent);
 }
 
-.nomad-sentinel__brain-stop--light {
-  stop-color: var(--sentinel-brain-light);
+.nomad-ibex__node:nth-child(4n + 2) > circle:first-child,
+.nomad-ibex__node:nth-child(4n + 2) > rect:first-child {
+  fill: var(--ibex-cyan);
 }
 
-.nomad-sentinel__brain-stop--dark {
-  stop-color: var(--sentinel-brain-dark);
+.nomad-ibex__node.is-signaling > circle:first-child,
+.nomad-ibex__node.is-signaling > rect:first-child {
+  fill: var(--ibex-paper);
+  filter: url(#nomad-ibex-node-glow);
 }
 
-.nomad-sentinel__iris-stop--light {
-  stop-color: var(--sentinel-iris-light);
-}
-
-.nomad-sentinel__iris-stop--dark {
-  stop-color: var(--sentinel-iris-dark);
-}
-
-.nomad-sentinel__globe {
-  stroke: color-mix(in srgb, var(--sentinel-ink) 24%, transparent);
+.nomad-ibex__rock-shape {
+  fill: var(--ibex-rock);
+  stroke: color-mix(in srgb, var(--ibex-paper) 38%, transparent);
   stroke-width: 1.5;
+  stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
 }
 
-.nomad-sentinel__latitude,
-.nomad-sentinel__longitude {
+.nomad-ibex__rock-network {
+  opacity: 0.77;
+}
+
+.nomad-ibex__silhouette {
+  fill: var(--ibex-goat);
+  stroke: var(--ibex-goat-edge);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.nomad-ibex__animal-art {
+  transform-origin: 200px 300px;
+}
+
+.nomad-ibex__animal {
+  filter: drop-shadow(12px 16px 11px var(--ibex-shadow));
+  animation: nomad-ibex-breathe 6.8s ease-in-out infinite;
+}
+
+.nomad-ibex__horn-circuit {
+  opacity: 0.92;
+}
+
+.nomad-ibex__horn-circuit > path:nth-child(odd),
+.nomad-ibex__body-circuit > path:nth-child(odd) {
+  stroke: var(--ibex-cyan);
+}
+
+.nomad-ibex__horn-circuit > path:nth-child(even),
+.nomad-ibex__body-circuit > path:nth-child(even) {
+  stroke: var(--ibex-accent);
+}
+
+.nomad-ibex__nodes--horn .nomad-ibex__node > circle:first-child {
+  stroke: var(--ibex-goat);
+}
+
+.nomad-ibex__body-circuit > path {
   fill: none;
-  stroke: color-mix(in srgb, var(--sentinel-ink) 18%, transparent);
-  stroke-width: 1.15;
-  stroke-dasharray: 4 8;
+  stroke: var(--ibex-line);
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
 }
 
-.nomad-sentinel__map-mark {
-  fill: color-mix(in srgb, var(--sentinel-ink) 7%, transparent);
-  stroke: color-mix(in srgb, var(--sentinel-ink) 10%, transparent);
-  stroke-width: 1;
-  vector-effect: non-scaling-stroke;
+.nomad-ibex__nodes--body {
+  opacity: 0.94;
 }
 
-.nomad-sentinel__orbits {
-  transform-origin: 400px 351px;
-  transform-box: view-box;
-}
-
-.nomad-sentinel__orbits--slow {
-  animation: nomad-sentinel-orbit 28s linear infinite;
-}
-
-.nomad-sentinel__orbits--fast {
-  animation: nomad-sentinel-orbit-reverse 21s linear infinite;
-}
-
-.nomad-sentinel__orbit {
-  fill: none;
-  stroke: var(--sentinel-ink);
-  stroke-width: 2.4;
+.nomad-ibex__routes {
   opacity: 0.8;
-  vector-effect: non-scaling-stroke;
 }
 
-.nomad-sentinel__orbit--dashed {
-  stroke: var(--sentinel-accent);
-  stroke-width: 2.1;
-  stroke-dasharray: 6 10;
-  opacity: 0.85;
-}
-
-.nomad-sentinel__planet {
-  stroke: var(--sentinel-ink);
-  stroke-width: 3;
-  vector-effect: non-scaling-stroke;
-}
-
-.nomad-sentinel__planet--coral { fill: var(--sentinel-accent); }
-.nomad-sentinel__planet--ink { fill: var(--sentinel-ink); }
-.nomad-sentinel__planet--paper { fill: var(--sentinel-paper-strong); }
-.nomad-sentinel__planet--small { fill: var(--sentinel-iris); }
-
-.nomad-sentinel__axis path,
-.nomad-sentinel__axis circle,
-.nomad-sentinel__compass-line {
+.nomad-ibex__route {
   fill: none;
-  stroke: color-mix(in srgb, var(--sentinel-ink) 55%, transparent);
-  stroke-width: 1.2;
-  stroke-dasharray: 5 8;
-  vector-effect: non-scaling-stroke;
-}
-
-.nomad-sentinel__axis circle {
-  fill: var(--sentinel-ink);
-  stroke: none;
-}
-
-.nomad-sentinel__compass-arrow {
-  fill: var(--sentinel-accent);
-  stroke: var(--sentinel-ink);
-  stroke-width: 3.2;
-  stroke-linejoin: round;
-  vector-effect: non-scaling-stroke;
-}
-
-.nomad-sentinel__compass-star,
-.nomad-sentinel__stars path,
-.nomad-sentinel__stars circle {
-  fill: var(--sentinel-ink);
-  stroke: none;
-}
-
-.nomad-sentinel__stars path:nth-child(2),
-.nomad-sentinel__stars path:nth-child(3) {
-  fill: var(--sentinel-accent);
-}
-
-.nomad-sentinel__organism {
-  transform-origin: 400px 390px;
-  transform-box: view-box;
-  animation: nomad-sentinel-float 5.8s ease-in-out infinite;
-  transition: filter 180ms ease, transform 180ms ease;
-}
-
-.nomad-sentinel__brain {
-  transform-origin: 400px 350px;
-  transform-box: view-box;
-  animation: nomad-sentinel-breathe 5.1s ease-in-out infinite;
-}
-
-.nomad-sentinel__brain-shadow {
-  fill: color-mix(in srgb, var(--sentinel-ink) 18%, transparent);
-  stroke: none;
-  transform: translate(8px, 10px);
-  opacity: 0.42;
-}
-
-.nomad-sentinel__brain-shape {
-  fill: url(#nomad-sentinel-brain-gradient);
-  stroke: var(--sentinel-ink);
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  vector-effect: non-scaling-stroke;
-}
-
-.nomad-sentinel__folds path {
-  fill: none;
-  stroke: color-mix(in srgb, var(--sentinel-ink) 80%, transparent);
-  stroke-width: 2.25;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  opacity: 0.88;
-  vector-effect: non-scaling-stroke;
-}
-
-.nomad-sentinel__eye {
-  transform-origin: 400px 333px;
-  transform-box: view-box;
-  transition: transform 90ms ease-in;
-}
-
-.nomad-sentinel.is-blinking .nomad-sentinel__eye {
-  transform: scaleY(0.055);
-}
-
-.nomad-sentinel__sclera {
-  fill: var(--sentinel-sclera);
-  stroke: var(--sentinel-ink);
-  stroke-width: 5;
-  stroke-linejoin: round;
-  vector-effect: non-scaling-stroke;
-}
-
-.nomad-sentinel__lid {
-  fill: none;
-  stroke: var(--sentinel-ink);
-  stroke-width: 3.2;
-  stroke-linecap: round;
-  vector-effect: non-scaling-stroke;
-}
-
-.nomad-sentinel__gaze {
-  transition: transform 130ms cubic-bezier(0.2, 0.75, 0.25, 1);
-}
-
-.nomad-sentinel__iris-ring {
-  fill: color-mix(in srgb, var(--sentinel-ink) 10%, transparent);
-  stroke: var(--sentinel-ink);
-  stroke-width: 3.3;
-  vector-effect: non-scaling-stroke;
-}
-
-.nomad-sentinel__iris {
-  stroke: var(--sentinel-ink);
-  stroke-width: 2.2;
-  vector-effect: non-scaling-stroke;
-}
-
-.nomad-sentinel__iris-rays path {
-  stroke: color-mix(in srgb, var(--sentinel-ink) 72%, transparent);
-  stroke-width: 2;
-  stroke-linecap: round;
-  vector-effect: non-scaling-stroke;
-}
-
-.nomad-sentinel__pupil {
-  fill: var(--sentinel-ink);
-}
-
-.nomad-sentinel__eye-glint {
-  fill: var(--sentinel-paper-strong);
-}
-
-.nomad-sentinel__eye-glint--small {
-  opacity: 0.75;
-}
-
-.nomad-sentinel__tendril {
-  transform-box: fill-box;
-  transform-origin: 50% 0%;
-}
-
-.nomad-sentinel__tendril-outline,
-.nomad-sentinel__tendril-fill,
-.nomad-sentinel__branch-outline,
-.nomad-sentinel__branch-fill {
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  vector-effect: non-scaling-stroke;
-}
-
-.nomad-sentinel__tendril-outline {
-  stroke: var(--sentinel-ink);
-  stroke-width: 22;
-}
-
-.nomad-sentinel__tendril-fill {
-  stroke: var(--sentinel-brain);
-  stroke-width: 15;
-}
-
-.nomad-sentinel__branch-outline {
-  stroke: var(--sentinel-ink);
-  stroke-width: 12;
-}
-
-.nomad-sentinel__branch-fill {
-  stroke: var(--sentinel-brain);
-  stroke-width: 7;
-}
-
-.nomad-sentinel__tendril--1,
-.nomad-sentinel__tendril--5 {
-  animation: nomad-sentinel-sway-a 4.9s ease-in-out infinite alternate;
-}
-
-.nomad-sentinel__tendril--2,
-.nomad-sentinel__tendril--6,
-.nomad-sentinel__tendril--branch-right {
-  animation: nomad-sentinel-sway-b 5.6s ease-in-out -1.2s infinite alternate;
-}
-
-.nomad-sentinel__tendril--3,
-.nomad-sentinel__tendril--7,
-.nomad-sentinel__tendril--branch-left {
-  animation: nomad-sentinel-sway-a 6.2s ease-in-out -2.1s infinite alternate-reverse;
-}
-
-.nomad-sentinel__tendril--4,
-.nomad-sentinel__tendril--8 {
-  animation: nomad-sentinel-sway-b 5.2s ease-in-out -0.6s infinite alternate-reverse;
-}
-
-.nomad-sentinel__terminal circle:first-child {
-  fill: var(--sentinel-accent);
-  stroke: var(--sentinel-ink);
-  stroke-width: 3;
-  vector-effect: non-scaling-stroke;
-}
-
-.nomad-sentinel__terminal circle:last-child {
-  fill: var(--sentinel-paper-strong);
-  stroke: none;
-}
-
-.nomad-sentinel__terminal:nth-child(2n) circle:first-child {
-  fill: var(--sentinel-iris);
-}
-
-.nomad-sentinel__terminal.is-signaling circle:first-child {
-  animation: nomad-sentinel-terminal-pulse 720ms ease-out 1;
-  filter: url(#nomad-sentinel-glow);
-}
-
-.nomad-sentinel__signal-marks circle {
-  fill: var(--sentinel-accent);
-}
-
-.nomad-sentinel__signal-marks path {
-  fill: none;
-  stroke: var(--sentinel-ink);
-  stroke-width: 1.4;
-  opacity: 0.65;
-  vector-effect: non-scaling-stroke;
-}
-
-.nomad-sentinel__frame {
-  fill: none;
-  stroke: color-mix(in srgb, var(--sentinel-ink) 25%, transparent);
+  stroke: var(--ibex-line-soft);
   stroke-width: 1.25;
+  stroke-dasharray: 5 10;
+  vector-effect: non-scaling-stroke;
+  animation: nomad-ibex-route-flow 12s linear infinite;
+}
+
+.nomad-ibex__route--b {
+  stroke: color-mix(in srgb, var(--ibex-accent) 70%, transparent);
+  animation-duration: 9s;
+  animation-direction: reverse;
+}
+
+.nomad-ibex__route--c {
+  stroke: color-mix(in srgb, var(--ibex-cyan) 62%, transparent);
+  animation-duration: 14s;
+}
+
+.nomad-ibex__packet {
+  fill: var(--ibex-paper);
+  filter: url(#nomad-ibex-node-glow);
+}
+
+.nomad-ibex__packet--b {
+  fill: var(--ibex-accent);
+}
+
+.nomad-ibex__packet--c {
+  fill: var(--ibex-cyan);
+}
+
+.nomad-ibex__frame {
+  fill: none;
+  stroke: rgba(239, 234, 222, 0.24);
+  stroke-width: 1.2;
   vector-effect: non-scaling-stroke;
 }
 
-.nomad-sentinel.is-recalibrating .nomad-sentinel__organism {
-  animation: nomad-sentinel-recalibrate 360ms steps(4, end) 1;
+.nomad-ibex__scanline {
+  fill: color-mix(in srgb, var(--ibex-paper) 10%, transparent);
+  opacity: 0.22;
+  animation: nomad-ibex-scan 7.2s linear infinite;
 }
 
-/* Dark interface keeps the full-colour emblem, but shifts it into a night map. */
+.nomad-ibex.is-shifting .nomad-ibex__animal {
+  animation: nomad-ibex-shift 270ms steps(3, end) 1;
+}
+
+.nomad-ibex.is-recalibrating .nomad-ibex__svg {
+  animation: nomad-ibex-recalibrate 410ms steps(5, end) 1;
+}
+
+/* Dark theme intentionally keeps the night-atlas treatment. */
 html[data-theme="dark"] .lab-hero__map--nomadic {
-  background: color-mix(in srgb, var(--lab-surface-strong) 88%, transparent);
+  background:
+    radial-gradient(circle at 55% 35%, rgba(255, 128, 96, 0.08), transparent 43%),
+    #070c12;
 }
 
-html[data-theme="dark"] .nomad-sentinel {
-  --sentinel-paper: #161b24;
-  --sentinel-paper-strong: #f7efe4;
-  --sentinel-ink: #f3ecdf;
-  --sentinel-ink-soft: rgba(243, 236, 223, 0.25);
-  --sentinel-ink-faint: rgba(243, 236, 223, 0.08);
-  --sentinel-brain: #ef928e;
-  --sentinel-brain-light: #ffb1a8;
-  --sentinel-brain-dark: #d96e6a;
-  --sentinel-sclera: #fbf2e5;
-  --sentinel-iris: #819ca8;
-  --sentinel-iris-light: #bed0d4;
-  --sentinel-iris-dark: #526e7e;
-  --sentinel-map: #26343c;
-  --sentinel-map-strong: #1e2b33;
-
-  box-shadow:
-    0 28px 64px rgba(0, 0, 0, 0.31),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+html[data-theme="dark"] .nomad-ibex {
+  --ibex-bg: #070c12;
+  --ibex-bg-soft: #0d151e;
+  --ibex-far: #586a76;
+  --ibex-mid: #2c3d48;
+  --ibex-near: #12202a;
+  --ibex-rock: #05090e;
 }
 
-/* Nomad Mode becomes a two-colour edge drawing rather than a raster effect. */
+/* Nomad Mode: the silhouette becomes a two-colour technical edge drawing. */
 html[data-nomad-mode="on"] .lab-hero__map--nomadic {
-  background: color-mix(in srgb, var(--nomad-bg) 88%, transparent);
+  padding: clamp(0.45rem, 1.4vw, 1rem);
+  background: color-mix(in srgb, var(--nomad-bg) 90%, transparent);
 }
 
-html[data-nomad-mode="on"] .nomad-sentinel {
-  --sentinel-paper: var(--nomad-bg);
-  --sentinel-paper-strong: var(--nomad-paper);
-  --sentinel-ink: var(--nomad-ink);
-  --sentinel-ink-soft: color-mix(in srgb, var(--nomad-ink) 44%, transparent);
-  --sentinel-ink-faint: color-mix(in srgb, var(--nomad-ink) 18%, transparent);
-  --sentinel-brain: var(--nomad-bg);
-  --sentinel-brain-light: var(--nomad-bg);
-  --sentinel-brain-dark: var(--nomad-bg);
-  --sentinel-sclera: var(--nomad-paper);
-  --sentinel-iris: var(--nomad-bg);
-  --sentinel-iris-light: var(--nomad-bg);
-  --sentinel-iris-dark: var(--nomad-bg);
-  --sentinel-accent: var(--nomad-ink);
-  --sentinel-map: var(--nomad-bg);
-  --sentinel-map-strong: var(--nomad-bg);
+html[data-nomad-mode="on"] .nomad-ibex {
+  --ibex-bg: var(--nomad-bg);
+  --ibex-bg-soft: var(--nomad-bg);
+  --ibex-paper: var(--nomad-paper);
+  --ibex-paper-soft: var(--nomad-paper);
+  --ibex-goat: var(--nomad-bg);
+  --ibex-goat-edge: var(--nomad-ink);
+  --ibex-far: color-mix(in srgb, var(--nomad-ink) 18%, var(--nomad-bg));
+  --ibex-mid: color-mix(in srgb, var(--nomad-ink) 11%, var(--nomad-bg));
+  --ibex-near: color-mix(in srgb, var(--nomad-ink) 7%, var(--nomad-bg));
+  --ibex-rock: var(--nomad-bg);
+  --ibex-grid: color-mix(in srgb, var(--nomad-ink) 18%, transparent);
+  --ibex-line: var(--nomad-ink);
+  --ibex-line-soft: color-mix(in srgb, var(--nomad-ink) 45%, transparent);
+  --ibex-node: var(--nomad-paper);
+  --ibex-accent: var(--nomad-ink);
+  --ibex-cyan: var(--nomad-ink);
+  --ibex-shadow: transparent;
 
   border: 3px solid var(--nomad-ink);
   border-radius: 0;
   box-shadow: 9px 9px 0 var(--nomad-ink);
 }
 
-html[data-nomad-mode="on"] .nomad-sentinel::after {
+html[data-nomad-mode="on"] .nomad-ibex::before {
   background: repeating-linear-gradient(
     135deg,
-    transparent 0 18px,
-    color-mix(in srgb, var(--nomad-ink) 7%, transparent) 18px 20px
+    transparent 0 19px,
+    color-mix(in srgb, var(--nomad-ink) 7%, transparent) 19px 21px
   );
-  mix-blend-mode: normal;
 }
 
-html[data-nomad-mode="on"] .nomad-sentinel__field,
-html[data-nomad-mode="on"] .nomad-sentinel__grid {
-  rx: 0;
+html[data-nomad-mode="on"] .nomad-ibex::after {
+  display: none;
 }
 
-html[data-nomad-mode="on"] .nomad-sentinel__globe {
-  fill: none;
-  stroke: var(--nomad-ink);
-  stroke-width: 3;
-  opacity: 0.3;
-}
-
-html[data-nomad-mode="on"] .nomad-sentinel__map-mark {
+html[data-nomad-mode="on"] .nomad-ibex__moon-halo {
   fill: none;
   stroke: var(--nomad-ink);
   stroke-width: 2;
-  stroke-dasharray: 4 5;
-  opacity: 0.28;
+  opacity: 0.25;
 }
 
-html[data-nomad-mode="on"] .nomad-sentinel__orbit,
-html[data-nomad-mode="on"] .nomad-sentinel__axis path,
-html[data-nomad-mode="on"] .nomad-sentinel__compass-line,
-html[data-nomad-mode="on"] .nomad-sentinel__signal-marks path {
-  stroke: var(--nomad-ink);
-  stroke-width: 3;
-}
-
-html[data-nomad-mode="on"] .nomad-sentinel__orbit--dashed {
-  stroke-dasharray: 6 6;
-}
-
-html[data-nomad-mode="on"] .nomad-sentinel__organism {
-  filter: url(#nomad-sentinel-rough-edge);
-  animation-timing-function: steps(8, end);
-}
-
-html[data-nomad-mode="on"] .nomad-sentinel__brain-shadow {
-  fill: var(--nomad-ink);
-  opacity: 1;
-  transform: translate(8px, 8px);
-}
-
-html[data-nomad-mode="on"] .nomad-sentinel__brain-shape {
-  fill: var(--nomad-bg);
-  stroke: var(--nomad-ink);
-  stroke-width: 6;
-}
-
-html[data-nomad-mode="on"] .nomad-sentinel__folds path {
-  stroke: var(--nomad-ink);
-  stroke-width: 3.2;
-  opacity: 1;
-}
-
-html[data-nomad-mode="on"] .nomad-sentinel__sclera {
+html[data-nomad-mode="on"] .nomad-ibex__moon {
   fill: var(--nomad-paper);
   stroke: var(--nomad-ink);
-  stroke-width: 6;
+  stroke-width: 3;
 }
 
-html[data-nomad-mode="on"] .nomad-sentinel__lid,
-html[data-nomad-mode="on"] .nomad-sentinel__iris-ring,
-html[data-nomad-mode="on"] .nomad-sentinel__iris {
+html[data-nomad-mode="on"] .nomad-ibex__moon-ring,
+html[data-nomad-mode="on"] .nomad-ibex__telemetry path,
+html[data-nomad-mode="on"] .nomad-ibex__calibration-marks path {
   stroke: var(--nomad-ink);
-  stroke-width: 4;
+  stroke-width: 2.3;
 }
 
-html[data-nomad-mode="on"] .nomad-sentinel__iris-ring,
-html[data-nomad-mode="on"] .nomad-sentinel__iris {
-  fill: var(--nomad-bg);
-}
-
-html[data-nomad-mode="on"] .nomad-sentinel__iris-rays path {
+html[data-nomad-mode="on"] .nomad-ibex__mountain-shape {
   stroke: var(--nomad-ink);
   stroke-width: 3;
 }
 
-html[data-nomad-mode="on"] .nomad-sentinel__pupil {
-  fill: var(--nomad-ink);
-}
-
-html[data-nomad-mode="on"] .nomad-sentinel__tendril-outline,
-html[data-nomad-mode="on"] .nomad-sentinel__branch-outline {
+html[data-nomad-mode="on"] .nomad-ibex__contours path,
+html[data-nomad-mode="on"] .nomad-ibex__foreground-waves path,
+html[data-nomad-mode="on"] .nomad-ibex__network path,
+html[data-nomad-mode="on"] .nomad-ibex__rock-network > path,
+html[data-nomad-mode="on"] .nomad-ibex__horn-circuit > path,
+html[data-nomad-mode="on"] .nomad-ibex__body-circuit > path,
+html[data-nomad-mode="on"] .nomad-ibex__route {
   stroke: var(--nomad-ink);
+  stroke-width: 2.4;
 }
 
-html[data-nomad-mode="on"] .nomad-sentinel__tendril-fill,
-html[data-nomad-mode="on"] .nomad-sentinel__branch-fill {
-  stroke: var(--nomad-bg);
-}
-
-html[data-nomad-mode="on"] .nomad-sentinel__terminal circle:first-child {
+html[data-nomad-mode="on"] .nomad-ibex__rock-shape {
   fill: var(--nomad-bg);
   stroke: var(--nomad-ink);
   stroke-width: 4;
 }
 
-html[data-nomad-mode="on"] .nomad-sentinel__terminal:nth-child(3n) circle:first-child {
-  fill: var(--nomad-ink);
-  stroke: var(--nomad-paper);
+html[data-nomad-mode="on"] .nomad-ibex__animal {
+  filter: url(#nomad-ibex-rough);
+  animation-timing-function: steps(7, end);
 }
 
-html[data-nomad-mode="on"] .nomad-sentinel__terminal circle:last-child {
+html[data-nomad-mode="on"] .nomad-ibex__silhouette {
+  fill: var(--nomad-bg);
+  stroke: var(--nomad-ink);
+  stroke-width: 5;
+}
+
+html[data-nomad-mode="on"] .nomad-ibex__horn-circuit {
+  opacity: 1;
+}
+
+html[data-nomad-mode="on"] .nomad-ibex__node > circle:first-child,
+html[data-nomad-mode="on"] .nomad-ibex__node > rect:first-child {
+  fill: var(--nomad-paper);
+  stroke: var(--nomad-ink);
+  stroke-width: 3;
+}
+
+html[data-nomad-mode="on"] .nomad-ibex__node > circle:last-child {
   fill: var(--nomad-ink);
 }
 
-html[data-nomad-mode="on"] .nomad-sentinel__frame {
+html[data-nomad-mode="on"] .nomad-ibex__node:nth-child(2n) > circle:first-child,
+html[data-nomad-mode="on"] .nomad-ibex__node:nth-child(2n) > rect:first-child {
+  fill: var(--nomad-bg);
+}
+
+html[data-nomad-mode="on"] .nomad-ibex__network-phase {
+  transition: opacity 1ms step-end;
+}
+
+html[data-nomad-mode="on"] .nomad-ibex__scanline {
+  fill: var(--nomad-ink);
+  opacity: 0.12;
+  animation-timing-function: steps(12, end);
+}
+
+html[data-nomad-mode="on"] .nomad-ibex__frame {
   stroke: var(--nomad-ink);
   stroke-width: 3;
   rx: 0;
 }
 
-html[data-nomad-mode="on"] .nomad-sentinel__orbits--slow,
-html[data-nomad-mode="on"] .nomad-sentinel__orbits--fast,
-html[data-nomad-mode="on"] .nomad-sentinel__tendril,
-html[data-nomad-mode="on"] .nomad-sentinel__brain {
-  animation-timing-function: steps(12, end);
+html[data-nomad-mode="on"] .nomad-ibex__route,
+html[data-nomad-mode="on"] .nomad-ibex__animal,
+html[data-nomad-mode="on"] .nomad-ibex__scanline {
+  animation-timing-function: steps(9, end);
 }
 
-@keyframes nomad-sentinel-orbit {
-  to { transform: rotate(360deg); }
+@keyframes nomad-ibex-breathe {
+  0%, 100% { transform: translate(var(--ibex-animal-x), var(--ibex-animal-y)) scale(1); }
+  50% { transform: translate(var(--ibex-animal-x), calc(var(--ibex-animal-y) - 2px)) scale(1.004); }
 }
 
-@keyframes nomad-sentinel-orbit-reverse {
-  to { transform: rotate(-360deg); }
+@keyframes nomad-ibex-route-flow {
+  to { stroke-dashoffset: -120; }
 }
 
-@keyframes nomad-sentinel-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-7px); }
+@keyframes nomad-ibex-scan {
+  0% { transform: translateY(-60px); }
+  65%, 100% { transform: translateY(900px); }
 }
 
-@keyframes nomad-sentinel-breathe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.012); }
+@keyframes nomad-ibex-shift {
+  0% { transform: translate(var(--ibex-animal-x), var(--ibex-animal-y)); }
+  33% { transform: translate(calc(var(--ibex-animal-x) - 3px), calc(var(--ibex-animal-y) + 1px)); }
+  66% { transform: translate(calc(var(--ibex-animal-x) + 2px), calc(var(--ibex-animal-y) - 1px)); }
+  100% { transform: translate(var(--ibex-animal-x), var(--ibex-animal-y)); }
 }
 
-@keyframes nomad-sentinel-sway-a {
-  from { transform: rotate(-1.6deg) translateX(-1px); }
-  to { transform: rotate(1.9deg) translateX(2px); }
-}
-
-@keyframes nomad-sentinel-sway-b {
-  from { transform: rotate(1.7deg) translateX(1px); }
-  to { transform: rotate(-1.9deg) translateX(-2px); }
-}
-
-@keyframes nomad-sentinel-terminal-pulse {
-  0% { transform: scale(0.82); opacity: 0.8; }
-  52% { transform: scale(1.65); opacity: 0.28; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-@keyframes nomad-sentinel-recalibrate {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(-5px, 1px); }
-  50% { transform: translate(4px, -2px); }
-  75% { transform: translate(-2px, 3px); }
-  100% { transform: translate(0, 0); }
+@keyframes nomad-ibex-recalibrate {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-4px, 1px); }
+  40% { transform: translate(3px, -2px); }
+  60% { transform: translate(-2px, 2px); }
+  80% { transform: translate(2px, 0); }
 }
 
 @media (max-width: 991.98px) {
-  .nomad-sentinel {
-    width: min(100%, 500px);
+  .lab-hero__map--nomadic {
+    min-height: 520px;
+  }
+
+  .nomad-ibex {
+    width: min(100%, 520px);
   }
 }
 
 @media (max-width: 767.98px) {
   .lab-hero__map--nomadic {
-    min-height: 370px;
-    padding: 0.9rem;
+    min-height: 390px;
+    padding: 0.75rem;
   }
 
-  .nomad-sentinel {
-    width: min(100%, 355px);
-    border-radius: 20px;
+  .nomad-ibex {
+    width: min(100%, 390px);
+    border-radius: 18px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nomad-sentinel__orbits,
-  .nomad-sentinel__organism,
-  .nomad-sentinel__brain,
-  .nomad-sentinel__tendril,
-  .nomad-sentinel__terminal.is-signaling circle:first-child {
-    animation: none;
+  .nomad-ibex__animal,
+  .nomad-ibex__route,
+  .nomad-ibex__scanline {
+    animation: none !important;
   }
 
-  .nomad-sentinel__gaze,
-  .nomad-sentinel__eye,
-  .nomad-sentinel__organism {
+  .nomad-ibex__packet {
+    display: none;
+  }
+
+  .nomad-ibex__sky,
+  .nomad-ibex__mountains,
+  .nomad-ibex__rock,
+  .nomad-ibex__animal,
+  .nomad-ibex__foreground-waves {
     transition: none;
   }
+}
+
+.nomad-ibex.is-paused .nomad-ibex__animal,
+.nomad-ibex.is-paused .nomad-ibex__route,
+.nomad-ibex.is-paused .nomad-ibex__scanline {
+  animation-play-state: paused !important;
 }
