@@ -93,7 +93,8 @@ items:
     code_url:
     project_url:
     abstract: >-
-      This work evaluates neonatal diffusion-MRI lesion segmentation under simulated four-fold k-space undersampling and investigates frequency-aware variants of SwinUNETR for robust low-resolution analysis.
+      Accurate segmentation of Hypoxic Ischemic Encephalopathy (HIE) lesions in neonatal diffusion MRI remains challenging due to the small, diffuse nature of the lesions and the constraints of accelerated imaging. Detecting such tiny lesions becomes particularly difficult when MRIs are acquired at very low spatial resolutions. In this study, we address the task of lesion segmentation from low-resolution MR images by simulating realistic clinical conditions through 4-fold equispaced undersampling of Apparent Diffusion Coefficient (ADC) and Z-score ADC (ZADC) volumes from the BONBID-HIE dataset. Paired aliased images are generated via inverse Fourier reconstruction, and three segmentation models are trained under these settings (i) a baseline SwinUNETR, (ii) a DCT-enhanced model incorporating global frequency representations, and (iii) a variant integrating localized (block-based) DCT into early encoder layers. Experimental results demonstrate that lesion segmentation from undersampled images is feasible, and that incorporating frequency-domain priors significantly improves performance. Our findings highlight the advantages of combining transformer-based architectures with frequency-aware augmentation for robust neonatal brain lesion segmentation under limited k-space sampling.
+      
 
   skewfuse:
     id: skewfuse
@@ -112,7 +113,7 @@ items:
     code_url:
     project_url:
     abstract: >-
-      SkewFuse performs unsupervised, query-aware fusion of retrieval rankings by accounting for differences in confidence across multiple visual embedding models.
+      In image retrieval systems, the use of multiple embedding models to capture diverse visual features often improves retrieval performance. However, traditional rank aggregation methods generally assume uniform reliability across retrieval models, neglecting the variability in model confidence across different queries. This paper introduces SkewFuse, an unsupervised rank fusion approach that dynamically weights retrieval results based on statistical skewness of similarity score distributions, effectively capturing query-specific confidence. We extend the Dowdall positional voting method by integrating these confidence weights, achieving adaptive and robust fusion. Evaluations conducted on the In-Shop Clothes Retrieval dataset demonstrate that SkewFuse consistently outperforms existing unsupervised and supervised fusion methods, notably improving early precision metrics, including a 4.7% relative gain in Recall@1 over the strongest baseline. SkewFuse offers an efficient, parameter-light solution ideal for real-world applications where top-ranked retrieval precision is critical.
 
   retrieval-oriented-dimensionality-reduction:
     id: retrieval-oriented-dimensionality-reduction
@@ -132,7 +133,7 @@ items:
     code_url:
     project_url:
     abstract: >-
-      The paper compares linear, nonlinear, and neural dimensionality-reduction strategies for large-scale fashion image retrieval, emphasizing preservation of neighborhood structure and retrieval quality.
+      Large-scale fashion image retrieval relies on high-dimensional embeddings that improve accuracy but introduce significant computational and storage costs. Dimensionality reduction offers a solution, yet many methods degrade retrieval quality by failing to preserve neighborhood structure. We evaluate linear, nonlinear, and neural approaches across state-of-the-art backbones on the DeepFashion In-Shop dataset, finding PCA to be a strong baseline while naive autoencoders perform poorly. To address this, we propose the MCDO Loss, a hybrid objective combining reconstruction fidelity, cosine similarity preservation, bottleneck decorrelation, and orthogonality regularization. Experiments show that AE-MCDO consistently outperforms PCA and MSE-based autoencoders, achieving higher Hit@K with more compact representations, thus enabling efficient and accurate large-scale fashion search.
 
   football-playing-styles-isace:
     id: football-playing-styles-isace
@@ -150,7 +151,9 @@ items:
     code_url:
     project_url:
     abstract: >-
-      The study applies Deep Embedded Clustering to more than three million football events from 1,826 matches to identify data-driven playing-style groups.
+      This study proposes a novel approach to clustering football teams’ playing styles using a Deep Embedded Clustering (DEC) algorithm applied to large-scale event data. The dataset comprises over 3 million events from 1,826 matches played in the top-tier leagues of England, Spain, Italy, Germany, and France during the 2016/2017 season. Each match event, such as passes, shots, and duels, contributes to a comprehensive representation of team behavior on the field. To capture tactical nuances, the dataset is segmented into four distinct phases of play, and each phase is clustered independently. These intermediate clustering results are aggregated to create a feature representation for each team, which is subsequently clustered to reveal dominant playing styles. A detailed feature engineering process, inspired by recent literature, incorporates spatial and temporal elements of play, including pass motifs, positional tendencies, and graph-based metrics. The resulting clusters are evaluated in terms of their clustering quality, measured by Silhouette, A(C)1, and A(C)2 scores, their predictive utility for match outcomes, and their tactical interpretability. The analysis demonstrates clear performance disparities among styles, offering insights into the effectiveness of specific tactical schemas. This methodology enables data-driven tactical analysis and benchmarking in football, highlighting the potential of unsupervised learning, particularly deep clustering, to inform strategic decision-making in sports analytics. The source code of this study is available at https://github.com/egecjdemir/how_football_teams_play.
+
+
 
   open-vocabulary-product-discovery:
     id: open-vocabulary-product-discovery
@@ -169,7 +172,8 @@ items:
     code_url:
     project_url:
     abstract: >-
-      A fusion-based visual retrieval pipeline supports open-vocabulary discovery of complementary products without requiring a category-specific detector to be retrained for every new product class.
+      In e-commerce, users often seek complementary products that appear together in the same scene, but existing visual search systems face scalability challenges. Traditional approaches rely on class-specific object detectors and supervised metric-learning models that require re-training and re-annotation for each new product category. Consequently, this reliance on manually labeled datasets limits adaptability in dynamic marketplace environments. We propose an end-to-end pipeline that addresses these constraints through open-vocabulary object detection combined with a novel freeze-weighted reciprocal rank fusion (FWRRF) retrieval strategy. Our system employs YOLO-World for prompt-driven product detection, enabling zero-shot recognition of unseen categories without additional training or annotations. The retrieval module extracts dual-view embeddings from both detected object crops and full scene images, then combines them using FWRRF, a lightweight fusion method that preserves high-precision object-centric results while incorporating contextual information through weighted reciprocal ranking. Evaluation on a curated living-room dataset demonstrates strong performance 0.851 mAP@0.5 for detection and Recall@3 = 0.580 for retrieval, surpassing single-view baselines and conventional fusion methods. This framework enables scalable, prompt-driven product discovery with continuous category expansion capabilities, eliminating costly retraining cycles in dynamic e-commerce environments.
+
 
   tinyrxnet:
     id: tinyrxnet
@@ -186,7 +190,7 @@ items:
     code_url:
     project_url:
     abstract: >-
-      TinyRXNet combines SAM-derived features with Local RX blocks to improve segmentation of very small objects, including pedestrians in top-down UAV imagery.
+      Segmenting tiny objects in high-resolution images, such as pedestrians in aerial views, poses major challenges due to their small size and limited contextual information. Existing segmentation models often fail to capture these fine details accurately. However, such small objects often appear as localized anomalies within the scene—distinct from their surroundings in feature space—which makes local anomaly detection methods like Local Reed-Xialoi (RX) detector, particularly effective for highlighting them. Thus, we introduce TinyRXNet, a novel deep segmentation network that combines SAM-based feature encoding with Local RX blocks, which apply localized anomaly scoring to highlight distinctive regions. This RX-based attention mechanism helps the model focus on areas that deviate from their surroundings, improving segmentation performance. Evaluated on the TinyPedSeg dataset, TinyRXNet outperforms standard baselines, demonstrating the effectiveness of combining deep features with spatial anomaly cues for tiny object segmentation. The codes are available at https://anonymous.4open.science/r/TINYRXNET-693B/
 
   itaclip:
     id: itaclip
@@ -206,7 +210,8 @@ items:
     code_url: https://github.com/m-arda-aydn/ITACLIP
     project_url:
     abstract: >-
-      ITACLIP improves training-free open-vocabulary semantic segmentation through ViT attention modifications, image-level augmentations, and LLM-generated class definitions and synonyms.
+      Recent advances in foundational Vision Language Models (VLMs) have reshaped the evaluation paradigm in computer vision tasks. These foundational models, especially CLIP, have accelerated research in open-vocabulary computer vision tasks, including Open-Vocabulary Semantic Segmentation (OVSS). Although the initial results are promising, the dense prediction capabilities of VLMs still require further improvement. In this study, we enhance the semantic segmentation performance of CLIP by introducing new modules and modifications. 1) architectural changes in the last layer of ViT and the incorporation of attention maps from the middle layers with the last layer, 2) Image Engineering. applying data augmentations to enrich input image representations, and 3) using Large Language Models (LLMs) to generate definitions and synonyms for each class name to leverage CLIP's open-vocabulary capabilities. Our training-free method, ITACLIP, outperforms current state-of-the-art approaches on five popular segmentation benchmarks. Our code is available at https://github.com/m-arda-aydn/ITACLIP.
+
 
   llmigrate:
     id: llmigrate
