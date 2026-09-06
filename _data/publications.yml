@@ -159,24 +159,31 @@ items:
     abstract: >-
       This work evaluates neonatal diffusion-MRI lesion segmentation under simulated four-fold k-space undersampling and investigates frequency-aware variants of SwinUNETR for robust low-resolution analysis.
 
+
   skewfuse:
     id: skewfuse
     url: /publications/skewfuse/
     title: "SkewFuse: Unsupervised Confidence-Guided Rank Fusion for Multi-View Image Retrieval"
-    description: A NomadLab conference publication at ICMLA 2025.
+    description: Query-adaptive unsupervised rank fusion that estimates retrieval confidence from the skewness of similarity-score distributions.
     venue: ICMLA 2025
     venue_type: Conference
+
+    image: /assets/img/publications/skewfuse/cover.png
+    image_alt: "Overview of the SkewFuse multi-view retrieval and confidence-guided rank fusion pipeline"
+
     authors:
       - enis-teper
       - mustafa-keskin
       - emre-rencberoglu
       - yusuf-huseyin-sahin
+
     paper_url: https://doi.org/10.1109/ICMLA66185.2025.00036
     scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:RHpTSmoSYBkC"
     code_url:
     project_url:
+
     abstract: >-
-      SkewFuse performs unsupervised, query-aware fusion of retrieval rankings by accounting for differences in confidence across multiple visual embedding models.
+      SkewFuse estimates query-specific retrieval confidence from the skewness of similarity-score distributions and uses those confidence weights inside a Dowdall-inspired fusion rule for multi-view fashion retrieval.
 
   retrieval-oriented-dimensionality-reduction:
     id: retrieval-oriented-dimensionality-reduction
