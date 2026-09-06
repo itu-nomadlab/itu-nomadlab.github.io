@@ -298,6 +298,10 @@ items:
       - mustafa-orcun-ucgun
       - ege-demir
       - yusuf-huseyin-sahin
+
+    image: /assets/img/publications/temporal-sliding-window-gat/over.jpeg
+    image_alt: "I don't want to see the back, I want to see the front!"
+    
     paper_url:
     scholar_url:
     code_url:
