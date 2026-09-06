@@ -1,0 +1,17 @@
+{% assign figure_src = include.src %}
+<figure class="publication-figure{% if include.wide %} publication-figure--wide{% endif %}">
+  {% if include.href %}<a href="{{ include.href }}" target="_blank" rel="noopener">{% endif %}
+  <img
+    src="{{ figure_src | relative_url }}"
+    alt="{{ include.alt | default: include.caption | escape }}"
+    loading="lazy"
+    decoding="async"
+  >
+  {% if include.href %}</a>{% endif %}
+  {% if include.caption or include.credit %}
+    <figcaption>
+      {% if include.caption %}<span>{{ include.caption }}</span>{% endif %}
+      {% if include.credit %}<small>{{ include.credit }}</small>{% endif %}
+    </figcaption>
+  {% endif %}
+</figure>

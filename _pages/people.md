@@ -7,10 +7,6 @@ nav: true
 nav_order: 2
 ---
 
-<div class="page-intro nomad-panel">
-  <p class="micro-label">The lab</p>
-  <p class="page-intro__lead">NomadLab brings together researchers interested in intelligent systems that can adapt, reason, and communicate uncertainty.</p>
-</div>
 
 {% for group in site.data.people.groups %}
 {% if group.members and group.members.size > 0 %}
@@ -22,13 +18,10 @@ nav_order: 2
       {% if group.description %}<p>{{ group.description }}</p>{% endif %}
     </div>
   </div>
-
   {% include people-grid.liquid members=group.members %}
 </section>
 {% endif %}
 {% endfor %}
-
-
 
 {% if site.data.people.recruiting.enabled %}
 <section class="open-roster nomad-panel">

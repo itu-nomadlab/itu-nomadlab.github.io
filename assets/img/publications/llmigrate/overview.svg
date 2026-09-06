@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">LLMigrate conceptual overview</title>
+  <desc id="desc">Three evolutionary islands exchange candidate designs under the coordination of a large language model migration controller.</desc>
+  <rect width="1200" height="720" fill="#f7efe5"/>
+  <g stroke="#16191f" stroke-width="5" fill="none">
+    <path d="M420 208 C520 118 690 118 786 214" stroke-dasharray="14 12"/>
+    <path d="M804 300 C860 390 822 506 714 552" stroke-dasharray="14 12"/>
+    <path d="M590 566 C456 594 340 522 326 402" stroke-dasharray="14 12"/>
+  </g>
+  <g font-family="monospace" text-anchor="middle">
+    <rect x="430" y="250" width="340" height="180" rx="28" fill="#16191f"/>
+    <text x="600" y="322" font-size="34" fill="#ff775c" letter-spacing="5">LLM</text>
+    <text x="600" y="372" font-size="28" fill="#fff8ef">MIGRATION CONTROLLER</text>
+    <text x="600" y="407" font-size="18" fill="#b9bec8">state → decision → exchange</text>
+  </g>
+  <g font-family="monospace" text-anchor="middle" stroke="#16191f" stroke-width="4">
+    <g transform="translate(245 205)">
+      <circle r="104" fill="#8eb7ef"/><circle r="74" fill="#f7efe5"/>
+      <circle cx="-28" cy="-16" r="14" fill="#16191f"/><circle cx="24" cy="-38" r="10" fill="#ff775c"/><circle cx="35" cy="24" r="17" fill="#16191f"/><circle cx="-38" cy="42" r="9" fill="#ff775c"/>
+      <text y="142" stroke="none" fill="#16191f" font-size="22">ISLAND A</text>
+    </g>
+    <g transform="translate(955 230)">
+      <circle r="104" fill="#ff775c"/><circle r="74" fill="#f7efe5"/>
+      <circle cx="-28" cy="-16" r="14" fill="#16191f"/><circle cx="24" cy="-38" r="10" fill="#8eb7ef"/><circle cx="35" cy="24" r="17" fill="#16191f"/><circle cx="-38" cy="42" r="9" fill="#8eb7ef"/>
+      <text y="142" stroke="none" fill="#16191f" font-size="22">ISLAND B</text>
+    </g>
+    <g transform="translate(600 590)">
+      <circle r="104" fill="#d9c7b1"/><circle r="74" fill="#f7efe5"/>
+      <circle cx="-28" cy="-16" r="14" fill="#16191f"/><circle cx="24" cy="-38" r="10" fill="#ff775c"/><circle cx="35" cy="24" r="17" fill="#16191f"/><circle cx="-38" cy="42" r="9" fill="#8eb7ef"/>
+      <text y="142" stroke="none" fill="#16191f" font-size="22">ISLAND C</text>
+    </g>
+  </g>
+  <g fill="#16191f">
+    <path d="M390 237 l34 -8 -12 32 z"/><path d="M814 250 l-30 -18 3 34 z"/><path d="M741 523 l24 27 -34 4 z"/>
+  </g>
+</svg>

@@ -1,19 +1,32 @@
 {% assign publication = include.publication %}
-<article class="publication-card{% if include.compact %} publication-card--compact{% endif %} nomad-panel">
-  <div class="publication-card__topline">
-    <span class="publication-card__venue">{{ publication.venue }}</span>
-    <span class="publication-card__type">{{ publication.venue_type }}</span>
-  </div>
-
-  {% if include.compact %}
-    <h3 class="publication-card__title"><a href="{{ publication.url | relative_url }}">{{ publication.title }}</a></h3>
-  {% else %}
-    <h2 class="publication-card__title"><a href="{{ publication.url | relative_url }}">{{ publication.title }}</a></h2>
+{% assign has_image = false %}
+{% if publication.image and include.compact != true %}{% assign has_image = true %}{% endif %}
+<article class="publication-card{% if include.compact %} publication-card--compact{% endif %}{% if has_image %} publication-card--with-image{% endif %} nomad-panel">
+  {% if has_image %}
+    <a class="publication-card__media" href="{{ publication.url | relative_url }}" tabindex="-1" aria-hidden="true">
+      <img
+        src="{{ publication.image | relative_url }}"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      >
+    </a>
   {% endif %}
 
-  {% include publication-authors.liquid authors=publication.authors %}
+  <div class="publication-card__body">
+    <div class="publication-card__topline">
+      <span class="publication-card__venue">{{ publication.venue }}</span>
+      <span class="publication-card__type">{{ publication.venue_type }}</span>
+    </div>
+    {% if include.compact %}
+      <h3 class="publication-card__title"><a href="{{ publication.url | relative_url }}">{{ publication.title }}</a></h3>
+    {% else %}
+      <h2 class="publication-card__title"><a href="{{ publication.url | relative_url }}">{{ publication.title }}</a></h2>
+    {% endif %}
 
-  <a class="publication-card__open" href="{{ publication.url | relative_url }}">
-    Publication page <i class="ti ti-arrow-up-right" aria-hidden="true"></i>
-  </a>
+    {% include publication-authors.liquid authors=publication.authors %}
+    <a class="publication-card__open" href="{{ publication.url | relative_url }}">
+      Publication page <i class="ti ti-arrow-up-right" aria-hidden="true"></i>
+    </a>
+  </div>
 </article>

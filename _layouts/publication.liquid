@@ -4,19 +4,27 @@ layout: default
 {% assign publication = site.data.publications.items[page.publication_id] %}
 <article class="publication-detail">
   <nav class="detail-breadcrumb" aria-label="Breadcrumb"><a href="{{ '/publications/' | relative_url }}"><i class="ti ti-arrow-left" aria-hidden="true"></i> Publications</a></nav>
+
   <header class="publication-detail__hero nomad-panel">
     <div class="publication-detail__venue-row"><span class="publication-detail__venue">{{ publication.venue }}</span><span class="publication-detail__type">{{ publication.venue_type }}</span></div>
     <h1>{{ publication.title }}</h1>
     {% include publication-authors.liquid authors=publication.authors %}
   </header>
+
   <div class="publication-detail__grid">
     <section class="publication-detail__main nomad-panel">
-      <p class="micro-label">About the work</p><h2>Abstract</h2>
-      {% if publication.abstract %}<p>{{ publication.abstract }}</p>{% else %}
-        <div class="artifact-placeholder artifact-placeholder--quiet"><i class="ti ti-align-box-left-top" aria-hidden="true"></i><div><strong>Abstract will be added.</strong><p>This publication page is ready for the abstract and final research materials.</p></div></div>
+      {% assign body_content = content | strip %}
+      {% if body_content != '' %}
+        <div class="publication-detail__content publication-summary">{{ content }}</div>
+      {% else %}
+        <div class="publication-summary__empty">
+          <p class="micro-label">Research summary</p>
+          <h2>Detailed summary coming soon.</h2>
+          <p>This page is ready for a structured explanation with figures, equations, results, and implementation notes.</p>
+        </div>
       {% endif %}
-      {% assign body_content = content | strip %}{% if body_content != '' %}<div class="publication-detail__content">{{ content }}</div>{% endif %}
     </section>
+
     <aside class="publication-detail__side nomad-panel">
       <p class="micro-label">Publication details</p>
       <dl class="publication-metadata"><div><dt>Venue</dt><dd>{{ publication.venue }}</dd></div><div><dt>Type</dt><dd>{{ publication.venue_type }}</dd></div><div><dt>Authors</dt><dd>{{ publication.authors | size }}</dd></div></dl>

@@ -4,7 +4,7 @@ title: Projects
 permalink: /projects/
 description: Active and exploratory research programs at NomadLab.
 nav: true
-nav_order: 5
+nav_order: 4
 ---
 
 <div class="page-intro nomad-panel">

@@ -1,0 +1,130 @@
+/* NomadLab publication thumbnails and rich paper summaries */
+.publication-card--with-image {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.38fr) minmax(0, 1fr);
+  padding: 0;
+  overflow: hidden;
+}
+.publication-card--with-image .publication-card__body {
+  min-width: 0;
+  padding: clamp(1.35rem, 2.7vw, 2rem);
+}
+.publication-card__media {
+  position: relative;
+  min-height: 230px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--lab-ink) 5%, var(--lab-surface));
+  border-right: 1px solid var(--lab-line);
+}
+.publication-card__media img {
+  width: 100%;
+  height: 100%;
+  min-height: 230px;
+  object-fit: cover;
+  display: block;
+  transition: transform 260ms ease;
+}
+.publication-card--with-image:hover .publication-card__media img { transform: scale(1.025); }
+
+.publication-summary { font-size: 1rem; line-height: 1.78; }
+.publication-summary > :first-child { margin-top: 0; }
+.publication-summary h2 {
+  margin: 2.4rem 0 0.75rem;
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  line-height: 1.08;
+}
+.publication-summary h3 { margin: 1.8rem 0 0.55rem; font-size: 1.18rem; }
+.publication-summary p { max-width: 78ch; }
+.publication-summary ul, .publication-summary ol { max-width: 76ch; }
+.publication-summary blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.2rem;
+  background: color-mix(in srgb, var(--lab-accent) 7%, var(--lab-surface));
+  border-left: 4px solid var(--lab-accent-strong);
+  border-radius: 0 var(--lab-radius-md) var(--lab-radius-md) 0;
+}
+.publication-summary__lede {
+  max-width: 72ch;
+  margin: 0 0 1.7rem;
+  color: var(--lab-ink);
+  font-size: clamp(1.06rem, 1.5vw, 1.23rem);
+  line-height: 1.72;
+}
+.publication-summary__facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin: 1.5rem 0 2rem;
+}
+.publication-summary__fact {
+  padding: 0.9rem 1rem;
+  background: color-mix(in srgb, var(--lab-ink) 3%, transparent);
+  border: 1px solid var(--lab-line);
+  border-radius: var(--lab-radius-md);
+}
+.publication-summary__fact span {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--lab-muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.publication-figure {
+  margin: 1.8rem 0 2rem;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--lab-ink) 3%, var(--lab-surface));
+  border: 1px solid var(--lab-line);
+  border-radius: var(--lab-radius-lg);
+}
+.publication-figure img { width: 100%; height: auto; display: block; }
+.publication-figure figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.78rem 0.95rem;
+  color: var(--lab-muted);
+  border-top: 1px solid var(--lab-line);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.publication-figure figcaption small { color: inherit; font-family: "IBM Plex Mono", monospace; }
+.publication-equation-note {
+  margin: 1rem 0 1.6rem;
+  padding: 0.85rem 1rem;
+  color: var(--lab-muted);
+  background: color-mix(in srgb, var(--lab-secondary) 7%, transparent);
+  border: 1px solid var(--lab-line);
+  border-radius: var(--lab-radius-md);
+  font-size: 0.88rem;
+}
+.publication-summary__empty { padding: 0.5rem 0; }
+
+html[data-nomad-mode="on"] .publication-card__media {
+  background: var(--nomad-bg);
+  border-right: 3px solid var(--nomad-ink);
+}
+html[data-nomad-mode="on"] .publication-card__media img {
+  filter: grayscale(1) contrast(1.55) brightness(0.95);
+  image-rendering: pixelated;
+}
+html[data-nomad-mode="on"] .publication-summary__fact,
+html[data-nomad-mode="on"] .publication-figure,
+html[data-nomad-mode="on"] .publication-equation-note {
+  color: var(--nomad-ink);
+  background: var(--nomad-bg);
+  border: 2px solid var(--nomad-ink);
+  border-radius: 0;
+}
+html[data-nomad-mode="on"] .publication-figure figcaption { border-top: 2px solid var(--nomad-ink); }
+
+@media (max-width: 767.98px) {
+  .publication-card--with-image { grid-template-columns: 1fr; }
+  .publication-card__media { min-height: 190px; border-right: 0; border-bottom: 1px solid var(--lab-line); }
+  .publication-card__media img { min-height: 190px; max-height: 280px; }
+  .publication-summary__facts { grid-template-columns: 1fr; }
+  .publication-figure figcaption { flex-direction: column; }
+  html[data-nomad-mode="on"] .publication-card__media { border-right: 0; border-bottom: 3px solid var(--nomad-ink); }
+}
