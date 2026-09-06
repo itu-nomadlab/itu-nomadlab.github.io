@@ -8,6 +8,16 @@ paper_url: https://doi.org/10.1145/3795101.3805447
 code_url: https://github.com/emirb0/evogym-migration
 ---
 
+{% include publication-figure.liquid
+  src="/assets/img/publications/llmigrate/overview.svg"
+  href="/assets/img/publications/llmigrate/overview.svg"
+  alt="Overview of the LLMigrate evolutionary pipeline"
+  caption="Overview of LLMigrate: island populations evolve locally while an LLM coordinates migration between subpopulations."
+  credit="Figure 1 from the manuscript"
+  wide=true
+%}
+
+
 <p class="publication-summary__lede">
 LLMigrate treats migration in an island-model evolutionary algorithm as a decision problem. Instead of moving individuals with a fixed heuristic, a large language model receives compact summaries of the current islands and decides which morphologies should move where. The goal is not simply to maximize fitness, but to preserve useful structural diversity under the unusually small evaluation budgets imposed by soft-robot co-design.
 </p>
