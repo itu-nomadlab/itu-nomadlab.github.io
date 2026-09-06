@@ -99,6 +99,37 @@ mirac-merthan-durdag:
     pdf: /assets/pdf/posters/mirac-merthan-durdag-graduation-poster.pdf
     available: false
 
+
+bunyamin-korkut:
+  name: Bünyamin Korkut
+  publication_name: Bünyamin Korkut
+  initials: BK
+  author_type: external
+  role: External Co-author
+
+yunus-emre-karaoglan:
+  name: Yunus Emre Karaoğlan
+  publication_name: Yunus Emre Karaoğlan
+  initials: YEK
+  author_type: external
+  role: External Co-author
+
+ozan-cetin:
+  name: Ozan Çetin
+  publication_name: Ozan Çetin
+  initials: OÇ
+  author_type: external
+  role: External Co-author
+
+alper-unal:
+  name: Alper Ünal
+  publication_name: Alper Ünal
+  initials: AÜ
+  author_type: external
+  role: External Co-author
+yusuf-huseyin-sahin zaten mevcut olduğu için tekrar ekleme.
+
+
 mustafa-orcun-ucgun:
   name: Mustafa Orçun Uçgun
   publication_name: Mustafa Orçun Uçgun
