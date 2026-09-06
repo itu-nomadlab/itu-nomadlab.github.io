@@ -1,4 +1,5 @@
 order:
+  - dva-clip
   - pixelwise-split-conformal-temperature-emulation
   - ai-automation-labor-market
   - color-aware-fashion-reranking
@@ -22,6 +23,31 @@ selected:
 
 items:
 
+  dva-clip:
+    id: dva-clip
+    url: /publications/dva-clip/
+    title: "DVA-CLIP: Zero-Feature Denoising and Vision-Side Attention Adaptation for Anomaly Detection"
+    description: Accepted at an ECCV 2026 Workshop; vision-side attention adaptation and training-free zero-input feature denoising for generalizable anomaly detection.
+    venue: ECCV 2026 Workshops
+    venue_type: Workshop
+
+    image: /assets/img/publications/dva-clip/cover.png
+    image_alt: "Overview of the DVA-CLIP framework"
+
+    authors:
+      - a-senih-yildirim
+      - teoman-turkoglu
+      - muzaffer-aydin
+      - yusuf-huseyin-sahin
+
+    paper_url:
+    scholar_url:
+    code_url: https://github.com/sahinyu/dva-clip
+    project_url:
+
+    abstract: >-
+      DVA-CLIP improves an AA-CLIP-style anomaly detection pipeline with cross-scale attention, a global visual attention adapter, and training-free zero-input feature denoising while keeping the language encoder frozen.
+      
 
   pixelwise-split-conformal-temperature-emulation:
     id: pixelwise-split-conformal-temperature-emulation
