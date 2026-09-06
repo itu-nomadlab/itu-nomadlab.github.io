@@ -322,23 +322,30 @@ items:
     project_url:
     abstract:
 
+
   football-playing-styles-dec:
     id: football-playing-styles-dec
     url: /publications/football-playing-styles-dec/
     title: "How Do Football Teams Play? An Extended DEC Analysis to Uncover Playing Styles"
-    description: A NomadLab journal publication in SN Computer Science.
+    description: An extended phase-aware DEC analysis with temporal adaptation, SHAP interpretability, cross-phase coherence, holistic tactical archetypes, and frozen-model robustness.
     venue: SN Computer Science
     venue_type: Journal
+
+    image: /assets/img/publications/football-playing-styles-dec/cover.png
+    image_alt: "Extended DEC methodology for phase-aware football playing-style analysis"
+
     authors:
       - ege-demir
       - nazim-kemal-ure
       - yusuf-huseyin-sahin
-    paper_url:
-    scholar_url:
-    code_url:
-    project_url:
-    abstract:
 
+    paper_url: https://doi.org/10.1007/s42979-026-04903-y
+    scholar_url:
+    code_url: https://github.com/egecjdemir/how_football_teams_play
+    project_url:
+
+    abstract: >-
+      The journal extension augments phase-aware Deep Embedded Clustering with 15-minute tactical adaptation analysis, feature ablation, supervised surrogates and SHAP, cross-phase tactical coherence, holistic archetypes, bootstrap uncertainty, and first-half-to-second-half frozen-model testing.
 
   ai-automation-labor-market:
     id: ai-automation-labor-market
