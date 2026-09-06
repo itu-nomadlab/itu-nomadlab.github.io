@@ -1,4 +1,5 @@
 order:
+  - pixelwise-split-conformal-temperature-emulation
   - ai-automation-labor-market
   - color-aware-fashion-reranking
   - occlusion-aware-face-retrieval
@@ -21,6 +22,7 @@ selected:
 
 items:
 
+
   pixelwise-split-conformal-temperature-emulation:
     id: pixelwise-split-conformal-temperature-emulation
     url: /publications/pixelwise-split-conformal-temperature-emulation/
@@ -28,20 +30,26 @@ items:
     description: A NomadLab conference publication at COPA 2026, published in PMLR Volume 329.
     venue: COPA 2026
     venue_type: Conference
+
     image: /assets/img/publications/pixelwise-split-conformal-temperature-emulation/cover.png
     image_alt: "Pipeline for leave-one-out teachers, pixelwise conformal calibration, and student distillation"
+
     authors:
       - bunyamin-korkut
       - yunus-emre-karaoglan
       - ozan-cetin
       - yusuf-huseyin-sahin
       - alper-unal
+
     paper_url: /assets/pdf/publications/pixelwise-split-conformal-temperature-emulation.pdf
     scholar_url:
     code_url: https://github.com/bunyaminkorkut/COPA-Global-Temperature-Emulation
     project_url:
+
     abstract: >-
-      Pixelwise split conformal residuals are used both to quantify spatial uncertainty and as training-time priors for distilling nine leave-one-out CMIP6 temperature emulators into a single UNet++ student.
+      Pixelwise split conformal residuals are used both to quantify spatial
+      uncertainty and as training-time priors for distilling nine leave-one-out
+      CMIP6 temperature emulators into a single UNet++ student.
 
 
 
