@@ -321,21 +321,31 @@ items:
     project_url:
     abstract:
 
+
   ai-automation-labor-market:
     id: ai-automation-labor-market
     url: /publications/ai-automation-labor-market/
-    title: "AI and Automation in the Labor Market: Literature Review on Implications for Employment, Skills, and Inclusive Growth"
-    description: A NomadLab conference publication at the 47th IBIMA Conference 2026.
+    title: "AI and the Labour Market: Theoretical Perspectives on the Impact of Automation on Employment and Skills"
+    description: A comparative analysis of AI, automation, employment structures, skills, and policy responses in Poland and Türkiye.
     venue: 47th IBIMA Conference 2026
     venue_type: Conference
+
+    image: /assets/img/publications/ai-automation-labor-market/cover.png
+    image_alt: "Employment by skill level in Poland and Türkiye from 2020 to 2024"
+
     authors:
       - marcin-hofman
       - tugce-temel
       - yusuf-huseyin-sahin
       - jacek-winiarski
-    paper_url: "https://repozytorium.bg.ug.edu.pl/info/article/UOG71aa054b9ed643b1a3254e480e579ff9/"
+
+    paper_url:
     scholar_url:
     code_url:
     project_url:
+
     abstract: >-
-      This literature review examines how AI-driven automation reshapes employment structures and skill requirements in Poland and Türkiye. It highlights the displacement risk for routine and low- to medium-skill work, the growing importance of advanced digital competencies, and the role of lifelong learning, human-capital investment, and active public policy in supporting inclusive growth.
+      A comparative theoretical and secondary-data analysis of how AI and
+      automation reshape employment structures and skill demand in Poland and
+      Türkiye, with emphasis on reskilling, human capital, labour-market
+      polarization, and institutional responses.
