@@ -1,102 +1,58 @@
-/* Home hero NOMAD acronym ----------------------------------------------- */
+/* Home hero brand lockup ------------------------------------------------- */
 
-.nomad-acronym {
-  position: relative;
-  display: grid;
-  align-items: center;
-  cursor: help;
-  isolation: isolate;
-  outline: none;
-}
-
-.nomad-acronym__face {
-  grid-area: 1 / 1;
-  transform-origin: left center;
-  transition:
-    opacity 220ms ease,
-    transform 220ms ease,
-    filter 220ms ease;
-}
-
-.nomad-acronym__face--default {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.nomad-acronym__face--expanded {
+.lab-hero .lab-hero__brand-title {
   display: flex;
   flex-direction: column;
-  gap: 0.02em;
-  opacity: 0;
-  transform: translateY(0.16em);
-  font-size: clamp(2.55rem, 5.15vw, 5.25rem);
-  line-height: 0.92;
-  letter-spacing: -0.045em;
-  text-transform: uppercase;
-  pointer-events: none;
+  align-items: flex-start;
+  gap: 0.28rem;
+  max-width: none;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1;
+  text-wrap: initial;
 }
 
-.nomad-acronym__line {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 0.2em;
-  white-space: nowrap;
-}
-
-.nomad-acronym__word {
-  display: inline-block;
-}
-
-.nomad-acronym__key {
+.lab-hero__brand-itu {
+  display: block;
   color: var(--lab-accent-strong);
+  font-size: clamp(1rem, 1.45vw, 1.35rem);
   font-weight: 850;
-  text-decoration: underline;
-  text-decoration-thickness: 0.065em;
-  text-underline-offset: 0.08em;
+  letter-spacing: 0.22em;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
-.nomad-acronym:hover .nomad-acronym__face--default,
-.nomad-acronym:focus .nomad-acronym__face--default {
-  opacity: 0;
-  transform: translateY(-0.12em);
-  filter: blur(2px);
+.lab-hero__brand-name {
+  display: block;
+  color: var(--lab-ink);
+  font-size: clamp(3rem, 4.7vw, 4.85rem);
+  font-weight: 850;
+  letter-spacing: -0.055em;
+  line-height: 0.94;
 }
 
-.nomad-acronym:hover .nomad-acronym__face--expanded,
-.nomad-acronym:focus .nomad-acronym__face--expanded {
-  opacity: 1;
-  transform: translateY(0);
-  filter: none;
+html[data-nomad-mode="on"] .lab-hero__brand-itu {
+  color: var(--nomad-ink);
+  background: var(--nomad-bg);
+  padding: 0.08em 0.18em 0.07em 0.28em;
+  border: 2px solid var(--nomad-ink);
+  box-shadow: 3px 3px 0 var(--nomad-glow);
 }
 
-.nomad-acronym:focus-visible {
-  outline: 3px solid var(--lab-accent-strong);
-  outline-offset: 0.16em;
-  border-radius: 0.04em;
-}
-
-html[data-nomad-mode="on"] .nomad-acronym__key {
-  color: var(--nomad-bg);
-  background: var(--nomad-ink);
-  padding: 0 0.035em;
-  text-decoration: none;
-  text-shadow: none;
-  box-shadow: 2px 2px 0 var(--nomad-glow);
+html[data-nomad-mode="on"] .lab-hero__brand-name {
+  color: var(--nomad-ink);
+  text-shadow: 3px 3px 0 var(--nomad-glow);
 }
 
 @media (max-width: 767.98px) {
-  .nomad-acronym__face--expanded {
-    font-size: clamp(1.9rem, 10vw, 3rem);
-    letter-spacing: -0.035em;
+  .lab-hero .lab-hero__brand-title {
+    gap: 0.22rem;
   }
 
-  .nomad-acronym__line {
-    gap: 0.16em;
+  .lab-hero__brand-name {
+    font-size: clamp(2.7rem, 13vw, 4.15rem);
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .nomad-acronym__face {
-    transition: none;
-  }
-}
+/* The home-only atlas styles are kept in a separate partial for maintainability. */
+@import "nomadic-atlas";
