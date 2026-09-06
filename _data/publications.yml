@@ -267,25 +267,33 @@ items:
     abstract: >-
       TinyRXNet combines SAM-derived features with Local RX blocks to improve segmentation of very small objects, including pedestrians in top-down UAV imagery.
 
+
   itaclip:
     id: itaclip
     url: /publications/itaclip/
     title: "ITACLIP: Boosting Training-Free Semantic Segmentation with Image, Text, and Architectural Enhancements"
-    description: A NomadLab workshop publication at CVPR Workshops 2025.
+    description: Training-free open-vocabulary semantic segmentation through coordinated architectural, image, and LLM-based text enhancements to CLIP.
     venue: CVPR Workshops 2025
     venue_type: Workshop
+
+    image: /assets/img/publications/itaclip/cover.png
+    image_alt: "Overview of the ITACLIP image, text, and architectural enhancement framework"
+
     authors:
       - m-arda-aydin
       - efe-mert-cirpar
       - elvin-abdinli
       - gozde-unal
       - yusuf-huseyin-sahin
+
     paper_url: https://openaccess.thecvf.com/content/CVPR2025W/PixFoundation/html/Aydin_ITACLIP_Boosting_Training-Free_Semantic_Segmentation_with_Image_Text_and_Architectural_CVPRW_2025_paper.html
     scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:qxL8FJ1GzNcC"
     code_url: https://github.com/m-arda-aydn/ITACLIP
     project_url:
+
     abstract: >-
       ITACLIP improves training-free open-vocabulary semantic segmentation through ViT attention modifications, image-level augmentations, and LLM-generated class definitions and synonyms.
+      
 
   llmigrate:
     id: llmigrate
