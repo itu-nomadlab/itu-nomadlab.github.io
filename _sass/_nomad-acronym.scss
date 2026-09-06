@@ -141,10 +141,14 @@ html[data-nomad-mode="on"] .lab-hero__manifesto-line {
 
 html[data-nomad-mode="on"] .lab-hero__manifesto-initial {
   color: var(--nomad-glow);
-  background: var(--nomad-ink);
-  padding: 0 0.06em;
-  margin-right: 0.015em;
-  text-shadow: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  text-shadow: 2px 2px 0 color-mix(in srgb, var(--nomad-bg) 65%, transparent);
+}
+
+html[data-nomad-mode="on"] .lab-hero__manifesto-word {
+  gap: 0;
 }
 
 @media (max-width: 767.98px) {
