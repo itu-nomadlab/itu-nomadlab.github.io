@@ -202,19 +202,27 @@ items:
     id: football-playing-styles-isace
     url: /publications/football-playing-styles-isace/
     title: "How Do Football Teams Play? A Deep Embedded Clustering Approach to Reveal Playing Styles"
-    description: A NomadLab conference publication in the ISACE 2025 proceedings.
+    description: Deep Embedded Clustering over phase-specific football event representations reveals interpretable and outcome-linked team playing styles.
     venue: ISACE 2025
     venue_type: Conference
+
+    image: /assets/img/publications/football-playing-styles-isace/cover.png
+    image_alt: "Deep Embedded Clustering pipeline for discovering football playing styles"
+
     authors:
       - ege-demir
       - yusuf-huseyin-sahin
       - nazim-kemal-ure
+
     paper_url: https://doi.org/10.1007/978-3-032-06167-6_4
     scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:dhFuZR0502QC"
-    code_url:
+    code_url: https://github.com/egecjdemir/how_football_teams_play
     project_url:
+
     abstract: >-
-      The study applies Deep Embedded Clustering to more than three million football events from 1,826 matches to identify data-driven playing-style groups.
+      A phase-specific Deep Embedded Clustering framework learns compact
+      tactical representations from more than three million football events and
+      reveals interpretable playing styles across Europe's top five leagues.
 
   open-vocabulary-product-discovery:
     id: open-vocabulary-product-discovery
