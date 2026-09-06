@@ -2,6 +2,10 @@
 layout: default
 ---
 {% assign publication = site.data.publications.items[page.publication_id] %}
+{% assign paper_url = page.paper_url | default: publication.paper_url %}
+{% assign scholar_url = page.scholar_url | default: publication.scholar_url %}
+{% assign code_url = page.code_url | default: publication.code_url %}
+{% assign project_url = page.project_url | default: publication.project_url %}
 <article class="publication-detail">
   <nav class="detail-breadcrumb" aria-label="Breadcrumb"><a href="{{ '/publications/' | relative_url }}"><i class="ti ti-arrow-left" aria-hidden="true"></i> Publications</a></nav>
 
@@ -30,10 +34,10 @@ layout: default
       <dl class="publication-metadata"><div><dt>Venue</dt><dd>{{ publication.venue }}</dd></div><div><dt>Type</dt><dd>{{ publication.venue_type }}</dd></div><div><dt>Authors</dt><dd>{{ publication.authors | size }}</dd></div></dl>
       <div class="publication-resources">
         <h2>Resources</h2>{% assign has_resource = false %}
-        {% if publication.paper_url %}{% assign has_resource = true %}<a class="lab-button lab-button--primary" href="{{ publication.paper_url }}" target="_blank" rel="noopener"><i class="ti ti-file-type-pdf"></i> Paper</a>{% endif %}
-        {% if publication.scholar_url %}{% assign has_resource = true %}<a class="lab-button lab-button--secondary" href="{{ publication.scholar_url }}" target="_blank" rel="noopener"><i class="ti ti-school"></i> Google Scholar</a>{% endif %}
-        {% if publication.code_url %}{% assign has_resource = true %}<a class="lab-button lab-button--secondary" href="{{ publication.code_url }}" target="_blank" rel="noopener"><i class="ti ti-code"></i> Code</a>{% endif %}
-        {% if publication.project_url %}{% assign has_resource = true %}<a class="lab-button lab-button--secondary" href="{{ publication.project_url }}" target="_blank" rel="noopener"><i class="ti ti-world"></i> Project</a>{% endif %}
+        {% if paper_url %}{% assign has_resource = true %}<a class="lab-button lab-button--primary" href="{{ paper_url }}" target="_blank" rel="noopener"><i class="ti ti-file-type-pdf"></i> Paper</a>{% endif %}
+        {% if scholar_url %}{% assign has_resource = true %}<a class="lab-button lab-button--secondary" href="{{ scholar_url }}" target="_blank" rel="noopener"><i class="ti ti-school"></i> Google Scholar</a>{% endif %}
+        {% if code_url %}{% assign has_resource = true %}<a class="lab-button lab-button--secondary" href="{{ code_url }}" target="_blank" rel="noopener"><i class="ti ti-code"></i> Code</a>{% endif %}
+        {% if project_url %}{% assign has_resource = true %}<a class="lab-button lab-button--secondary" href="{{ project_url }}" target="_blank" rel="noopener"><i class="ti ti-world"></i> Project</a>{% endif %}
         {% unless has_resource %}<p class="publication-resources__empty">Paper, code, and project links will appear here when they are available.</p>{% endunless %}
       </div>
     </aside>

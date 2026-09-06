@@ -1,6 +1,6 @@
 {% assign figure_src = include.src %}
 <figure class="publication-figure{% if include.wide %} publication-figure--wide{% endif %}">
-  {% if include.href %}<a href="{{ include.href }}" target="_blank" rel="noopener">{% endif %}
+  {% if include.href %}<a href="{{ include.href | relative_url }}" target="_blank" rel="noopener">{% endif %}
   <img
     src="{{ figure_src | relative_url }}"
     alt="{{ include.alt | default: include.caption | escape }}"
