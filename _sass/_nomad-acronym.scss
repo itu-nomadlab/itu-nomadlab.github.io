@@ -1,15 +1,69 @@
-/* Home hero brand lockup ------------------------------------------------- */
+/* Home hero brand lockup + NOMAD manifesto -------------------------------- */
 
 .lab-hero .lab-hero__brand-title {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.28rem;
-  max-width: none;
+  position: relative;
+  display: block;
+  width: min(100%, 38rem);
+  min-height: clamp(5.4rem, 7.3vw, 7.7rem);
   margin: 0;
+  color: var(--lab-ink);
   font-size: 1rem;
   line-height: 1;
   text-wrap: initial;
+  cursor: default;
+  outline: none;
+  isolation: isolate;
+}
+
+.lab-hero__brand-face {
+  position: absolute;
+  inset: 0 auto auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  transform-origin: left center;
+  transition:
+    opacity 180ms ease,
+    transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 220ms ease;
+}
+
+.lab-hero__brand-face--default {
+  gap: 0.28rem;
+  opacity: 1;
+  transform: translateY(0) skewX(0deg);
+  filter: blur(0);
+}
+
+.lab-hero__brand-face--manifesto {
+  gap: 0.08em;
+  opacity: 0;
+  transform: translateY(0.42em) skewX(-5deg);
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+.lab-hero__brand-title:is(:hover, :focus-visible) .lab-hero__brand-face--default {
+  opacity: 0;
+  transform: translateY(-0.28em) skewX(4deg);
+  filter: blur(4px);
+}
+
+.lab-hero__brand-title:is(:hover, :focus-visible) .lab-hero__brand-face--manifesto {
+  opacity: 1;
+  transform: translateY(0) skewX(0deg);
+  filter: blur(0);
+}
+
+.lab-hero__brand-title:focus-visible::after {
+  content: "";
+  position: absolute;
+  inset: -0.35rem;
+  border: 2px dashed var(--lab-accent-strong);
+  pointer-events: none;
 }
 
 .lab-hero__brand-itu {
@@ -31,6 +85,40 @@
   line-height: 0.94;
 }
 
+.lab-hero__manifesto-line {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  gap: 0.22em;
+  color: var(--lab-ink);
+  font-size: clamp(1.8rem, 3.25vw, 3.25rem);
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.lab-hero__manifesto-word {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.lab-hero__manifesto-initial {
+  color: var(--lab-accent-strong);
+  font-weight: 950;
+  text-shadow: 0.035em 0.035em 0 color-mix(in srgb, var(--lab-accent-strong) 26%, transparent);
+}
+
+html[data-nomad-mode="on"] .lab-hero__brand-title {
+  min-height: clamp(5.7rem, 7.6vw, 8rem);
+}
+
+html[data-nomad-mode="on"] .lab-hero__brand-face {
+  transition-duration: 90ms;
+  transition-timing-function: steps(2, end);
+}
+
 html[data-nomad-mode="on"] .lab-hero__brand-itu {
   color: var(--nomad-ink);
   background: var(--nomad-bg);
@@ -44,13 +132,46 @@ html[data-nomad-mode="on"] .lab-hero__brand-name {
   text-shadow: 3px 3px 0 var(--nomad-glow);
 }
 
+html[data-nomad-mode="on"] .lab-hero__manifesto-line {
+  color: var(--nomad-ink);
+  font-family: var(--nomad-font, ui-monospace, monospace);
+  letter-spacing: -0.045em;
+  text-shadow: 3px 3px 0 var(--nomad-glow);
+}
+
+html[data-nomad-mode="on"] .lab-hero__manifesto-initial {
+  color: var(--nomad-glow);
+  background: var(--nomad-ink);
+  padding: 0 0.06em;
+  margin-right: 0.015em;
+  text-shadow: none;
+}
+
 @media (max-width: 767.98px) {
   .lab-hero .lab-hero__brand-title {
+    width: 100%;
+    min-height: clamp(5.2rem, 20vw, 6.8rem);
+  }
+
+  .lab-hero__brand-face--default {
     gap: 0.22rem;
   }
 
   .lab-hero__brand-name {
     font-size: clamp(2.7rem, 13vw, 4.15rem);
+  }
+
+  .lab-hero__manifesto-line {
+    gap: 0.18em;
+    font-size: clamp(1.45rem, 7.2vw, 2.35rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-hero__brand-face {
+    transition: opacity 1ms linear;
+    transform: none !important;
+    filter: none !important;
   }
 }
 
