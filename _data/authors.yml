@@ -45,6 +45,21 @@ ege-demir:
     pdf: /assets/pdf/theses/ege-demir-thesis.pdf
     available: false
 
+teoman-turkoglu:
+  name: Teoman Türkoğlu
+  publication_name: Teoman Türkoğlu
+  initials: TT
+  author_type: external
+  role: External Co-author
+
+muzaffer-aydin:
+  name: Muzaffer Aydın
+  publication_name: Muzaffer Aydın
+  initials: MA
+  author_type: external
+  role: External Co-author
+  
+
 emir-bugra-sahin:
   name: Emir Buğra Şahin
   publication_name: Emir Buğra Şahin
