@@ -78,24 +78,30 @@ items:
       CMIP6 temperature emulators into a single UNet++ student.
 
 
-
   color-aware-fashion-reranking:
     id: color-aware-fashion-reranking
     url: /publications/color-aware-fashion-reranking/
     title: "Color-Aware Re-Ranking for Fashion Image Retrieval"
-    description: A NomadLab conference publication at ICCDE 2026.
+    description: CA-Rank adds segmentation-driven perceptual color reasoning to fashion image retrieval without retraining the underlying embedding backbone.
     venue: ICCDE 2026
     venue_type: Conference
+
+    image: /assets/img/publications/color-aware-fashion-reranking/cover.png
+    image_alt: "Overview of the CA-Rank color-aware fashion retrieval pipeline"
+
     authors:
       - enis-teper
       - ilayda-kara
       - yusuf-huseyin-sahin
+
     paper_url: https://doi.org/10.1145/3801839.3801868
     scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:TFP_iSt0sucC"
     code_url:
     project_url:
+
     abstract: >-
       CA-Rank uses garment segmentation and perceptual color similarity to re-rank fashion retrieval results, improving chromatic consistency without retraining the underlying retrieval model.
+
 
   occlusion-aware-face-retrieval:
     id: occlusion-aware-face-retrieval
