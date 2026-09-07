@@ -209,21 +209,27 @@ items:
     id: retrieval-oriented-dimensionality-reduction
     url: /publications/retrieval-oriented-dimensionality-reduction/
     title: "Image Retrieval through Retrieval-Oriented Dimensionality Reduction"
-    description: A NomadLab conference publication at ISMSIT 2025.
+    description: Retrieval-oriented embedding compression using an autoencoder trained with reconstruction, cosine, decorrelation, and orthogonality objectives.
     venue: ISMSIT 2025
     venue_type: Conference
+
+    image: /assets/img/publications/retrieval-oriented-dimensionality-reduction/cover.png
+    image_alt: "DeepFashion item ID split into visually consistent group IDs"
+
     authors:
       - enis-teper
       - alp-arda-yalman
       - dilge-karakas
       - serena-tomakyan
       - yusuf-huseyin-sahin
+
     paper_url: https://doi.org/10.1109/ISMSIT67332.2025.11268102
     scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:R3hNpaxXUhUC"
     code_url:
     project_url:
+
     abstract: >-
-      The paper compares linear, nonlinear, and neural dimensionality-reduction strategies for large-scale fashion image retrieval, emphasizing preservation of neighborhood structure and retrieval quality.
+      The paper compares linear, nonlinear, and neural dimensionality-reduction strategies for large-scale fashion image retrieval and proposes MCDO, a retrieval-oriented autoencoder loss that preserves reconstruction, angular similarity, bottleneck decorrelation, and latent orthogonality.
 
   football-playing-styles-isace:
     id: football-playing-styles-isace
