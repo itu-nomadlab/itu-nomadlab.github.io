@@ -103,24 +103,32 @@ items:
       CA-Rank uses garment segmentation and perceptual color similarity to re-rank fashion retrieval results, improving chromatic consistency without retraining the underlying retrieval model.
 
 
+
   occlusion-aware-face-retrieval:
     id: occlusion-aware-face-retrieval
     url: /publications/occlusion-aware-face-retrieval/
     title: "Occlusion-Aware Face Retrieval: Identity Restoration through Generative Inpainting"
-    description: A NomadLab conference publication at AICCC 2025.
+    description: A benchmarking pipeline for studying how realistic facial occlusions distort retrieval embeddings and how generative inpainting restores identity-preserving information.
     venue: AICCC 2025
     venue_type: Conference
+
+    image: /assets/img/publications/occlusion-aware-face-retrieval/cover.png
+    image_alt: "Pipeline showing raw image, mask-based occlusion handling, and identity-restoring inpainting"
+
     authors:
       - enis-teper
       - selcuk-acikalin
       - yunus-emre-gundogmus
       - yusuf-huseyin-sahin
+
     paper_url: https://doi.org/10.1145/3789982.3790067
     scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:r0BpntZqJG4C"
     code_url:
     project_url:
+
     abstract: >-
       This work studies how facial occlusions alter identity embeddings and evaluates generative inpainting as a way to restore identity-preserving information for face retrieval.
+
 
   self-supervised-jigsaw-change-detection:
     id: self-supervised-jigsaw-change-detection
