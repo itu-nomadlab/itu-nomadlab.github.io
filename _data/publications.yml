@@ -257,24 +257,31 @@ items:
       tactical representations from more than three million football events and
       reveals interpretable playing styles across Europe's top five leagues.
 
+
   open-vocabulary-product-discovery:
     id: open-vocabulary-product-discovery
     url: /publications/open-vocabulary-product-discovery/
     title: "Open-Vocabulary Product Discovery via Fusion Based Visual Retrieval in E-Commerce"
-    description: A NomadLab conference publication at UBMK 2025.
+    description: Prompt-driven open-vocabulary product detection combined with dual-view visual retrieval and Freeze-Weighted Reciprocal Rank Fusion.
     venue: UBMK 2025
     venue_type: Conference
+
+    image: /assets/img/publications/open-vocabulary-product-discovery/cover.png
+    image_alt: "YOLO-World open-vocabulary detection and product/scene FWRRF retrieval pipeline"
+
     authors:
       - enis-teper
       - mustafa-keskin
       - emre-rencberoglu
       - yusuf-huseyin-sahin
+
     paper_url: https://doi.org/10.1109/UBMK67458.2025.11206995
     scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:L8Ckcad2t8MC"
     code_url:
     project_url:
+
     abstract: >-
-      A fusion-based visual retrieval pipeline supports open-vocabulary discovery of complementary products without requiring a category-specific detector to be retrained for every new product class.
+      A prompt-driven e-commerce visual-search pipeline uses YOLO-World for open-vocabulary detection and Freeze-Weighted Reciprocal Rank Fusion to combine product-crop and scene-level retrieval without fine-tuning the neural backbones.
 
   tinyrxnet:
     id: tinyrxnet
