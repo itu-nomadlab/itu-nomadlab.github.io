@@ -2,6 +2,7 @@ order:
   - dva-clip
   - pixelwise-split-conformal-temperature-emulation
   - ai-automation-labor-market
+  - cae-fno
   - color-aware-fashion-reranking
   - occlusion-aware-face-retrieval
   - self-supervised-jigsaw-change-detection
@@ -22,6 +23,29 @@ selected:
   - football-playing-styles-dec
 
 items:
+
+  cae-fno:
+    id: cae-fno
+    url: /publications/cae-fno/
+    title: "CAE-FNO: A Fourier Neural Operator-Based Acoustic Anomaly Detection Network"
+    description: A raw-waveform reconstruction autoencoder combining global Fourier operators with local temporal convolutions for unsupervised industrial acoustic anomaly detection.
+    venue: MMSP 2026
+    venue_type: Conference
+
+    image: /assets/img/publications/cae-fno/cover.png
+    image_alt: "CAE-FNO skip-connected raw-waveform autoencoder architecture"
+
+    authors:
+      - ugur-erkan-bol
+      - yusuf-huseyin-sahin
+
+    paper_url:
+    scholar_url:
+    code_url: https://github.com/ugur-bol/CAE-FNO
+    project_url:
+
+    abstract: >-
+      CAE-FNO is a reconstruction-based acoustic anomaly detector that replaces conventional convolutional blocks with Convolutional Fourier Layers, combining global spectral modeling with local waveform processing directly on raw industrial audio.
 
   dva-clip:
     id: dva-clip
