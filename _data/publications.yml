@@ -287,18 +287,24 @@ items:
     id: tinyrxnet
     url: /publications/tinyrxnet/
     title: "TinyRXNet: A Local RX-Based Architecture for Accurate Segmentation of Small-Scale Objects"
-    description: A NomadLab conference publication at UBMK 2025.
+    description: Tiny-object segmentation by combining SAM encoder features with tile-wise Local RX anomaly maps inside a ResNet-based segmentation network.
     venue: UBMK 2025
     venue_type: Conference
+
+    image: /assets/img/publications/tinyrxnet/cover.png
+    image_alt: "TinyRXNet architecture combining frozen SAM features and Local RX anomaly maps"
+
     authors:
       - nazrin-abdinli
       - yusuf-huseyin-sahin
+
     paper_url: https://doi.org/10.1109/UBMK67458.2025.11206877
     scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:7PzlFSSx8tAC"
-    code_url:
+    code_url: https://github.com/abdinlin22/TINYRXNET
     project_url:
+
     abstract: >-
-      TinyRXNet combines SAM-derived features with Local RX blocks to improve segmentation of very small objects, including pedestrians in top-down UAV imagery.
+      TinyRXNet combines frozen SAM encoder features with tile-wise Local RX anomaly maps to highlight locally distinctive tiny objects in deep feature space and improve aerial pedestrian segmentation.
 
 
   itaclip:
