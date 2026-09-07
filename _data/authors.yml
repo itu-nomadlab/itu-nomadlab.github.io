@@ -1,5 +1,5 @@
 yusuf-huseyin-sahin:
-  name: Yusuf Hüseyin Şahin
+  name: Yusuf H. Şahin
   publication_name: Yusuf H Şahin
   initials: YHŞ
   author_type: graduate
@@ -7,14 +7,14 @@ yusuf-huseyin-sahin:
   role: Principal Investigator · Assistant Professor
   affiliation: Department of Computer Engineering, Istanbul Technical University
   email: sahinyu@itu.edu.tr
-  bio: Researcher and educator working across machine learning, computer vision, multimodal systems, information retrieval, and scientific AI.
+  bio: "Towards thee I roll, thou all-destroying but unconquering whale; to the last I grapple with thee; from hell’s heart I stab at thee; for hate’s sake I spit my last breath at thee. Sink all coffins and all hearses to one common pool! and since neither can be mine, let me then tow to pieces, while still chasing thee, though tied to thee, thou damned whale! Thus, I give up the spear!"
   image: people/yusuf-sahin.jpg
   image_alt: Portrait of Yusuf Hüseyin Şahin
-  interests:
+  interests: 
+    - Chasing Moby Dick
     - Reliable machine learning
     - Vision-language models
     - Information retrieval
-    - AI for science
   thesis:
     title:
     degree:
