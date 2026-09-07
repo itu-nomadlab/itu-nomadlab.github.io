@@ -159,21 +159,26 @@ items:
     id: neonatal-mri-kspace-lesion-segmentation
     url: /publications/neonatal-mri-kspace-lesion-segmentation/
     title: "Lesion Segmentation of Neonatal Diffusion MRI Under Simulated K-space Undersampling"
-    description: A NomadLab conference publication at AICCC 2025.
+    description: Frequency-aware SwinUNETR variants for neonatal HIE lesion segmentation directly from simulated undersampled diffusion MRI.
     venue: AICCC 2025
     venue_type: Conference
+
+    image: /assets/img/publications/neonatal-mri-kspace-lesion-segmentation/cover.png
+    image_alt: "SwinUNETR architecture with localized Block DCT frequency features"
+
     authors:
       - a-senih-yildirim
       - ayca-pektas
       - busra-koyun
       - yusuf-huseyin-sahin
+
     paper_url: https://doi.org/10.1145/3789982.3790068
     scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:4JMBOYKVnBMC"
     code_url:
     project_url:
-    abstract: >-
-      This work evaluates neonatal diffusion-MRI lesion segmentation under simulated four-fold k-space undersampling and investigates frequency-aware variants of SwinUNETR for robust low-resolution analysis.
 
+    abstract: >-
+      This work evaluates neonatal diffusion-MRI lesion segmentation under simulated k-space undersampling and investigates global and localized DCT frequency priors within SwinUNETR.
 
   skewfuse:
     id: skewfuse
