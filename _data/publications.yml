@@ -134,20 +134,27 @@ items:
     id: self-supervised-jigsaw-change-detection
     url: /publications/self-supervised-jigsaw-change-detection/
     title: "Enhancing Change Detection with Self-Supervised Jigsaw Loss"
-    description: A NomadLab conference publication at AICCC 2025.
+    description: Jigsaw Change Detection augments supervised remote-sensing change segmentation with a self-supervised spatial deshuffling objective.
     venue: AICCC 2025
     venue_type: Conference
+
+    image: /assets/img/publications/self-supervised-jigsaw-change-detection/cover.png
+    image_alt: "Jigsaw Change Detection architecture with auxiliary shuffle prediction"
+
     authors:
       - ayberk-gurses
       - berke-algul
       - yusuf-huseyin-sahin
+
     paper_url: https://doi.org/10.1145/3789982.3790069
     scholar_url: "https://scholar.google.com/citations?view_op=view_citation&hl=tr&user=62rdgoYAAAAJ&sortby=pubdate&citation_for_view=62rdgoYAAAAJ:j3f4tGmQtD8C"
-    code_url:
+    code_url: https://github.com/berkealgul/JDS
     project_url:
-    abstract: >-
-      The study augments change-detection training with a self-supervised jigsaw objective designed to strengthen spatial reasoning and improve segmentation of changed regions.
 
+    abstract: >-
+      JCD adds a self-supervised jigsaw classification objective to a dual encoder-decoder change-detection model, encouraging stronger spatial reasoning and improving change localization across multiple remote-sensing benchmarks.
+
+      
   neonatal-mri-kspace-lesion-segmentation:
     id: neonatal-mri-kspace-lesion-segmentation
     url: /publications/neonatal-mri-kspace-lesion-segmentation/
