@@ -4,7 +4,7 @@ title: Collaborations
 permalink: /collaborations/
 description: Applied research programs developed with public agencies, university centers, and domain partners.
 nav: true
-nav_order: 5
+nav_order: 4
 ---
 
 <div class="page-intro nomad-panel">
